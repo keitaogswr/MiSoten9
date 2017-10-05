@@ -50,6 +50,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
         this.BGMList.ForEach(bgm => addClipDict(this.bgmDict, bgm));
         this.SEList.ForEach(se => addClipDict(this.seDict, se));
+        DontDestroyOnLoad(this.gameObject);
     }
 
     //  効果音再生。
