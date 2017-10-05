@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CretaeManager : MonoBehaviour {
     public List<GameObject> prefab;
-    static private List<GameObject> obj; 
+    private List<GameObject> obj = new List<GameObject>(); 
 
     void Awake() {
         for (int i = 0; i < prefab.Count; i++) {
@@ -17,9 +17,9 @@ public class CretaeManager : MonoBehaviour {
     }
 
     GameObject getObject(string name) {
-        for (int i = 0; i < prefab.Count; i++) {
-            if (name == prefab[i].name) {
-                return prefab[i];
+        for (int i = 0; i < obj.Count; i++) {
+            if (name == obj[i].name) {
+                return obj[i];
             }
         }
 
