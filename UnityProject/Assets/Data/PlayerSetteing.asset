@@ -11,5 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2d193141610f541b4235e2577c3afc, type: 3}
   m_Name: PlayerSetteing
   m_EditorClassIdentifier: 
-  health: 0
-  moveSpeed: 0
+  maxSpeed: 10
+  minSpeed: 2
+  acceleration: 0.1
+  acceleSlope: 0.2
