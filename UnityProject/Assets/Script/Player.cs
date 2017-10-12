@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     [SerializeField]
     PlayerSetteing parameter = null;
+    [SerializeField]
+    GameObject paintField = null;
 
     private float moveSpeed = 0.0f;
     private float maxSpeed = 0.0f;
@@ -32,36 +34,28 @@ public class Player : MonoBehaviour {
     }
 
     private void move () {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            if (moveSpeed < maxSpeed)
-            {
+        if (Input.GetKey(KeyCode.UpArrow)) {
+            if (moveSpeed < maxSpeed) {
                 moveSpeed += acceleration;
             }
-            else
-            {
+            else {
                 moveSpeed = maxSpeed;
             }
         }
-        else
-        {
-            if (minSpeed < moveSpeed)
-            {
+        else {
+            if (minSpeed < moveSpeed) {
                 moveSpeed -= acceleration;
             }
-            else
-            {
+            else {
                 moveSpeed = minSpeed;
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
+        if (Input.GetKey(KeyCode.RightArrow)) {
             slope += acceleSlope;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
+        if (Input.GetKey(KeyCode.LeftArrow)) {
             slope -= acceleSlope;
         }
 
