@@ -56,7 +56,7 @@ public class Notes_C : MonoBehaviour {
         Obj_L.transform.SetParent(this.transform);
 
         Obj_L.name = "Note" + lineNum;
-        Obj_L.transform.localPosition = new Vector2(-510 + (Obj_L.GetComponent<RectTransform>().rect.width / 2), -330);
+        Obj_L.transform.localPosition = new Vector2(-510 + (Obj_L.GetComponent<RectTransform>().rect.width / 2), -230);
         Obj_L.transform.localScale = new Vector3(1, 1, 1);
 
         GameObject Obj_R = Instantiate(notes);
@@ -64,7 +64,7 @@ public class Notes_C : MonoBehaviour {
         Obj_R.transform.SetParent(this.transform);
 
         Obj_R.name = "Note" + lineNum;
-        Obj_R.transform.localPosition = new Vector2(510 - (Obj_R.GetComponent<RectTransform>().rect.width / 2), -330);
+        Obj_R.transform.localPosition = new Vector2(510 - (Obj_R.GetComponent<RectTransform>().rect.width / 2), -230);
         Obj_R.transform.localScale = new Vector3(1, 1, 1);
 
         Obj_R.GetComponent<Note2>().Note_Speed *= -1;
