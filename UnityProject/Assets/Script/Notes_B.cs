@@ -42,7 +42,7 @@ public class Notes_B : MonoBehaviour
 
         Obj.transform.SetParent(this.transform);
 
-        Obj.transform.localPosition = new Vector2(-510 + (Obj.GetComponent<RectTransform>().rect.width / 2), -330);
+        Obj.transform.localPosition = new Vector2(-510 + (Obj.GetComponent<RectTransform>().rect.width / 2), -230);
         Obj.transform.localScale = new Vector3(1, 1, 1);
 
         FieldNote = Obj;
