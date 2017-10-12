@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Note3 : MonoBehaviour {
+public class Note : MonoBehaviour {
 
     public float Note_Speed = 10;
 
