@@ -13,7 +13,7 @@ public class Notes_C : MonoBehaviour {
     public float bpm;
     private float Note_Span = 0;
 
-    public GameObject[,] FieldNote = new GameObject[10,2];
+    public GameObject[,] FieldNote = new GameObject[250,2];
 
     // Use this for initialization
     void Start()
@@ -36,6 +36,12 @@ public class Notes_C : MonoBehaviour {
             if (FieldNote[0,0] != null && FieldNote[0,0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
             {
                 Debug.Log("Good");
+
+                DestoryNote();
+            }
+            else if(FieldNote[0,0] != null)
+            {
+                Debug.Log("Bad");
 
                 DestoryNote();
             }
@@ -69,7 +75,7 @@ public class Notes_C : MonoBehaviour {
 
         Obj_R.GetComponent<Note2>().Note_Speed *= -1;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 250; i++)
         {
             if (FieldNote[i,0] == null)
             {
@@ -86,13 +92,13 @@ public class Notes_C : MonoBehaviour {
         FieldNote[0,0].GetComponent<Note2>().DestroyObj();
         FieldNote[0, 1].GetComponent<Note2>().DestroyObj();
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 249; i++)
         {
             FieldNote[i,0] = FieldNote[i + 1,0];
             FieldNote[i, 1] = FieldNote[i + 1, 1];
         }
 
-        FieldNote[9,0] = null;
-        FieldNote[9, 1] = null;
+        FieldNote[249,0] = null;
+        FieldNote[249, 1] = null;
     }
 }

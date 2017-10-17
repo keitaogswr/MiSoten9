@@ -433,13 +433,13 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673763350}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49e4e7278990de94e96c69bcc77fdd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   notes: {fileID: 1127459039088136, guid: a30f656ecb9d70f45ac3aba56fb3fc98, type: 2}
-  bpm: 30
+  bpm: 100
 --- !u!114 &673763352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673763350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a94e9088c6f69014eb35a35021ec0f8f, type: 3}
   m_Name: 
