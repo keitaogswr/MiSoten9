@@ -14,6 +14,7 @@ public class CretaeManager : MonoBehaviour {
                 obj[i].name = prefab[i].name;
             }
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     GameObject getObject(string name) {

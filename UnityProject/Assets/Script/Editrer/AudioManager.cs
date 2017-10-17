@@ -23,13 +23,6 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
 
     public void Awake()
     {
-        if (this != Instance) {
-            Destroy(this);
-            return;
-        }
-
-        DontDestroyOnLoad(this.gameObject);
-
         //create listener
         if (FindObjectsOfType(typeof(AudioListener)).All(o => !((AudioListener)o).enabled)) {
             this.gameObject.AddComponent<AudioListener>();

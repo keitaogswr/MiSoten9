@@ -17,9 +17,9 @@ public class Fade : MonoBehaviour {
         Fade_Out,
     };
 
-    Fade_Mode fadeMode;
+    public Fade_Mode fadeMode;
+    public Fade_Mode FadeMode { get { return fadeMode; } set { fadeMode = value; } }
     Color color;
-    string nextScene;
 
     // Use this for initialization
     void Awake () {
@@ -28,7 +28,6 @@ public class Fade : MonoBehaviour {
 	}
 
     void Start () {
-        nextScene = null;
         fadeMode = Fade_Mode.Fade_None;
 
         color = child.GetComponent<Image>().color;
@@ -42,8 +41,8 @@ public class Fade : MonoBehaviour {
             color.a += fadeMode == Fade_Mode.Fade_Out ? fadeSpeed : -fadeSpeed;
 
             if (color.a > 1.0f) {
+                color.a = 1.0f;
                 fadeMode = Fade_Mode.Fade_In;
-                SceneManager.LoadScene(nextScene);
             }
             else if (color.a < 0.0f) {
                 color.a = 0.0f;
@@ -56,13 +55,20 @@ public class Fade : MonoBehaviour {
         child.GetComponent<Image>().sprite = texture;
     }
 
-    public bool setFade (string sceneName) {
+    public bool setFade () {
         if (fadeMode == Fade_Mode.Fade_None) {
             color.a = 0;
-            nextScene = sceneName;
             fadeMode = Fade_Mode.Fade_Out;
             return true;
         }
         return false;
+    }
+
+    public Fade_Mode getFadeMode () {
+        return fadeMode;
+    }
+
+    public GameObject getChild () {
+        return child;
     }
 }
