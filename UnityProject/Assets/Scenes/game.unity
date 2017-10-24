@@ -445,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notes: {fileID: 1127459039088136, guid: a30f656ecb9d70f45ac3aba56fb3fc98, type: 2}
   GoodText: {fileID: 1001213724711390, guid: a731ab919ea934145876c09650637415, type: 2}
+  BadText: {fileID: 1609176772282274, guid: 6e2d484300b7e914ebfda522ef0f063a, type: 2}
   bpm: 30
   Bar: {fileID: 0}
 --- !u!114 &673763352

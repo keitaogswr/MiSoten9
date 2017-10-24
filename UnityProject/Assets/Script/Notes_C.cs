@@ -31,9 +31,18 @@ public class Notes_C : MonoBehaviour {
     {
         if (Time.time > Note_Span)
         {
-            SpawnNotes();
+            if (lineNum % 5 == 0)
+            {
+                SpawnNotes();
 
-            Note_Span += 60.0f / bpm / 4;
+                Note_Span += 60.0f / bpm / 8;
+            }
+            else
+            {
+                SpawnNotes();
+
+                Note_Span += 60.0f / bpm / 4;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
