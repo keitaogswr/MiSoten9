@@ -9,6 +9,7 @@ public class Fade : MonoBehaviour {
     private GameObject fade;
     private GameObject child;
     public Sprite texture;
+    public string cameraName;
     public float fadeSpeed = 0.01f;
 
     public enum Fade_Mode {
@@ -17,21 +18,34 @@ public class Fade : MonoBehaviour {
         Fade_Out,
     };
 
+    private GameObject camera;
+
     public Fade_Mode fadeMode;
     public Fade_Mode FadeMode { get { return fadeMode; } set { fadeMode = value; } }
     Color color;
 
     // Use this for initialization
     void Awake () {
-        child = transform.Find("FadePanel").gameObject;
+        
         DontDestroyOnLoad(this.gameObject);
 	}
 
     void Start () {
         fadeMode = Fade_Mode.Fade_None;
-
+        child = transform.Find("FadePanel").gameObject;
         color = child.GetComponent<Image>().color;
         color.a = 0;
+        camera = GameObject.Find(cameraName);
+
+        Vector3 min = camera.GetComponent<Camera>().ScreenToWorldPoint(Vector3.zero);
+        min.Scale(new Vector3(1.0f, -1.0f, 1.0f));
+        Vector3 max = camera.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0.0f));
+        max.Scale(new Vector3(1.0f, -1.0f, 1.0f));
+
+        float width = Screen.width;
+        float height = Screen.height;
+
+        child.GetComponent<Image>().GetComponent<RectTransform>().sizeDelta = new Vector2(max.x - min.x, max.y - min.y);
     }
 
 	// Update is called once per frame

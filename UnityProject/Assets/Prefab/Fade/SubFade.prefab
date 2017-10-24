@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 0}
+  cameraName: SubCamera
   fadeSpeed: 0.01
   fadeMode: 0
 --- !u!114 &114901517023800938
