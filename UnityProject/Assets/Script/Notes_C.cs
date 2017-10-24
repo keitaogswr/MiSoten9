@@ -5,6 +5,9 @@ using UnityEngine;
 public class Notes_C : MonoBehaviour {
 
     public GameObject notes;
+    public GameObject GoodText;
+    public GameObject BadText;
+
     private float taiming;
     private int lineNum = 0;
 
@@ -15,10 +18,12 @@ public class Notes_C : MonoBehaviour {
 
     public GameObject[,] FieldNote = new GameObject[250,2];
 
+    public GameObject Bar;
+
     // Use this for initialization
     void Start()
     {
-
+        Bar = GameObject.Find("Hantei_Center").gameObject;
     }
 
     // Update is called once per frame
@@ -37,11 +42,31 @@ public class Notes_C : MonoBehaviour {
             {
                 Debug.Log("Good");
 
+                GameObject Good = Instantiate(GoodText);
+
+                Good.transform.SetParent(this.transform);
+
+                Good.name = "Good";
+                Good.transform.localPosition = new Vector2(100, -230);
+                Good.transform.localScale = new Vector3(2, 2, 2);
+
+                Bar.GetComponent<BarAct>().GoodAct();
+
                 DestoryNote();
             }
             else if(FieldNote[0,0] != null)
             {
                 Debug.Log("Bad");
+
+                GameObject Bad = Instantiate(BadText);
+
+                Bad.transform.SetParent(this.transform);
+
+                Bad.name = "Bad";
+                Bad.transform.localPosition = new Vector2(110, -230);
+                Bad.transform.localScale = new Vector3(2, 2, 2);
+
+                Bar.GetComponent<BarAct>().BadAct();
 
                 DestoryNote();
             }
