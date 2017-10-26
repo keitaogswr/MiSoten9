@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player2 : MonoBehaviour {
     [SerializeField]
     PlayerSetteing parameter = null;
     [SerializeField]
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour {
     }
 
     private void Move () {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical_1") == 1) {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical_2") == 1) {
             if (moveSpeed < maxSpeed) {
                 moveSpeed += acceleration;
             }
@@ -51,11 +51,11 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal_1") == 1) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal_2") == 1) {
             slope += acceleSlope;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal_1") == -1) {
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal_2") == -1) {
             slope -= acceleSlope;
         }
 
