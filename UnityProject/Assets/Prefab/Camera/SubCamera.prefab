@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 124626786749908232}
   - component: {fileID: 92616935920315588}
   - component: {fileID: 81437281762398674}
+  - component: {fileID: 114740929178317554}
   m_Layer: 0
   m_Name: SubCamera
   m_TagString: Untagged
@@ -93,6 +94,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585804022061950}
   m_Enabled: 1
+--- !u!114 &114740929178317554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585804022061950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13621597a9e1acc4d8f7e8abc5bec5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &124626786749908232
 Behaviour:
   m_ObjectHideFlags: 1
