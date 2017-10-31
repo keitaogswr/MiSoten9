@@ -55,3 +55,4 @@ MonoBehaviour:
   - {fileID: 1218238180252494, guid: 839518f9876732b4ea5bc891d08de45b, type: 2}
   - {fileID: 1031609134353586, guid: 7cf3a17632c75ba40b040ade56e254f5, type: 2}
   - {fileID: 1245051643508208, guid: 4c50e9f1ccbac854cae38aaa2bc8f0a6, type: 2}
+  texture: {fileID: 0}
