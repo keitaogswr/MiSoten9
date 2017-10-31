@@ -97,7 +97,7 @@ public class TerraScript : MonoBehaviour {
 
         if (AriaSize > 5)
         {
-            AriaSize -= 0.5f;
+            //AriaSize -= 0.5f;
         }
 
     }

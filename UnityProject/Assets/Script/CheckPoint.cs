@@ -24,6 +24,7 @@ public class CheckPoint : MonoBehaviour {
             if (elapsedTime < sec) {
                 elapsedTime += Time.deltaTime;
                 childColl.radius = addScal * elapsedTime;
+                
             }
         }
     }

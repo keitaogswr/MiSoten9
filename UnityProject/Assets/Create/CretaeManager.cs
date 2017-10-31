@@ -13,6 +13,9 @@ public class CretaeManager : MonoBehaviour {
                 obj.Add(Instantiate(prefab[i]) as GameObject);
                 obj[i].name = prefab[i].name;
             }
+            else {
+                obj.Add(GameObject.Find(prefab[i].name));
+            }
         }
         DontDestroyOnLoad(this.gameObject);
     }
