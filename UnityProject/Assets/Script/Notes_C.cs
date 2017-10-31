@@ -20,10 +20,16 @@ public class Notes_C : MonoBehaviour {
 
     public GameObject Bar;
 
+    public GameObject TerrainObj;
+    public TerraScript TerrainScript;
+    public float AddAriaSize;
+
     // Use this for initialization
     void Start()
     {
         Bar = GameObject.Find("Hantei_Center").gameObject;
+        TerrainObj = GameObject.Find("Terrain").gameObject;
+        TerrainScript = TerrainObj.GetComponent<TerraScript>();
     }
 
     // Update is called once per frame
@@ -49,7 +55,7 @@ public class Notes_C : MonoBehaviour {
         {
             if (FieldNote[0,0] != null && FieldNote[0,0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
             {
-                Debug.Log("Good");
+                //Debug.Log("Good");
 
                 GameObject Good = Instantiate(GoodText);
 
@@ -59,13 +65,15 @@ public class Notes_C : MonoBehaviour {
                 Good.transform.localPosition = new Vector2(100, -230);
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
+                TerrainScript.AriaSize = AddAriaSize;
+
                 Bar.GetComponent<BarAct>().GoodAct();
 
                 DestoryNote();
             }
             else if(FieldNote[0,0] != null)
             {
-                Debug.Log("Bad");
+                //Debug.Log("Bad");
 
                 GameObject Bad = Instantiate(BadText);
 
