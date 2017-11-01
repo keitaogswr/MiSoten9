@@ -9,10 +9,13 @@ namespace Es.InkPainter.Sample
         [SerializeField]
         private Brush brush;
 
+        //[SerializeField]
+        //TeamColor teamColor = null;
+
         // Use this for initialization
         void Start()
         {
-
+            //brush.Color = teamColor.TeamColor1;
         }
 
         // Update is called once per frame
