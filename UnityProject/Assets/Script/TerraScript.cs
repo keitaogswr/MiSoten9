@@ -19,27 +19,18 @@ public class TerraScript : MonoBehaviour {
 
     public float AriaSize = 5;
 
-    public GameObject GrowEfe;
-    private ParticleSystem GrowParm;
-    private ParticleSystem.ShapeModule Shape;
-    private ParticleSystem.ShapeModule ShapeChild;
+    private ParticleSystem.ShapeModule GrowEfe;
 
     void Start()
     {
         terrainComponent = this.GetComponent<Terrain>();
         terrainCollider = this.GetComponent<TerrainCollider>();
 
-        GrowEfe = GameObject.Find("Growth");
-        GrowParm = GrowEfe.GetComponent<ParticleSystem>();
-        Shape = GrowParm.shape;
-        ShapeChild = GameObject.Find("GrowthChild").GetComponent<ParticleSystem>().shape;
-
         mapSize_W = terrainComponent.terrainData.heightmapWidth;
         mapSize_H = terrainComponent.terrainData.heightmapHeight;
 
         mapAlphaSize_W = terrainComponent.terrainData.alphamapWidth;
         mapAlphaSize_H = terrainComponent.terrainData.alphamapHeight;
-
 
         Debug.Log("Width:" + mapSize_W);
         Debug.Log("Height:" + mapSize_H);
@@ -49,6 +40,8 @@ public class TerraScript : MonoBehaviour {
 
         AlphaMap = new float[mapAlphaSize_W, mapAlphaSize_W, 2];
         AlphaMapOrg = new float[mapAlphaSize_W, mapAlphaSize_W, 2];
+
+        GrowEfe = GameObject.Find("GrowEfe").GetComponent<ParticleSystem>().shape;
 
         for (var y = 0; y < mapAlphaSize_H; y++)
         {
@@ -105,14 +98,12 @@ public class TerraScript : MonoBehaviour {
 
         //terrainComponent.terrainData.SetAlphamaps();
 
+        //GrowEfe.radius = AriaSize;
+
         if (AriaSize > 5)
         {
-            AriaSize -= 0.5f;
+            //AriaSize -= 0.5f;
         }
-
-        
-        Shape.radius = AriaSize;
-        ShapeChild.radius = AriaSize;
 
     }
 
@@ -144,7 +135,7 @@ public class TerraScript : MonoBehaviour {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
                 {
                     //Random.Range(0.1f, 0.5f);
-                    AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
+                    AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.1f, 0.8f);
 
                     if(AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1)
                     {
@@ -158,5 +149,7 @@ public class TerraScript : MonoBehaviour {
         }
 
         //terrainComponent.terrainData.SetAlphamaps(0, 0, AlphaMap);
+
+        collision.gameObject.GetComponent<SphereCollider>().isTrigger = true;
     }
 }
