@@ -19,10 +19,20 @@ public class TerraScript : MonoBehaviour {
 
     public float AriaSize = 5;
 
+    public GameObject GrowEfe;
+    private ParticleSystem GrowParm;
+    private ParticleSystem.ShapeModule Shape;
+    private ParticleSystem.ShapeModule ShapeChild;
+
     void Start()
     {
         terrainComponent = this.GetComponent<Terrain>();
         terrainCollider = this.GetComponent<TerrainCollider>();
+
+        GrowEfe = GameObject.Find("Growth");
+        GrowParm = GrowEfe.GetComponent<ParticleSystem>();
+        Shape = GrowParm.shape;
+        ShapeChild = GameObject.Find("GrowthChild").GetComponent<ParticleSystem>().shape;
 
         mapSize_W = terrainComponent.terrainData.heightmapWidth;
         mapSize_H = terrainComponent.terrainData.heightmapHeight;
@@ -99,6 +109,10 @@ public class TerraScript : MonoBehaviour {
         {
             AriaSize -= 0.5f;
         }
+
+        
+        Shape.radius = AriaSize;
+        ShapeChild.radius = AriaSize;
 
     }
 
