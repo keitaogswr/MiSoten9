@@ -65,7 +65,12 @@ public class Notes_C : MonoBehaviour {
                 Good.transform.localPosition = new Vector2(100, -230);
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
-                TerrainScript.AriaSize = AddAriaSize;
+                TerrainScript.AriaSize += 5;
+
+                if (TerrainScript.AriaSize > AddAriaSize)
+                {
+                    TerrainScript.AriaSize = AddAriaSize;
+                }
 
                 Bar.GetComponent<BarAct>().GoodAct();
 
