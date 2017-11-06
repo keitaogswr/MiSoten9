@@ -81,7 +81,7 @@ public class PixelColor : MonoBehaviour
 		//float ratio2Score = 0;
 
 		// チーム１＋チーム２＝１００（塗られていない場所は関与しない）
-		ratio1Score = (team1Score * 100) / (team1Score + team2Score);
+		//ratio1Score = (team1Score * 100) / (team1Score + team2Score);
 		ratio2Score = 100 - ratio1Score;
 
 		// チーム１＋チーム２＋OTHER＝１００（塗られていない場所含めて比率１００で計算）

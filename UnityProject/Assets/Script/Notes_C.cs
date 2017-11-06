@@ -24,11 +24,14 @@ public class Notes_C : MonoBehaviour {
     public TerraScript TerrainScript;
     public float AddAriaSize;
 
+    public GameObject GrowPoint;
+
     // Use this for initialization
     void Start()
     {
         Bar = GameObject.Find("Hantei_Center").gameObject;
         TerrainObj = GameObject.Find("Terrain").gameObject;
+        GrowPoint = GameObject.Find("Sphere").gameObject;
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
     }
 
@@ -37,11 +40,11 @@ public class Notes_C : MonoBehaviour {
     {
         if (Time.time > Note_Span)
         {
-            if (lineNum % 5 == 0)
+            if (lineNum % 1 == 0)
             {
                 SpawnNotes();
 
-                Note_Span += 60.0f / bpm / 8;
+                Note_Span += 60.0f / bpm / 4;
             }
             else
             {
@@ -66,6 +69,8 @@ public class Notes_C : MonoBehaviour {
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
                 TerrainScript.AriaSize += 5;
+
+                GrowPoint.GetComponent<SphereCollider>().isTrigger = false;
 
                 if (TerrainScript.AriaSize > AddAriaSize)
                 {
