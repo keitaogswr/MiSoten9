@@ -29,11 +29,6 @@ public class TerraScript : MonoBehaviour {
         terrainComponent = this.GetComponent<Terrain>();
         terrainCollider = this.GetComponent<TerrainCollider>();
 
-        GrowEfe = GameObject.Find("Growth");
-        GrowParm = GrowEfe.GetComponent<ParticleSystem>();
-        Shape = GrowParm.shape;
-        ShapeChild = GameObject.Find("GrowthChild").GetComponent<ParticleSystem>().shape;
-
         mapSize_W = terrainComponent.terrainData.heightmapWidth;
         mapSize_H = terrainComponent.terrainData.heightmapHeight;
 
@@ -109,11 +104,6 @@ public class TerraScript : MonoBehaviour {
         {
             AriaSize -= 0.5f;
         }
-
-        
-        Shape.radius = AriaSize;
-        ShapeChild.radius = AriaSize;
-
     }
 
     private void OnCollisionStay(Collision collision)
@@ -133,6 +123,10 @@ public class TerraScript : MonoBehaviour {
 
         int z1 = (int)Mathf.Max(-mapR, -mapZ);
         int z2 = (int)Mathf.Min(mapR, -mapZ + mapSize_H - 1);
+        bool tornade = false;
+        if (collision.gameObject.tag == "Tornado") {
+            tornade = true;
+        }
 
         for (var z = z1; z <= z2; z++)
         {
@@ -143,17 +137,29 @@ public class TerraScript : MonoBehaviour {
             {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
                 {
-                    //Random.Range(0.1f, 0.5f);
-                    AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
+                    if (!(collision.gameObject.tag == "Tornado")) {
+                        //Random.Range(0.1f, 0.5f);
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
 
-                    if(AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1)
-                    {
-                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1;
+                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1) {
+                            AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1;
+                        }
+
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1];
                     }
+                    else {
+                        //Random.Range(0.1f, 0.5f);
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] += Random.Range(0.001f, 0.01f);
 
-                    AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1];
+                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] > 1) {
+                            AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1;
+                        }
+
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0];
+                    }
                 }
-
+                
+          
             }
         }
 
