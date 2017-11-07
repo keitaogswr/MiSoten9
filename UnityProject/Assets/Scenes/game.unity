@@ -4237,9 +4237,32 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 19807740, guid: d18380a6098943a4a879b5a0f3826c9d, type: 2}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19807740, guid: d18380a6098943a4a879b5a0f3826c9d, type: 2}
+      propertyPath: randomSeed
+      value: -2134623978
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d18380a6098943a4a879b5a0f3826c9d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1465716527 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 108504, guid: d18380a6098943a4a879b5a0f3826c9d, type: 2}
+  m_PrefabInternal: {fileID: 1465716526}
+--- !u!114 &1465716528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1465716527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f8a69252d52134a8d98bcb188d0d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1626548019
 GameObject:
   m_ObjectHideFlags: 0
