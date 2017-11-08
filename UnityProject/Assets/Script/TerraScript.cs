@@ -19,7 +19,10 @@ public class TerraScript : MonoBehaviour {
 
     public float AriaSize = 5;
 
-    private ParticleSystem.ShapeModule GrowEfe;
+    public GameObject GrowEfe;
+    private ParticleSystem GrowParm;
+    private ParticleSystem.ShapeModule Shape;
+    private ParticleSystem.ShapeModule ShapeChild;
 
     void Start()
     {
@@ -32,6 +35,7 @@ public class TerraScript : MonoBehaviour {
         mapAlphaSize_W = terrainComponent.terrainData.alphamapWidth;
         mapAlphaSize_H = terrainComponent.terrainData.alphamapHeight;
 
+
         Debug.Log("Width:" + mapSize_W);
         Debug.Log("Height:" + mapSize_H);
 
@@ -40,8 +44,6 @@ public class TerraScript : MonoBehaviour {
 
         AlphaMap = new float[mapAlphaSize_W, mapAlphaSize_W, 2];
         AlphaMapOrg = new float[mapAlphaSize_W, mapAlphaSize_W, 2];
-
-        GrowEfe = GameObject.Find("GrowEfe").GetComponent<ParticleSystem>().shape;
 
         for (var y = 0; y < mapAlphaSize_H; y++)
         {
@@ -98,13 +100,10 @@ public class TerraScript : MonoBehaviour {
 
         //terrainComponent.terrainData.SetAlphamaps();
 
-        //GrowEfe.radius = AriaSize;
-
         if (AriaSize > 5)
         {
-            //AriaSize -= 0.5f;
+            AriaSize -= 0.5f;
         }
-
     }
 
     private void OnCollisionStay(Collision collision)
@@ -124,6 +123,10 @@ public class TerraScript : MonoBehaviour {
 
         int z1 = (int)Mathf.Max(-mapR, -mapZ);
         int z2 = (int)Mathf.Min(mapR, -mapZ + mapSize_H - 1);
+        bool tornade = false;
+        if (collision.gameObject.tag == "Tornado") {
+            tornade = true;
+        }
 
         for (var z = z1; z <= z2; z++)
         {
@@ -134,22 +137,32 @@ public class TerraScript : MonoBehaviour {
             {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
                 {
-                    //Random.Range(0.1f, 0.5f);
-                    AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.1f, 0.8f);
+                    if (!(collision.gameObject.tag == "Tornado")) {
+                        //Random.Range(0.1f, 0.5f);
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
 
-                    if(AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1)
-                    {
-                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1;
+                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1) {
+                            AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1;
+                        }
+
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1];
                     }
+                    else {
+                        //Random.Range(0.1f, 0.5f);
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] += Random.Range(0.001f, 0.01f);
 
-                    AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1];
+                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] > 1) {
+                            AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1;
+                        }
+
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0];
+                    }
                 }
-
+                
+          
             }
         }
 
         //terrainComponent.terrainData.SetAlphamaps(0, 0, AlphaMap);
-
-        collision.gameObject.GetComponent<SphereCollider>().isTrigger = true;
     }
 }
