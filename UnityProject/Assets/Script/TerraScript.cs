@@ -17,12 +17,9 @@ public class TerraScript : MonoBehaviour {
     private float[,,] AlphaMap;
     private float[,,] AlphaMapOrg;
 
-    public float AriaSize = 5;
+    //public float AriaSize = 5;
 
     public GameObject GrowEfe;
-    private ParticleSystem GrowParm;
-    private ParticleSystem.ShapeModule Shape;
-    private ParticleSystem.ShapeModule ShapeChild;
 
     private const float UpdateDeray = 0.2f;
     private float UpdateTimer = 0;
@@ -108,10 +105,10 @@ public class TerraScript : MonoBehaviour {
         }
         //terrainComponent.terrainData.SetAlphamaps();
 
-        if (AriaSize > 5)
-        {
-            AriaSize -= 0.5f;
-        }
+        //if (AriaSize > 5)
+        //{
+        //    AriaSize -= 0.5f;
+        //}
     }
 
     private void OnCollisionStay(Collision collision)
@@ -127,35 +124,44 @@ public class TerraScript : MonoBehaviour {
 
         var mapX = collision.contacts[0].point.z * mapSize_W / terrainComponent.terrainData.size.x;
         var mapZ = collision.contacts[0].point.x * mapSize_H / terrainComponent.terrainData.size.z;
-        var mapR = AriaSize * mapSize_W / terrainComponent.terrainData.size.z;
+        var mapR = collision.transform.localScale.x * mapSize_W / terrainComponent.terrainData.size.z;
 
         int z1 = (int)Mathf.Max(-mapR, -mapZ);
         int z2 = (int)Mathf.Min(mapR, -mapZ + mapSize_H - 1);
 
+        int mapW;
+        int x1;
+        int x2;
+
+        var Tag = collision.gameObject.tag;
+
         for (var z = z1; z <= z2; z++)
         {
-            int mapW = (int)Mathf.Sqrt(mapR * mapR - z * z);
-            int x1 = (int)Mathf.Max(-mapW, -mapX);
-            int x2 = (int)Mathf.Min(mapW, -mapX + mapSize_W - 1);
+            mapW = (int)Mathf.Sqrt(mapR * mapR - z * z);
+            x1 = (int)Mathf.Max(-mapW, -mapX);
+            x2 = (int)Mathf.Min(mapW, -mapX + mapSize_W - 1);
             for (var x = x1; x <= x2; x++)
             {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
                 {
-                    if (!(collision.gameObject.tag == "Tornado")) {
+                    if (!(Tag == "Tornado")) {
                         //Random.Range(0.1f, 0.5f);
                         AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
 
-                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1) {
+                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1)
+                        {
                             AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1;
                         }
 
                         AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1];
                     }
-                    else {
+                    else
+                    {
                         //Random.Range(0.1f, 0.5f);
                         AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] += Random.Range(0.001f, 0.01f);
 
-                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] > 1) {
+                        if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] > 1)
+                        {
                             AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1;
                         }
 
