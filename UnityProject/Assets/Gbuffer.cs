@@ -59,7 +59,7 @@ public class Gbuffer : MonoBehaviour {
         var texture = new RenderTexture(camera.pixelWidth, camera.pixelHeight, depth, format);
         texture.filterMode = FilterMode.Point;
         texture.useMipMap = false;
-        texture.generateMips = false;
+        texture.autoGenerateMips = false;
         texture.enableRandomWrite = false;
         texture.Create();
         return texture;

@@ -12,7 +12,7 @@ public class CheckPoint : MonoBehaviour {
     private SphereCollider childColl;
     // Use this for initialization
     void Start () {
-        childColl = transform.FindChild("DrawField").GetComponent<SphereCollider>();
+        childColl = transform.Find("DrawField").GetComponent<SphereCollider>();
         if (childColl != null)
             childColl.enabled = false;
         addScal = drawRange / sec;
