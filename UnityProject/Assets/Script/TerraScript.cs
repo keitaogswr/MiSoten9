@@ -123,10 +123,6 @@ public class TerraScript : MonoBehaviour {
 
         int z1 = (int)Mathf.Max(-mapR, -mapZ);
         int z2 = (int)Mathf.Min(mapR, -mapZ + mapSize_H - 1);
-        bool tornade = false;
-        if (collision.gameObject.tag == "Tornado") {
-            tornade = true;
-        }
 
         for (var z = z1; z <= z2; z++)
         {
@@ -158,8 +154,6 @@ public class TerraScript : MonoBehaviour {
                         AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] = 1 - AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0];
                     }
                 }
-                
-          
             }
         }
 

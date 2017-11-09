@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 114417952626073932}
   - component: {fileID: 54146385916181782}
   - component: {fileID: 135951767458739934}
+  - component: {fileID: 114654460186706944}
   m_Layer: 0
   m_Name: Spiral_01.2 Tornado tall
   m_TagString: Tornado
@@ -119,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.9, y: 0, z: 0}
+  m_LocalPosition: {x: 252.4, y: 0, z: 247.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457024}
@@ -3429,7 +3430,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1827592095
+  randomSeed: -422258347
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6778,7 +6779,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1707070255
+  randomSeed: 47980359
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13505,6 +13506,19 @@ MonoBehaviour:
   x: 0
   y: 1
   z: 0
+--- !u!114 &114654460186706944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f8a69252d52134a8d98bcb188d0d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 10
+  speed: 10
 --- !u!135 &135951767458739934
 SphereCollider:
   m_ObjectHideFlags: 1
