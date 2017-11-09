@@ -330,6 +330,11 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 135657526773929404, guid: 1b5fe8aafc1068a4ab9496c252790824,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
   m_IsPrefabParent: 0
@@ -602,7 +607,7 @@ Canvas:
   m_GameObject: {fileID: 673763350}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -4095,6 +4100,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1132251907 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1792064698479406, guid: 1b5fe8aafc1068a4ab9496c252790824,
+    type: 2}
+  m_PrefabInternal: {fileID: 433425201}
+--- !u!114 &1132251910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1132251907}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38d2380db046a6a47916826bf4ec3aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxParticleNum: 10000
+  mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+  shader: {fileID: 4800000, guid: ae437c3e44a6ae040b75b553e83145c9, type: 3}
+  computeShader: {fileID: 7200000, guid: 1d7e283c44dacd6468ac297cfcebf7bb, type: 3}
+  SpawnPoint: {x: 0, y: 0, z: 0}
+  velocity: {x: 2, y: 5, z: 2}
+  angVelocity: {x: 45, y: 45, z: 45}
+  range: {x: 1, y: 1, z: 1}
+  scale: 5
+  lifeTime: 2
+  emitGroupNum: 10
 --- !u!1001 &1275021343
 Prefab:
   m_ObjectHideFlags: 0
@@ -4744,7 +4776,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1167566728
+  randomSeed: -2061424358
   InitialModule:
     serializedVersion: 3
     enabled: 1
