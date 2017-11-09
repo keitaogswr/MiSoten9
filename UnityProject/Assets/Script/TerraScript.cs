@@ -24,6 +24,9 @@ public class TerraScript : MonoBehaviour {
     private ParticleSystem.ShapeModule Shape;
     private ParticleSystem.ShapeModule ShapeChild;
 
+    private const float UpdateDeray = 0.2f;
+    private float UpdateTimer = 0;
+
     void Start()
     {
         terrainComponent = this.GetComponent<Terrain>();
@@ -96,8 +99,13 @@ public class TerraScript : MonoBehaviour {
 
         Alpha += 0.01f;
 
-        terrainComponent.terrainData.SetAlphamaps(0, 0, AlphaMap);
+        UpdateTimer += Time.deltaTime;
 
+        if (UpdateTimer > UpdateDeray)
+        {
+            terrainComponent.terrainData.SetAlphamaps(0, 0, AlphaMap);
+            UpdateTimer = 0;
+        }
         //terrainComponent.terrainData.SetAlphamaps();
 
         if (AriaSize > 5)

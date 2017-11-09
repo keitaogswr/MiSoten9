@@ -24,14 +24,15 @@ public class Notes_C : MonoBehaviour {
     public TerraScript TerrainScript;
     public float AddAriaSize;
 
-    public GameObject GrowPoint;
+    [SerializeField]
+    private SphereCollider GrowPoint;
 
     // Use this for initialization
     void Start()
     {
         Bar = GameObject.Find("Hantei_Center").gameObject;
         TerrainObj = GameObject.Find("Terrain").gameObject;
-        GrowPoint = GameObject.Find("Sphere").gameObject;
+        GrowPoint = GameObject.Find("Player/Sphere").gameObject.GetComponent<SphereCollider>();
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
     }
 
@@ -70,7 +71,7 @@ public class Notes_C : MonoBehaviour {
 
                 TerrainScript.AriaSize += 5;
 
-                GrowPoint.GetComponent<SphereCollider>().isTrigger = false;
+                GrowPoint.isTrigger = false;
 
                 if (TerrainScript.AriaSize > AddAriaSize)
                 {
@@ -96,6 +97,12 @@ public class Notes_C : MonoBehaviour {
                 Bar.GetComponent<BarAct>().BadAct();
 
                 DestoryNote();
+
+                GrowPoint.isTrigger = true;
+            }
+            else
+            {
+                GrowPoint.isTrigger = true;
             }
 
         }
