@@ -69,15 +69,15 @@ public class Notes_C : MonoBehaviour {
                 Good.transform.localPosition = new Vector2(100, -230);
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
-                TerrainScript.AriaSize += 5;
+                //TerrainScript.AriaSize += 5;
 
                 GrowPoint.isTrigger = false;
 
-                if (TerrainScript.AriaSize > AddAriaSize)
-                {
-                    TerrainScript.AriaSize = AddAriaSize;
-                }
-
+               // if (TerrainScript.AriaSize > AddAriaSize)
+               // {
+               //     TerrainScript.AriaSize = AddAriaSize;
+               // }
+               
                 Bar.GetComponent<BarAct>().GoodAct();
 
                 DestoryNote();
