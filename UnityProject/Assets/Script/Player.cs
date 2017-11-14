@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     PlayerSetteing parameter = null;
     [SerializeField]
     GameObject paintField = null;
-    public PlayerNum playerNum;
+    public PlayerNum playerNum = PlayerNum.Player_1;
     public enum PlayerNum {
         Player_1 = 1,
         PLayer_2,
