@@ -13,20 +13,32 @@ public class PixelColor : MonoBehaviour
 	[SerializeField]
 	TeamColor teamColor = null;
 
+	private Color[] resultColor;
+	private float timeCnt = 0.0f;
 	// Use this for initialization
 	void Start()
 	{
-
+		// ピクセル色すべて取得
+		Color[] colors = teamColor.tex1.GetPixels();
+		// ピクセル色からかぶりのない色を抽出
+		System.Collections.Generic.HashSet<Color> hs1 = new System.Collections.Generic.HashSet<Color>(colors);
+		resultColor = new Color[hs1.Count];
+		// 塗りテクスチャに使う色を被りなく配列に格納
+		hs1.CopyTo(resultColor,0);
 	}
 	// Update is called once per frame
 	void Update()
 	{
 		// クリック時（ゲームの流れが完成したらゲーム終了時に）
-		if (Input.GetMouseButtonDown(0))
+		//if (Input.GetMouseButtonDown(0))
+		timeCnt += Time.deltaTime;
+		if (timeCnt > 0.5f)
 		{
+			timeCnt = 0.0f;
 			CalcPixelColor();
-
 		}
+
+
 
 	}
 
@@ -53,37 +65,47 @@ public class PixelColor : MonoBehaviour
 		// 得点（仮）
 		int team1Score = 0;
 		int team2Score = 0;
-		//int otherColor = 0;
+		int otherColor = 0;
 		for (int i = 0; i < colors.Length; i++)
 		{
-			if ((colors[i].r > (teamColor.TeamColor1.r - NEARCOLOR) && colors[i].r < (teamColor.TeamColor1.r + NEARCOLOR)) &&
-				(colors[i].g > (teamColor.TeamColor1.g - NEARCOLOR) && colors[i].g < (teamColor.TeamColor1.g + NEARCOLOR)) &&
-				(colors[i].b > (teamColor.TeamColor1.b - NEARCOLOR) && colors[i].b < (teamColor.TeamColor1.b + NEARCOLOR)))
+			for (int j = 0; j < resultColor.Length; j++)
 			{
-				team1Score++;
+				float nearR = Mathf.Abs(colors[i].r - resultColor[j].r);
+				float nearG = Mathf.Abs(colors[i].g - resultColor[j].g);
+				float nearB = Mathf.Abs(colors[i].b - resultColor[j].b);
+				if (nearR <= 0.1f/* && nearG <= 0.1f && nearB <= 0.1f*/)
+				{
+					// 塗られている
+					team1Score++;
+					break;
+				}
+				else
+				{
+					// 塗られていない
+					team2Score++;
+					if (resultColor.Length == team2Score)
+					{
+						team2Score = 0;
+						otherColor++;
+					}
+				}
 			}
-			/*else */
-			if ((colors[i].r > (teamColor.TeamColor2.r - NEARCOLOR) && colors[i].r < (teamColor.TeamColor2.r + NEARCOLOR)) &&
-			(colors[i].g > (teamColor.TeamColor2.g - NEARCOLOR) && colors[i].g < (teamColor.TeamColor2.g + NEARCOLOR)) &&
-			(colors[i].b > (teamColor.TeamColor2.b - NEARCOLOR) && colors[i].b < (teamColor.TeamColor2.b + NEARCOLOR)))
-			{
-				team2Score++;
-			}
-			//else
-			//{
-			//    otherColor++;
-			//}
+
 		}
 
-		int ratio1Score = 0;
-		int ratio2Score = 0;
-        //float ratio1Score = 0;
-        //float ratio2Score = 0;
+		//int ratio1Score = 0;
+		//int ratio2Score = 0;
+		float ratio1Score = 0;
+		float ratio2Score = 0;
 
-        // チーム１＋チーム２＝１００（塗られていない場所は関与しない）
-        if (team1Score == 0 && team2Score == 0) return;
-		ratio1Score = (team1Score * 100) / (team1Score + team2Score);
-		ratio2Score = 100 - ratio1Score;
+		// チーム１＋チーム２＝１００（塗られていない場所は関与しない）
+		if (team1Score == 0 && otherColor == 0)
+		{
+			Debug.Log("塗られてない");
+			return;
+		}
+		ratio1Score = (float)(team1Score * 100) / (team1Score + otherColor);
+		ratio2Score = (float)(100 - ratio1Score);
 
 		// チーム１＋チーム２＋OTHER＝１００（塗られていない場所含めて比率１００で計算）
 		//float ratio = 100.0f / (team1Score + team2Score + otherColor);
@@ -96,8 +118,8 @@ public class PixelColor : MonoBehaviour
 		RenderTexture.active = null; // added to avoid errors
 		DestroyImmediate(rt);
 
-		Debug.Log("1team:" + ratio1Score);
-		Debug.Log("2team:" + ratio2Score);
+		Debug.Log("塗られてる:" + ratio1Score);
+		Debug.Log("塗られてない:" + ratio2Score);
 	}
 }
 

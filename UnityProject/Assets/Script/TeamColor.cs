@@ -7,7 +7,7 @@ public class TeamColor : ScriptableObject
 {
     public Color TeamColor1;
     public Color TeamColor2;
-
+	public Texture2D tex1;
 
 
 }
