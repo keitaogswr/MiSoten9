@@ -7,17 +7,21 @@ public class CameraChild : MonoBehaviour {
     public Vector3 pos;
 	// Use this for initialization
 	void Start () {
-		if (target != null) {
+        setCameraTarget();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    public void setCameraTarget () {
+        if (target != null) {
             GameObject obj = GameObject.Find(target.name);
             if (obj != null) {
                 this.transform.parent = obj.transform;
                 this.transform.localPosition = pos;
             }
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
 }
