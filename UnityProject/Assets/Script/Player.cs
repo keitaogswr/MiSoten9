@@ -19,6 +19,7 @@ public class Player : MonoBehaviour {
     private float acceleration = 0.1f;
     private float slope = 0.0f;
     private float acceleSlope = 0.0f;
+    private Es.InkPainter.Sample.Paint brush;
 
     private string vertical;
     private string horizontal;
@@ -36,6 +37,9 @@ public class Player : MonoBehaviour {
         }
         vertical = "Vertical_" + (int)playerNum;
         horizontal = "Horizontal_" + (int)playerNum;
+
+        brush = this.GetComponent<Es.InkPainter.Sample.Paint>();
+
     }
 	
 	// Update is called once per frame
@@ -75,5 +79,17 @@ public class Player : MonoBehaviour {
 
     public void setMoveSpeed(float speed) {
         moveSpeed = speed;
+    }
+
+    public void addRangeScale (float additional) {
+        brush.getBrush().Scale += additional;
+    }
+
+    public void subRangeScale(float subtract) {
+        brush.getBrush().Scale -= subtract;
+    }
+
+    public void setRangeScale (float scal) {
+        brush.getBrush().Scale = scal;
     }
 }

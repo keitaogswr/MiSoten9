@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 54146385916181782}
   - component: {fileID: 135951767458739934}
   - component: {fileID: 114654460186706944}
+  - component: {fileID: 114070193111096152}
   m_Layer: 0
   m_Name: Spiral_01.2 Tornado tall
   m_TagString: Tornado
@@ -120,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 252.4, y: 0, z: 247.5}
+  m_LocalPosition: {x: 321.5, y: 37.7, z: 247.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457024}
@@ -3430,7 +3431,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -422258347
+  randomSeed: -149429258
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6779,7 +6780,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 47980359
+  randomSeed: 1488051681
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13492,6 +13493,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &114070193111096152
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5446660f2a3446a428bace97748e8a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    brushTexture: {fileID: 2800000, guid: 827cfc83afa113f4b9f699ad6afc5941, type: 3}
+    brushNormalTexture: {fileID: 2800000, guid: 8f5ee04947e003441921dffbf787fbb1,
+      type: 3}
+    brushHeightTexture: {fileID: 0}
+    brushScale: 0.05
+    brushNormalBlend: 0.03
+    brushHeightBlend: 0.18
+    brushColor: {r: 0, g: 0, b: 0, a: 0.003921569}
+    colorBlendType: 0
+    normalBlendType: 0
+    heightBlendType: 0
 --- !u!114 &114417952626073932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13517,8 +13541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f8a69252d52134a8d98bcb188d0d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
-  speed: 10
+  time: 30
+  speed: 2.5
 --- !u!135 &135951767458739934
 SphereCollider:
   m_ObjectHideFlags: 1
