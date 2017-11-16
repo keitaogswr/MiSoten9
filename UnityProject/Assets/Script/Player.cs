@@ -70,7 +70,7 @@ public class Player : MonoBehaviour {
         }
 
         transform.rotation = Quaternion.Euler(0, transform.rotation.y + slope, 0);
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        transform.Translate(transform.forward * moveSpeed * Time.deltaTime);
     }
 
     public void setMoveSpeed(float speed) {
