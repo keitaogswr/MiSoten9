@@ -23,6 +23,8 @@ public class Notes_C : MonoBehaviour {
     public GameObject TerrainObj;
     public TerraScript TerrainScript;
     public float AddAriaSize;
+    public GameObject PlayerObj;
+    private Player playerScript;
 
     [SerializeField]
     private SphereCollider GrowPoint;
@@ -34,6 +36,8 @@ public class Notes_C : MonoBehaviour {
         TerrainObj = GameObject.Find("Terrain").gameObject;
         GrowPoint = GameObject.Find("Player/Sphere").gameObject.GetComponent<SphereCollider>();
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
+        PlayerObj = GameObject.Find("Player").gameObject;
+        playerScript = PlayerObj.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -70,6 +74,7 @@ public class Notes_C : MonoBehaviour {
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
                 //TerrainScript.AriaSize += 5;
+                playerScript.addRangeScale(0.001f);
 
                 GrowPoint.isTrigger = false;
 
@@ -95,7 +100,7 @@ public class Notes_C : MonoBehaviour {
                 Bad.transform.localScale = new Vector3(2, 2, 2);
 
                 Bar.GetComponent<BarAct>().BadAct();
-
+                playerScript.subRangeScale(0.001f);
                 DestoryNote();
 
                 GrowPoint.isTrigger = true;

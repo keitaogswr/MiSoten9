@@ -30,5 +30,9 @@ namespace Es.InkPainter.Sample
                 if (paintObject != null) success = paintObject.Paint(brush, hitInfo);
             }
         }
+
+        public Brush getBrush() {
+            return brush;
+        }
     }
 }
