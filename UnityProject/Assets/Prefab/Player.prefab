@@ -334,8 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brush:
     brushTexture: {fileID: 2800000, guid: 66201c401d6e9984fb424632992e362a, type: 3}
-    brushNormalTexture: {fileID: 2800000, guid: 30085a64fa5792b47b911f68e30439ef,
-      type: 3}
+    brushNormalTexture: {fileID: 0}
     brushHeightTexture: {fileID: 0}
     brushScale: 0.12
     brushNormalBlend: 0.1
