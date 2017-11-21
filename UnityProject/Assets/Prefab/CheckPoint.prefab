@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 136859310802239442}
   - component: {fileID: 114203291084553860}
   - component: {fileID: 54364083892162546}
+  - component: {fileID: 114901971656996810}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
@@ -63,23 +64,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1707057983289424
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4052344982056852}
-  - component: {fileID: 135092409411040324}
-  - component: {fileID: 54996003321733232}
-  m_Layer: 0
-  m_Name: DrawField
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1709154552903128
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,19 +98,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4052344982056852
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707057983289424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4096796771183988}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4096796771183988
 Transform:
   m_ObjectHideFlags: 1
@@ -134,14 +105,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046194133795768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 252.9, y: 0, z: 53.4}
+  m_LocalPosition: {x: 355, y: 23, z: 102}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4419924445037502}
   - {fileID: 4300109895458392}
   - {fileID: 4297076539446614}
   - {fileID: 4520740418532584}
-  - {fileID: 4052344982056852}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -368,21 +338,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!54 &54996003321733232
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707057983289424}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &114203291084553860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,19 +350,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sec: 5
-  drawRange: 3
---- !u!135 &135092409411040324
-SphereCollider:
+  drawRange: 0.1
+--- !u!114 &114901971656996810
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707057983289424}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1046194133795768}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.00001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5446660f2a3446a428bace97748e8a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    brushTexture: {fileID: 2800000, guid: 827cfc83afa113f4b9f699ad6afc5941, type: 3}
+    brushNormalTexture: {fileID: 0}
+    brushHeightTexture: {fileID: 0}
+    brushScale: 0
+    brushNormalBlend: 0
+    brushHeightBlend: 0
+    brushColor: {r: 0, g: 1, b: 0.516, a: 0.297}
+    colorBlendType: 0
+    normalBlendType: 0
+    heightBlendType: 0
 --- !u!136 &136859310802239442
 CapsuleCollider:
   m_ObjectHideFlags: 1
