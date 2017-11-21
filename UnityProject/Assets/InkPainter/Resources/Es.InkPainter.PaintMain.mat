@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Brush:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 66201c401d6e9984fb424632992e362a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -61,7 +61,7 @@ Material:
     m_Floats:
     - INK_PAINTER_COLOR_BLEND: 0
     - TEXTURE_PAINT_COLOR_BLEND: 0
-    - _BrushScale: 0.17
+    - _BrushScale: 0.12
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -80,6 +80,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ControlColor: {r: 1, g: 0, b: 0, a: 1}
+    - _ControlColor: {r: 1, g: 1, b: 1, a: 0.084}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PaintUV: {r: 0.5, g: 0.9226041, b: 0, a: 0}
+    - _PaintUV: {r: 0.500116, g: 0.6994849, b: 0, a: 0}
