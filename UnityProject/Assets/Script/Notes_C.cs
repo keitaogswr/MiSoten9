@@ -8,6 +8,8 @@ public class Notes_C : MonoBehaviour {
     public GameObject GoodText;
     public GameObject BadText;
 
+    public GameObject GoodEffect;
+
     private float taiming;
     private int lineNum = 0;
 
@@ -73,6 +75,14 @@ public class Notes_C : MonoBehaviour {
                 Good.transform.localPosition = new Vector2(100, -230);
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
+                GameObject GEfe = Instantiate(GoodEffect);
+                GEfe.transform.SetParent(this.transform);
+
+                GEfe.transform.localPosition = new Vector2(0, -230);
+                //GEfe.transform.localScale = new Vector3(2, 2, 2);
+
+                DestroyObject(GEfe, 3);
+
                 //TerrainScript.AriaSize += 5;
                 playerScript.addRangeScale(0.001f);
 
@@ -103,11 +113,11 @@ public class Notes_C : MonoBehaviour {
                 playerScript.subRangeScale(0.001f);
                 DestoryNote();
 
-                GrowPoint.isTrigger = true;
+                //GrowPoint.isTrigger = true;
             }
             else
             {
-                GrowPoint.isTrigger = true;
+                //GrowPoint.isTrigger = true;
             }
 
         }
