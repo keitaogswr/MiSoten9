@@ -8,7 +8,8 @@ public class CheckPoint : MonoBehaviour {
     public float drawRange = 5.0f;
     private float addScal = 0.0f;
     private float elapsedTime = 0.0f;
-
+    private Es.InkPainter.Sample.Paint brush;
+    private bool drawStart = false;
     private SphereCollider childColl;
     // Use this for initialization
     void Start () {
@@ -16,6 +17,8 @@ public class CheckPoint : MonoBehaviour {
         if (childColl != null)
             childColl.enabled = false;
         addScal = drawRange / sec;
+        brush = this.GetComponent<Es.InkPainter.Sample.Paint>();
+        brush.getBrush().Scale = 0.0f;
     }
 	
 	// Update is called once per frame
@@ -24,14 +27,22 @@ public class CheckPoint : MonoBehaviour {
             if (elapsedTime < sec) {
                 elapsedTime += Time.deltaTime;
                 childColl.radius = addScal * elapsedTime;
-                
             }
+        }
+
+        if (drawStart) {
+            if (brush.getBrush().Scale > drawRange) {
+                drawStart = false;
+                return;
+            }
+            brush.getBrush().Scale += addScal * Time.deltaTime;
         }
     }
 
     void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "Player") {
             childColl.enabled = true;
+            drawStart = true;
         }
     }
 }
