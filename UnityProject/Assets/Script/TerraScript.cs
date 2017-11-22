@@ -135,8 +135,6 @@ public class TerraScript : MonoBehaviour {
 
         var Tag = collision.gameObject.tag;
 
-        collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x,this.transform.localPosition.y + terrainComponent.terrainData.GetHeight((int)mapZ,(int)mapX), collision.gameObject.transform.position.z);
-
         for (var z = z1; z <= z2; z++)
         {
             mapW = (int)Mathf.Sqrt(mapR * mapR - z * z);
