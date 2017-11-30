@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Notes_C : MonoBehaviour
-{
+public class Notes_C : MonoBehaviour {
 
     public GameObject notes;
     public GameObject GoodText;
     public GameObject BadText;
-
-    public GameObject GoodEffect;
 
     private float taiming;
     private int lineNum = 0;
@@ -19,7 +16,7 @@ public class Notes_C : MonoBehaviour
     public float bpm;
     private float Note_Span = 0;
 
-    public GameObject[,] FieldNote = new GameObject[250, 2];
+    public GameObject[,] FieldNote = new GameObject[250,2];
 
     public GameObject Bar;
 
@@ -64,7 +61,7 @@ public class Notes_C : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
+            if (FieldNote[0,0] != null && FieldNote[0,0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
             {
                 //Debug.Log("Good");
 
@@ -76,29 +73,21 @@ public class Notes_C : MonoBehaviour
                 Good.transform.localPosition = new Vector2(100, -230);
                 Good.transform.localScale = new Vector3(2, 2, 2);
 
-                GameObject GEfe = Instantiate(GoodEffect);
-                GEfe.transform.SetParent(this.transform);
-
-                GEfe.transform.localPosition = new Vector2(0, -230);
-                //GEfe.transform.localScale = new Vector3(2, 2, 2);
-
-                DestroyObject(GEfe, 3);
-
                 //TerrainScript.AriaSize += 5;
                 playerScript.addRangeScale(0.001f);
 
                 GrowPoint.isTrigger = false;
 
-                // if (TerrainScript.AriaSize > AddAriaSize)
-                // {
-                //     TerrainScript.AriaSize = AddAriaSize;
-                // }
-
+               // if (TerrainScript.AriaSize > AddAriaSize)
+               // {
+               //     TerrainScript.AriaSize = AddAriaSize;
+               // }
+               
                 Bar.GetComponent<BarAct>().GoodAct();
 
                 DestoryNote();
             }
-            else if (FieldNote[0, 0] != null)
+            else if(FieldNote[0,0] != null)
             {
                 //Debug.Log("Bad");
 
@@ -114,16 +103,16 @@ public class Notes_C : MonoBehaviour
                 playerScript.subRangeScale(0.001f);
                 DestoryNote();
 
-                //GrowPoint.isTrigger = true;
+                GrowPoint.isTrigger = true;
             }
             else
             {
-                //GrowPoint.isTrigger = true;
+                GrowPoint.isTrigger = true;
             }
 
         }
 
-        if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > 0)
+        if (FieldNote[0,0] != null && FieldNote[0,0].transform.localPosition.x > 0)
         {
             DestoryNote();
         }
@@ -152,7 +141,7 @@ public class Notes_C : MonoBehaviour
 
         for (int i = 0; i < 250; i++)
         {
-            if (FieldNote[i, 0] == null)
+            if (FieldNote[i,0] == null)
             {
                 FieldNote[i, 0] = Obj_L;
                 FieldNote[i, 1] = Obj_R;
@@ -164,16 +153,16 @@ public class Notes_C : MonoBehaviour
 
     void DestoryNote()
     {
-        FieldNote[0, 0].GetComponent<Note2>().DestroyObj();
+        FieldNote[0,0].GetComponent<Note2>().DestroyObj();
         FieldNote[0, 1].GetComponent<Note2>().DestroyObj();
 
         for (int i = 0; i < 249; i++)
         {
-            FieldNote[i, 0] = FieldNote[i + 1, 0];
+            FieldNote[i,0] = FieldNote[i + 1,0];
             FieldNote[i, 1] = FieldNote[i + 1, 1];
         }
 
-        FieldNote[249, 0] = null;
+        FieldNote[249,0] = null;
         FieldNote[249, 1] = null;
     }
 }

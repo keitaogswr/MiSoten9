@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TerraScript : MonoBehaviour
-{
+public class TerraScript : MonoBehaviour {
 
     private GameObject terrain;
     private Terrain terrainComponent;
     private TerrainCollider terrainCollider;
     private TerrainData terrainData;
 
-    private static int mapSize_W, mapSize_H;
+    private static int mapSize_W,mapSize_H;
     private static int mapAlphaSize_W, mapAlphaSize_H;
 
     private float Alpha = 0;
@@ -55,9 +54,9 @@ public class TerraScript : MonoBehaviour
 
                 //var angle = terrainComponent.terrainData.GetSteepness(norX, norY);
 
-
+                
                 AlphaMapOrg[x, y, 0] = 1;
-
+                
             }
         }
 
@@ -89,7 +88,7 @@ public class TerraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update ()
     {
         AlphaMap[150, 150, 1] = Alpha;
         AlphaMap[150, 150, 0] = 1 - Alpha;
@@ -136,8 +135,6 @@ public class TerraScript : MonoBehaviour
 
         var Tag = collision.gameObject.tag;
 
-        collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x, this.transform.localPosition.y + terrainComponent.terrainData.GetHeight((int)mapZ, (int)mapX), collision.gameObject.transform.position.z);
-
         for (var z = z1; z <= z2; z++)
         {
             mapW = (int)Mathf.Sqrt(mapR * mapR - z * z);
@@ -147,8 +144,7 @@ public class TerraScript : MonoBehaviour
             {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
                 {
-                    if (!(Tag == "Tornado"))
-                    {
+                    if (!(Tag == "Tornado")) {
                         //Random.Range(0.1f, 0.5f);
                         AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
 
