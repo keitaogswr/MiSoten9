@@ -34,7 +34,9 @@ public class TornadoManager : MonoBehaviour {
         for (int i = 0; i < tornado.Length; i++) {
             if (tornadoNum < simultaneous - 1) {
                 if (tornado[i] < tornadoPrefab.Count) {
-                    GameObject obj = Instantiate(tornadoPrefab[tornado[i]], new Vector3(transform.position.x + Random.Range(-createRange, createRange), transform.position.y, transform.position.z + Random.Range(-createRange, createRange)), Quaternion.identity);
+                    GameObject obj = Instantiate(tornadoPrefab[tornado[i]], new Vector3(transform.position.x + Random.Range(-createRange, createRange),
+                                                               transform.position.y, transform.position.z + Random.Range(-createRange, createRange)),
+                                                               Quaternion.identity);
                     obj.name = tornadoPrefab[tornado[i]].name;
                     CountUp();
                 }
