@@ -61,7 +61,7 @@ Material:
     m_Floats:
     - INK_PAINTER_COLOR_BLEND: 0
     - TEXTURE_PAINT_COLOR_BLEND: 0
-    - _BrushScale: 0.05
+    - _BrushScale: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -80,6 +80,6 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ControlColor: {r: 0, g: 0, b: 0, a: 0.003921569}
+    - _ControlColor: {r: 0, g: 1, b: 0.516, a: 0.297}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PaintUV: {r: 0.36937416, g: 0.3697221, b: 0, a: 0}
+    - _PaintUV: {r: 0.28953904, g: 0.7957798, b: 0, a: 0}
