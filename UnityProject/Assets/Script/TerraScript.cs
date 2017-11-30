@@ -22,7 +22,9 @@ public class TerraScript : MonoBehaviour
     //public float AriaSize = 5;
 
     public GameObject DominateBarObj;
+    public GameObject DominateBarObj_2P;
     private DominateBar DominateScript;
+    private DominateBar DominateScript_2P;
 
     private const float UpdateDeray = 0.2f;
     private float UpdateTimer = 0;
@@ -113,6 +115,7 @@ public class TerraScript : MonoBehaviour
         thread.Start();
 
         DominateScript = DominateBarObj.GetComponent<DominateBar>();
+        DominateScript_2P = DominateBarObj_2P.GetComponent<DominateBar>();
     }
 
     // Update is called once per frame
@@ -247,6 +250,7 @@ public class TerraScript : MonoBehaviour
                 }
 
                 DominateScript.Bar = ((float)DominateCnt / (float)DominateCntMax) * 10;
+                DominateScript_2P.Bar = ((float)DominateCnt / (float)DominateCntMax) * 10;
                 //Debug.Log(((float)DominateCnt / (float)DominateCntMax));
             }
         }
