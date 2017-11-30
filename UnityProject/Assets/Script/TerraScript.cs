@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class TerraScript : MonoBehaviour
@@ -17,25 +18,43 @@ public class TerraScript : MonoBehaviour
 
     private float[,,] AlphaMap;
     private float[,,] AlphaMapOrg;
-
+    
     //public float AriaSize = 5;
 
-    public GameObject GrowEfe;
+    public GameObject DominateBarObj;
+    private DominateBar DominateScript;
 
     private const float UpdateDeray = 0.2f;
     private float UpdateTimer = 0;
+
+    private const float TeraCheckDeray = 0.5f;
+    private float TeraCheckTimer = 0;
+
+    private int DominateCnt;
+    private int DominateCntMax;
+
+    Thread thread;
+
+    Object sync = new Object();
 
     void Start()
     {
         terrainComponent = this.GetComponent<Terrain>();
         terrainCollider = this.GetComponent<TerrainCollider>();
 
+        //terrainComponent.terrainData.alphamapResolution = 256;
+
+        //マップの高さ用２次元配列「W、H」
         mapSize_W = terrainComponent.terrainData.heightmapWidth;
         mapSize_H = terrainComponent.terrainData.heightmapHeight;
 
+        //マップの染色用２次元配列「同上」
         mapAlphaSize_W = terrainComponent.terrainData.alphamapWidth;
         mapAlphaSize_H = terrainComponent.terrainData.alphamapHeight;
 
+        //マップの塗られている比率カウント用変数の初期化
+        DominateCnt = 0;
+        DominateCntMax = mapAlphaSize_H * mapAlphaSize_W;
 
         Debug.Log("Width:" + mapSize_W);
         Debug.Log("Height:" + mapSize_H);
@@ -43,6 +62,9 @@ public class TerraScript : MonoBehaviour
         Debug.Log("AlphaWidth:" + mapAlphaSize_W);
         Debug.Log("AlphaHeight:" + mapAlphaSize_H);
 
+        Debug.Log("AlphaResolution:" + terrainComponent.terrainData.alphamapResolution);
+
+        //マップの染色用データの配列「W、H、色の種類」
         AlphaMap = new float[mapAlphaSize_W, mapAlphaSize_W, 2];
         AlphaMapOrg = new float[mapAlphaSize_W, mapAlphaSize_W, 2];
 
@@ -86,30 +108,56 @@ public class TerraScript : MonoBehaviour
         //terrainToPopulate.terrainData.SetDetailLayer(0, 0, 0, newMap);
 
         AlphaMap = AlphaMapOrg;
+
+        thread = new Thread(CheckTeraDominate);
+        thread.Start();
+
+        DominateScript = DominateBarObj.GetComponent<DominateBar>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        AlphaMap[150, 150, 1] = Alpha;
-        AlphaMap[150, 150, 0] = 1 - Alpha;
+        //AlphaMap[150, 150, 1] = Alpha;
+        //AlphaMap[150, 150, 0] = 1 - Alpha;
 
 
         Alpha += 0.01f;
 
         UpdateTimer += Time.deltaTime;
+        TeraCheckTimer += Time.deltaTime;
 
         if (UpdateTimer > UpdateDeray)
         {
             terrainComponent.terrainData.SetAlphamaps(0, 0, AlphaMap);
             UpdateTimer = 0;
         }
+
+        if(TeraCheckTimer > TeraCheckDeray)
+        {
+            //CheckTeraDominate();
+
+            Debug.Log("塗られた数:" + DominateCnt);
+
+            ClearDominateCnt();
+        }
+
+        //DominateCnt = 0;
+
         //terrainComponent.terrainData.SetAlphamaps();
 
         //if (AriaSize > 5)
         //{
         //    AriaSize -= 0.5f;
         //}
+    }
+
+    private void OnApplicationQuit()
+    {
+        if(thread != null)
+        {
+            thread.Abort();
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -176,5 +224,49 @@ public class TerraScript : MonoBehaviour
         }
 
         //terrainComponent.terrainData.SetAlphamaps(0, 0, AlphaMap);
+    }
+
+    private void CheckTeraDominate()
+    {
+
+        int x, y;
+        while (true)
+        {
+            Thread.Sleep(100);
+            lock (sync)
+            {
+                for (y = 0; y < mapAlphaSize_H; y++)
+                {
+                    for (x = 0; x < mapAlphaSize_W; x++)
+                    {
+                        if (AlphaMap[x, y, 1] == 1)
+                        {
+                            DominateCnt += 1;
+                        }
+                    }
+                }
+
+                DominateScript.Bar = ((float)DominateCnt / (float)DominateCntMax) * 10;
+                //Debug.Log(((float)DominateCnt / (float)DominateCntMax));
+            }
+        }
+    }
+
+    public int GetDominateCnt()
+    {
+       {
+            lock (sync)
+            {
+                return DominateCnt;
+            }
+       }
+    }
+
+    public void ClearDominateCnt()
+    {
+        lock(sync)
+        {
+            DominateCnt = 0;
+        }
     }
 }
