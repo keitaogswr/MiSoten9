@@ -48,7 +48,7 @@ public class CheckPoint : MonoBehaviour {
                 drawEnd = true;
             }
             else {
-                drawSphere.transform.localScale += new Vector3(addScal, addScal, addScal);
+                drawSphere.transform.localScale += new Vector3(addScal, 0, addScal);
             }
         }
     }
