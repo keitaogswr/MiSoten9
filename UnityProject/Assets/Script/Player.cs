@@ -31,6 +31,8 @@ public class Player : MonoBehaviour {
             minSpeed = parameter.minSpeed;
             acceleration = parameter.acceleration;
             acceleSlope = parameter.acceleSlope;
+            GameObject Obj = GameObject.Find("Player/Sphere");
+            Obj.transform.localScale = new Vector3(parameter.DrawAriaSize, Obj.transform.localScale.y, transform.localScale.z);
         }
         else {
             Debug.Log("param is null");

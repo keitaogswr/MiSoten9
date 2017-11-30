@@ -8,4 +8,5 @@ public class PlayerSetteing : ScriptableObject {
     public float minSpeed;      //  最低速度
     public float acceleration;  //  加速度
     public float acceleSlope;   //  旋回速度
+    public float DrawAriaSize;  //　色塗り範囲
 }
