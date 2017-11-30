@@ -18,7 +18,7 @@ public class DominateBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Bar += 0.01f;
+        //Bar += 0.01f;
 
         if(Bar > 1)
         {

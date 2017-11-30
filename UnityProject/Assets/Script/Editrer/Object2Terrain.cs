@@ -54,6 +54,7 @@ public class Object2Terrain : EditorWindow
         TerrainData terrain = new TerrainData();
         terrain.name = "TerrainData_Alpha";
         terrain.heightmapResolution = resolution;
+        terrain.alphamapResolution = resolution;
         GameObject terrainObject = Terrain.CreateTerrainGameObject(terrain);
 
         Undo.RegisterCreatedObjectUndo(terrainObject, "Object to Terrain");
