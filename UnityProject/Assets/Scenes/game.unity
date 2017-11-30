@@ -1070,11 +1070,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4630215700707098, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
       propertyPath: m_LocalScale.y
-      value: 28.39
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4630215700707098, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
       propertyPath: m_LocalScale.x
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23478682355250400, guid: 1b5fe8aafc1068a4ab9496c252790824,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
@@ -1162,11 +1167,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4046251540666444, guid: c3581684865345a4da56b679074c4c99, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 250
+      value: 266.5
       objectReference: {fileID: 0}
     - target: {fileID: 4046251540666444, guid: c3581684865345a4da56b679074c4c99, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 42.25
+      value: 57.8
       objectReference: {fileID: 0}
     - target: {fileID: 4046251540666444, guid: c3581684865345a4da56b679074c4c99, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1191,6 +1196,19 @@ Prefab:
     - target: {fileID: 4046251540666444, guid: c3581684865345a4da56b679074c4c99, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102400580018846, guid: c3581684865345a4da56b679074c4c99, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102400580018846, guid: c3581684865345a4da56b679074c4c99, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23113919085077040, guid: c3581684865345a4da56b679074c4c99,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3581684865345a4da56b679074c4c99, type: 2}
@@ -7578,6 +7596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DominateBarObj: {fileID: 1527821712}
+  DominateBarObj_2P: {fileID: 248280177}
 --- !u!1 &1834909215
 GameObject:
   m_ObjectHideFlags: 0

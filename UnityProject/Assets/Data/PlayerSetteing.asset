@@ -15,3 +15,4 @@ MonoBehaviour:
   minSpeed: 2
   acceleration: 0.1
   acceleSlope: 0.5
+  DrawAriaSize: 10
