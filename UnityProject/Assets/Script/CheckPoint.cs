@@ -7,14 +7,12 @@ public class CheckPoint : MonoBehaviour {
     public float sec = 5.0f;
     public float addScal = 0.0f;
     private float elapsedTime = 0.0f;
-    private Es.InkPainter.Sample.Paint brush;
     private bool drawStart = false;
     private bool drawEnd = false;
     public GameObject drawSphere = null;
     // Use this for initialization
     void Start () {
-        brush = this.GetComponent<Es.InkPainter.Sample.Paint>();
-        brush.getBrush().Scale = 0.0f;
+
 
         if (drawSphere == null) {
             Debug.Log("オブジェクトが設定されていないので、検索します。");
@@ -35,11 +33,6 @@ public class CheckPoint : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (drawStart) {
-            //if (brush.getBrush().Scale > drawRange) {
-            //    drawStart = false;
-            //    return;
-            //}
-            //brush.getBrush().Scale += addScal * Time.deltaTime;
             elapsedTime += Time.deltaTime;
             if (elapsedTime > sec) {
                 drawStart = false;
