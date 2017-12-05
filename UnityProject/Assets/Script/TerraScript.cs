@@ -213,7 +213,7 @@ public class TerraScript : MonoBehaviour
                     else
                     {
                         //Random.Range(0.1f, 0.5f);
-                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] += Random.Range(0.001f, 0.01f);
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] = 1;
 
                         if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 0] > 1)
                         {

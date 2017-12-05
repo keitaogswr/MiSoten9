@@ -41,6 +41,8 @@ public class Notes_C : MonoBehaviour
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
         PlayerObj = GameObject.Find("Player").gameObject;
         playerScript = PlayerObj.GetComponent<Player>();
+
+        Note_Span = Time.time;
     }
 
     // Update is called once per frame
