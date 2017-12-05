@@ -20,8 +20,10 @@ public class GameManager : MonoBehaviour {
         Player.GetComponent<Player>().enabled = false;
         Player_2P.GetComponent<Player>().enabled = false;
         Terrain.GetComponent<TerraScript>().enabled = false;
+        Terrain.GetComponent<TerrainCollider>().enabled = false;
         Game_UI.GetComponent<Notes_C>().enabled = false;
         Game_UI_2P.GetComponent<Notes_C>().enabled = false;
+        
 
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour {
         {
             Player.GetComponent<Player>().enabled = true;
             Player_2P.GetComponent<Player>().enabled = true;
+            Terrain.GetComponent<TerrainCollider>().enabled = true;
             Terrain.GetComponent<TerraScript>().enabled = true;
             Game_UI.GetComponent<Notes_C>().enabled = true;
             Game_UI_2P.GetComponent<Notes_C>().enabled = true;
