@@ -2472,24 +2472,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4630215700707098, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114946910104538304, guid: 1b5fe8aafc1068a4ab9496c252790824,
-        type: 2}
-      propertyPath: PlayerObj
-      value: 
-      objectReference: {fileID: 1199221055}
-    - target: {fileID: 114946910104538304, guid: 1b5fe8aafc1068a4ab9496c252790824,
-        type: 2}
-      propertyPath: LerpHight
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4413183735936676, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
   m_IsPrefabParent: 0
@@ -2719,11 +2701,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1196432481}
---- !u!1 &1199221055 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1884345844337582, guid: 1b5fe8aafc1068a4ab9496c252790824,
-    type: 2}
-  m_PrefabInternal: {fileID: 1070653006}
 --- !u!1 &1240596921
 GameObject:
   m_ObjectHideFlags: 0

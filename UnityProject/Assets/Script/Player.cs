@@ -129,7 +129,7 @@ public class Player : MonoBehaviour {
         }
         else
         {
-            PlayerCamera.transform.localPosition = new Vector3(0, -7, Mathf.Lerp(PlayerCamera.transform.localPosition.z, 0, LerpTimer));
+            PlayerCamera.transform.localPosition = new Vector3(0, -7, Mathf.Lerp(PlayerCamera.transform.localPosition.z, -1, LerpTimer));
         }
 
         //transform.position = new Vector3(transform.localPosition.x, Mathf.Lerp(transform.position.y, LerpHight, LerpTimer), transform.localPosition.z);
