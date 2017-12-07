@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 114417952626073932}
   - component: {fileID: 54146385916181782}
   - component: {fileID: 114654460186706944}
-  - component: {fileID: 114070193111096152}
   m_Layer: 0
   m_Name: Spiral_01.2 Tornado tall
   m_TagString: Tornado
@@ -120,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 247.3, y: 38.95, z: 81.4}
+  m_LocalPosition: {x: 388.8, y: 51.62, z: 130.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457024}
@@ -3431,7 +3430,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1716932331
+  randomSeed: 1528894926
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6780,7 +6779,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 850376891
+  randomSeed: -934984091
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13489,9 +13488,9 @@ GameObject:
   - component: {fileID: 33685009322730954}
   - component: {fileID: 135279828788321374}
   - component: {fileID: 23354054841416960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DrawSphere
-  m_TagString: Untagged
+  m_TagString: Tornado
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13561,31 +13560,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
---- !u!114 &114070193111096152
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 108504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5446660f2a3446a428bace97748e8a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brush:
-    brushTexture: {fileID: 2800000, guid: 827cfc83afa113f4b9f699ad6afc5941, type: 3}
-    brushNormalTexture: {fileID: 2800000, guid: 8f5ee04947e003441921dffbf787fbb1,
-      type: 3}
-    brushHeightTexture: {fileID: 0}
-    brushScale: 0.05
-    brushNormalBlend: 0.03
-    brushHeightBlend: 0.18
-    brushColor: {r: 0, g: 0, b: 0, a: 0.003921569}
-    colorBlendType: 0
-    normalBlendType: 0
-    heightBlendType: 0
 --- !u!114 &114417952626073932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13623,5 +13599,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 5.4
   m_Center: {x: 0, y: 0, z: 0}
