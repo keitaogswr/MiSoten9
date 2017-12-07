@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 136859310802239442}
   - component: {fileID: 114203291084553860}
   - component: {fileID: 54364083892162546}
+  - component: {fileID: 114368951408616640}
+  - component: {fileID: 114718229477707928}
+  - component: {fileID: 114121684280965886}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: Untagged
@@ -154,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046194133795768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 378.6, y: 28.5, z: 121.9}
+  m_LocalPosition: {x: 355, y: 38.2, z: 102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4419924445037502}
@@ -495,7 +498,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &114203291084553860
+--- !u!114 &114121684280965886
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -503,12 +506,78 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046194133795768}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5446660f2a3446a428bace97748e8a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    brushTexture: {fileID: 2800000, guid: 827cfc83afa113f4b9f699ad6afc5941, type: 3}
+    brushNormalTexture: {fileID: 0}
+    brushHeightTexture: {fileID: 0}
+    brushScale: 0
+    brushNormalBlend: 0
+    brushHeightBlend: 0
+    brushColor: {r: 0, g: 1, b: 0.516, a: 0.297}
+    colorBlendType: 0
+    normalBlendType: 0
+    heightBlendType: 0
+--- !u!114 &114203291084553860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046194133795768}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1a1b3476e87625418c5a20aab878cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sec: 20
   addScal: 0.1
   drawSphere: {fileID: 1243448950690190}
+--- !u!114 &114368951408616640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046194133795768}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5446660f2a3446a428bace97748e8a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    brushTexture: {fileID: 2800000, guid: 827cfc83afa113f4b9f699ad6afc5941, type: 3}
+    brushNormalTexture: {fileID: 0}
+    brushHeightTexture: {fileID: 0}
+    brushScale: 0
+    brushNormalBlend: 0
+    brushHeightBlend: 0
+    brushColor: {r: 0, g: 1, b: 0.516, a: 0.297}
+    colorBlendType: 0
+    normalBlendType: 0
+    heightBlendType: 0
+--- !u!114 &114718229477707928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046194133795768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5446660f2a3446a428bace97748e8a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brush:
+    brushTexture: {fileID: 2800000, guid: 827cfc83afa113f4b9f699ad6afc5941, type: 3}
+    brushNormalTexture: {fileID: 0}
+    brushHeightTexture: {fileID: 0}
+    brushScale: 0
+    brushNormalBlend: 0
+    brushHeightBlend: 0
+    brushColor: {r: 0, g: 1, b: 0.516, a: 0.297}
+    colorBlendType: 0
+    normalBlendType: 0
+    heightBlendType: 0
 --- !u!135 &135048545366670080
 SphereCollider:
   m_ObjectHideFlags: 1
