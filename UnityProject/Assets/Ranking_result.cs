@@ -43,10 +43,12 @@ public class Ranking_result : MonoBehaviour {
         Ranking[4, 1] = 5;
         Ranking[4, 2] = 100;
 
-        // 今回のスコアのデータ
-        Ranking[5, 0] = 85000;
-        Ranking[5, 1] = 1;
-        Ranking[5, 2] = 450;
+        //---------------------------------------------------//
+        // 今回のスコアのデータ（ここにゲームスコアを入れる）
+        //---------------------------------------------------//
+        Ranking[5, 0] = 30000;  // スコア
+        Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
+        Ranking[5, 2] = 50;    // ファン数
 
         // 今回のスコアを保存
         NewScore[0] = Ranking[5, 0];
@@ -147,10 +149,16 @@ public class Ranking_result : MonoBehaviour {
 
         // 今回のスコアOBJ
         RankObj[5, 0].GetComponent<Text>().text = "" + NewScore[0];
-        RankObj[5, 1].GetComponent<Text>().text = "" + NewScore[1];
         RankObj[5, 2].GetComponent<Text>().text = "" + NewScore[2];
 
-        
+        if (NewScore[1] == 0)
+        {
+            RankObj[5, 1].GetComponent<Text>().text = "圏外";
+        }
+        else
+        {
+            RankObj[5, 1].GetComponent<Text>().text = "" + NewScore[1];
+        }
     }
 
     // スワップ
