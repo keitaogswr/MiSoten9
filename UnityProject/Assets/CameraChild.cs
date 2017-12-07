@@ -17,7 +17,7 @@ public class CameraChild : MonoBehaviour {
 
     public void setCameraTarget () {
         if (target != null) {
-            GameObject obj = GameObject.Find(target.name);
+            GameObject obj = GameObject.Find(target.name + "/Capsule");
             if (obj != null) {
                 this.transform.parent = obj.transform;
                 this.transform.localPosition = pos;

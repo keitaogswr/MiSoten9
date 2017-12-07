@@ -140,7 +140,7 @@ public class TerraScript : MonoBehaviour
         {
             //CheckTeraDominate();
 
-            Debug.Log("塗られた数:" + DominateCnt);
+            //Debug.Log("塗られた数:" + DominateCnt);
 
             ClearDominateCnt();
         }
@@ -187,7 +187,17 @@ public class TerraScript : MonoBehaviour
 
         var Tag = collision.gameObject.tag;
 
-        collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x, this.transform.localPosition.y + terrainComponent.terrainData.GetHeight((int)mapZ, (int)mapX), collision.gameObject.transform.position.z);
+        if(Tag != "Player")
+        {
+            collision.gameObject.transform.position = new Vector3(collision.gameObject.transform.position.x, this.transform.localPosition.y + terrainComponent.terrainData.GetHeight((int)mapZ, (int)mapX), collision.gameObject.transform.position.z);
+        }
+        else
+        {
+            if(collision.gameObject.transform.position.y <= terrainComponent.terrainData.GetHeight((int)mapZ, (int)mapX))
+            {
+                collision.gameObject.transform.position -= collision.gameObject.transform.forward;
+            }
+        }
 
         for (var z = z1; z <= z2; z++)
         {
