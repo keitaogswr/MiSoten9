@@ -8,6 +8,9 @@ public class Game : MonoBehaviour {
     [SerializeField]
     private GameObject create = null;
 
+    private bool gameStart = false;
+    private bool gameFinish = false;
+
     void Awake () {
         if (!GameObject.Find(create.name)) {
             GameObject manager = Instantiate(create);
@@ -21,10 +24,20 @@ public class Game : MonoBehaviour {
         if (fade == null) {
             Debug.Log("fadeManager is null.");
         }
+
+        gameStart = true;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public bool getGameStart () {
+        return gameStart;
+    }
+
+    public bool getGameEnd () {
+        return gameFinish;
+    }
 }
