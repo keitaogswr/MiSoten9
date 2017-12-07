@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 224961409506549090}
   - component: {fileID: 222317821622826846}
   - component: {fileID: 114514464112820848}
+  - component: {fileID: 114051701675810976}
   m_Layer: 0
   m_Name: GoodText
   m_TagString: Untagged
@@ -120,6 +121,7 @@ GameObject:
   - component: {fileID: 224056621567452026}
   - component: {fileID: 222264076714534590}
   - component: {fileID: 114762875139920756}
+  - component: {fileID: 114733215943400226}
   m_Layer: 0
   m_Name: ScoreText
   m_TagString: Untagged
@@ -153,6 +155,7 @@ GameObject:
   - component: {fileID: 224995215204319560}
   - component: {fileID: 222516936866663022}
   - component: {fileID: 114004044677819348}
+  - component: {fileID: 114439792506535040}
   m_Layer: 0
   m_Name: BadText
   m_TagString: Untagged
@@ -275,6 +278,7 @@ GameObject:
   - component: {fileID: 222130479762655100}
   - component: {fileID: 114844901537713192}
   - component: {fileID: 114420505897564728}
+  - component: {fileID: 114758956016276336}
   m_Layer: 5
   m_Name: NumText
   m_TagString: Untagged
@@ -324,6 +328,7 @@ GameObject:
   - component: {fileID: 224277527729383344}
   - component: {fileID: 222673826823836194}
   - component: {fileID: 114687633631872804}
+  - component: {fileID: 114812944189762474}
   m_Layer: 5
   m_Name: FanText
   m_TagString: Untagged
@@ -519,6 +524,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 0
   m_Text: 25
+--- !u!114 &114051701675810976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124762599217516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
 --- !u!114 &114082662850753452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -591,6 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 945e2df6d9bca0645a2f359d6843e5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CangeColorTime: 0.1
 --- !u!114 &114274043167233466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -631,6 +649,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!114 &114439792506535040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330808055631556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
 --- !u!114 &114514464112820848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -723,6 +753,30 @@ MonoBehaviour:
     y: 10
     width: 20
     height: 10
+--- !u!114 &114733215943400226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1289942723974622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
+--- !u!114 &114758956016276336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1689148078457116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
 --- !u!114 &114762875139920756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -734,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: fc35031ed36a8a84fa4c58a2c6b9f07f, type: 2}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -799,6 +853,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114812944189762474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921331363740336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
 --- !u!114 &114844901537713192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4595,7 +4661,7 @@ Canvas:
   m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
