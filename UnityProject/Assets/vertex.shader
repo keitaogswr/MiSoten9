@@ -9,7 +9,7 @@
 		_StencilOp("Stencil Operation", Float) = 0
 		_StencilWriteMask("Stencil Write Mask", Float) = 255
 		_StencilReadMask("Stencil Read Mask", Float) = 255
-
+		_Swing("Swing Width", Float) = 5
 		_ColorMask("Color Mask", Float) = 15
 
 		[Toggle(UNITY_UI_ALPHACLIP)] _UseUIAlphaClip("Use Alpha Clip", Float) = 0
@@ -75,12 +75,13 @@
 	fixed4 _Color;
 	fixed4 _TextureSampleAdd;
 	float4 _ClipRect;
+	float  _Swing;
 
 	v2f vert(appdata_t v)
 	{
 		v2f OUT;
 		float amp = 0.5*sin(_Time * 100 + v.vertex.x * 100);
-		v.vertex.xyz = float3(v.vertex.x, v.vertex.y + amp, v.vertex.z);
+		v.vertex.xyz = float3(v.vertex.x, v.vertex.y + (amp * _Swing), v.vertex.z);
 
 		UNITY_SETUP_INSTANCE_ID(v);
 		UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
