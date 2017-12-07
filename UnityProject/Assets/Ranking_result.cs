@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
 public class Ranking_result : MonoBehaviour {
 
     public int MaxText = 3;
@@ -12,77 +13,65 @@ public class Ranking_result : MonoBehaviour {
     bool chkEnd = false;
 
     GameObject[,] RankObj;
-    int[] NewScore;
-    int[,] Ranking, OldRanking;
+    int[] NewScore, SaveRanking, LoadRanking;
+    int[,] Ranking;
+
+    const string SCORE_KEY = "SCORE";
 
     // Use this for initialization
     void Start()
     {
-        var key = "SCORE";
-
         RankObj     = new GameObject[MaxRank, MaxText];
         NewScore    = new int[MaxText];
         Ranking     = new int[MaxRank, MaxText];
-        OldRanking  = new int[MaxRank, MaxText];
+        SaveRanking = new int[MaxRank * MaxText];
+        LoadRanking = new int[MaxRank * MaxText];
 
-        //if(PlayerPrefsUtils.GetObject<int[,]>(key) == null)
-        //{
-        //    // ランキングデータ
-        //    Ranking[0, 0] = 90000;
-        //    Ranking[0, 1] = 1;
-        //    Ranking[0, 2] = 500;
+        // 読み込み
+        LoadRanking = PlayerPrefsX.GetIntArray(SCORE_KEY);
 
-        //    Ranking[1, 0] = 80000;
-        //    Ranking[1, 1] = 2;
-        //    Ranking[1, 2] = 400;
+        if(LoadRanking != null)
+        {
+            int LoadRankCnt = 0;
+            for (int i = 0; i < MaxRank; i++)
+            {
+                for (int j = 0; j < MaxText; j++)
+                {
+                    Ranking[i, j] = LoadRanking[LoadRankCnt];
+                    LoadRankCnt++;
+                }
+            }
+        }
+        else
+        {
+            // ランキングデータ
+            Ranking[0, 0] = 90000;
+            Ranking[0, 1] = 1;
+            Ranking[0, 2] = 500;
 
-        //    Ranking[2, 0] = 70000;
-        //    Ranking[2, 1] = 3;
-        //    Ranking[2, 2] = 300;
+            Ranking[1, 0] = 80000;
+            Ranking[1, 1] = 2;
+            Ranking[1, 2] = 400;
 
-        //    Ranking[3, 0] = 60000;
-        //    Ranking[3, 1] = 4;
-        //    Ranking[3, 2] = 200;
+            Ranking[2, 0] = 70000;
+            Ranking[2, 1] = 3;
+            Ranking[2, 2] = 300;
 
-        //    Ranking[4, 0] = 50000;
-        //    Ranking[4, 1] = 5;
-        //    Ranking[4, 2] = 100;
-        //}
-        //else
-        //{
-        //    Ranking = PlayerPrefsUtils.GetObject<int[,]>(key);
-        //}
+            Ranking[3, 0] = 60000;
+            Ranking[3, 1] = 4;
+            Ranking[3, 2] = 200;
 
-        // ランキングデータ
-        Ranking[0, 0] = 90000;
-        Ranking[0, 1] = 1;
-        Ranking[0, 2] = 500;
-
-        Ranking[1, 0] = 80000;
-        Ranking[1, 1] = 2;
-        Ranking[1, 2] = 400;
-
-        Ranking[2, 0] = 70000;
-        Ranking[2, 1] = 3;
-        Ranking[2, 2] = 300;
-
-        Ranking[3, 0] = 60000;
-        Ranking[3, 1] = 4;
-        Ranking[3, 2] = 200;
-
-        Ranking[4, 0] = 50000;
-        Ranking[4, 1] = 5;
-        Ranking[4, 2] = 100;
-
-        PlayerPrefsUtils.SetObject(key, Ranking);
-        OldRanking = PlayerPrefsUtils.GetObject<int[,]>(key);
+            Ranking[4, 0] = 50000;
+            Ranking[4, 1] = 5;
+            Ranking[4, 2] = 100;
+        }
 
         //---------------------------------------------------//
         // 今回のスコアのデータ（ここにゲームスコアを入れる）
         //---------------------------------------------------//
-        Ranking[5, 0] = 30000;  // スコア
+        Ranking[5, 0] = 75000;  // スコア
         Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
-        Ranking[5, 2] = 50;    // ファン数
+        Ranking[5, 2] = 350;     // ファン数
 
         // 今回のスコアを保存
         NewScore[0] = Ranking[5, 0];
@@ -128,7 +117,16 @@ public class Ranking_result : MonoBehaviour {
         }
 
         // 保存
-        //PlayerPrefsUtils.SetObject(key, Ranking);
+        int SaveRankCnt = 0;
+        for (int i = 0; i < MaxRank; i++)
+        {
+            for (int j = 0; j < MaxText; j++)
+            {
+                SaveRanking[SaveRankCnt] = Ranking[i, j];
+                SaveRankCnt++;
+            }
+        }
+        PlayerPrefsX.SetIntArray(SCORE_KEY, SaveRanking);
 
         // ランキングのゲームオブジェクトをファインド
         RankObj[0, 0] = GameObject.Find("Canvas_Player03/Ranking/RankScoreText1/ScoreText1");    // スコア
