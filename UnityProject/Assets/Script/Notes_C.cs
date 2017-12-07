@@ -89,7 +89,7 @@ public class Notes_C : MonoBehaviour
                 //TerrainScript.AriaSize += 5;
                 playerScript.addRangeScale(0.001f);
 
-                GrowPoint.isTrigger = false;
+                //GrowPoint.isTrigger = false;
 
                 // if (TerrainScript.AriaSize > AddAriaSize)
                 // {

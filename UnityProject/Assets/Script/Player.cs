@@ -24,6 +24,15 @@ public class Player : MonoBehaviour {
     private string vertical;
     private string horizontal;
 
+    private GameObject HightTarget;
+   
+    public GameObject PlayerObj;
+    public GameObject PlayerCamera;
+
+    public float LerpHight = 40;
+    public float LerpAngle = -80;
+    private float LerpTimer = 0;
+
     // Use this for initialization
     void Start () {
         if (parameter != null) {
@@ -31,8 +40,19 @@ public class Player : MonoBehaviour {
             minSpeed = parameter.minSpeed;
             acceleration = parameter.acceleration;
             acceleSlope = parameter.acceleSlope;
-            GameObject Obj = GameObject.Find("Player/Sphere");
-            Obj.transform.localScale = new Vector3(parameter.DrawAriaSize, Obj.transform.localScale.y, transform.localScale.z);
+            //PlayerObj = GameObject.Find("Player/Capsule");
+
+            if(this.name != "Player")
+            {
+                PlayerCamera = GameObject.Find("Player2/Capsule/SubCamera");
+            }
+            else
+            {
+                PlayerCamera = GameObject.Find("Player/Capsule/Main Camera");
+            }
+
+            HightTarget = GameObject.Find("Player/Sphere");
+            HightTarget.transform.localScale = new Vector3(parameter.DrawAriaSize, HightTarget.transform.localScale.y, transform.localScale.z);
         }
         else {
             Debug.Log("param is null");
@@ -76,7 +96,47 @@ public class Player : MonoBehaviour {
         }
 
         transform.rotation = Quaternion.Euler(0, transform.rotation.y + slope, 0);
+        
+        if((int)HightTarget.transform.localPosition.y > -6)
+        {
+            LerpHight = 100;
+        }
+        else if((int)HightTarget.transform.localPosition.y < -6 && (int)HightTarget.transform.localPosition.y > -17)
+        {
+            LerpHight = 70;
+            LerpAngle = -0.45f;
+        }
+        else
+        {
+            LerpHight = 50;
+            LerpAngle = -0.6f;
+        }
+
+        if (PlayerObj.transform.position.y != LerpHight)
+        {
+            LerpTimer = 0;
+        }
+
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+        LerpTimer += Time.deltaTime;
+        PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);
+        PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(Camera.main.transform.localRotation.x, LerpAngle, LerpTimer), Camera.main.transform.localRotation.y, Camera.main.transform.localRotation.z, Camera.main.transform.localRotation.w);
+        
+        if(LerpAngle == -0.45f)
+        {
+            PlayerCamera.transform.localPosition = new Vector3(0, -7, Mathf.Lerp(PlayerCamera.transform.localPosition.z, -6, LerpTimer));
+        }
+        else
+        {
+            PlayerCamera.transform.localPosition = new Vector3(0, -7, Mathf.Lerp(PlayerCamera.transform.localPosition.z, -1, LerpTimer));
+        }
+
+        //transform.position = new Vector3(transform.localPosition.x, Mathf.Lerp(transform.position.y, LerpHight, LerpTimer), transform.localPosition.z);
+        if (LerpTimer > 1)
+        {
+            LerpTimer = 1;
+        }
     }
 
     public void setMoveSpeed(float speed) {
