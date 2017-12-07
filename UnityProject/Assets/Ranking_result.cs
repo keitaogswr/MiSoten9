@@ -14,6 +14,9 @@ public class Ranking_result : MonoBehaviour {
     GameObject[,] RankObj;
     int[] NewScore;
     int[,] Ranking;
+    int[,] OldRanking;
+
+    const string RANKING_KEY = "Ranking";
 
     // Use this for initialization
     void Start()
@@ -21,6 +24,9 @@ public class Ranking_result : MonoBehaviour {
         RankObj     = new GameObject[MaxRank, MaxText];
         NewScore    = new int[MaxText];
         Ranking     = new int[MaxRank, MaxText];
+        OldRanking  = new int[MaxRank - 1, MaxText];
+
+       
 
         // ランキングデータ
         Ranking[0, 0] = 90000;
@@ -46,9 +52,9 @@ public class Ranking_result : MonoBehaviour {
         //---------------------------------------------------//
         // 今回のスコアのデータ（ここにゲームスコアを入れる）
         //---------------------------------------------------//
-        Ranking[5, 0] = 30000;  // スコア
+        Ranking[5, 0] = 100000;  // スコア
         Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
-        Ranking[5, 2] = 50;    // ファン数
+        Ranking[5, 2] = 550;    // ファン数
 
         // 今回のスコアを保存
         NewScore[0] = Ranking[5, 0];
@@ -88,6 +94,7 @@ public class Ranking_result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
         // スコアのソート処理
         bool isEnd = false;
         while (!isEnd)
@@ -147,10 +154,10 @@ public class Ranking_result : MonoBehaviour {
         RankObj[4, 1].GetComponent<Text>().text = "5";
         RankObj[4, 2].GetComponent<Text>().text = "" + Ranking[4, 2];
 
-        // 今回のスコアOBJ
+        // 今回のスコア表示
         RankObj[5, 0].GetComponent<Text>().text = "" + NewScore[0];
         RankObj[5, 2].GetComponent<Text>().text = "" + NewScore[2];
-
+        // ランク表示
         if (NewScore[1] == 0)
         {
             RankObj[5, 1].GetComponent<Text>().text = "圏外";
@@ -158,6 +165,20 @@ public class Ranking_result : MonoBehaviour {
         else
         {
             RankObj[5, 1].GetComponent<Text>().text = "" + NewScore[1];
+        }
+
+        // 画面遷移時（仮）
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            for(int i = 0 ; i < MaxRank - 1 ; i++ )
+            {
+                for(int j = 0 ; j < MaxText ; j++ )
+                {
+                    OldRanking[i, j] = Ranking[i, j];
+                }
+            }
+            PlayerPrefs.SetInt(RANKING_KEY, OldRanking);
+            PlayerPrefs.Save();
         }
     }
 
