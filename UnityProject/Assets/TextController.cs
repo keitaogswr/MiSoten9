@@ -19,7 +19,7 @@ public class TextController : BaseMeshEffect
         List<UIVertex> vertices = new List<UIVertex>();
         vh.GetUIVertexStream(vertices);
 
-        TextMove(ref vertices);
+        //TextMove(ref vertices);
 
         vh.Clear();
         vh.AddUIVertexTriangleStream(vertices);
