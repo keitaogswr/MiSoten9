@@ -12,10 +12,12 @@ public class GameManager : MonoBehaviour {
     public GameObject Game_UI_2P;
 
     public float WaitTimer;
+
+    public float ChangeSkyValue = 0.5f;
     private float Timer = 0;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         Player.GetComponent<Player>().enabled = false;
         Player_2P.GetComponent<Player>().enabled = false;
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour {
 
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
+
+       
     }
 	
 	// Update is called once per frame
@@ -54,5 +58,7 @@ public class GameManager : MonoBehaviour {
             Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
             Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
         }
+
+        
 	}
 }
