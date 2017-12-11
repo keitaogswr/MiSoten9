@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 457024}
   - component: {fileID: 19807740}
   - component: {fileID: 19990304}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: particle master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 388.8, y: 51.62, z: 130.74}
+  m_LocalPosition: {x: 331.8, y: 66, z: 247.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 457024}
@@ -3430,7 +3430,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1528894926
+  randomSeed: -897573144
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6779,7 +6779,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -934984091
+  randomSeed: 902017776
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13488,7 +13488,7 @@ GameObject:
   - component: {fileID: 33685009322730954}
   - component: {fileID: 135279828788321374}
   - component: {fileID: 23354054841416960}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: DrawSphere
   m_TagString: Tornado
   m_Icon: {fileID: 0}
@@ -13599,5 +13599,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5.4
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
