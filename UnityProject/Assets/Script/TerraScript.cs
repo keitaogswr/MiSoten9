@@ -32,7 +32,9 @@ public class TerraScript : MonoBehaviour
     private const float TeraCheckDeray = 0.5f;
     private float TeraCheckTimer = 0;
 
+    [SerializeField]
     private int DominateCnt;
+    [SerializeField]
     private int DominateCntMax;
 
     Thread thread;
@@ -140,7 +142,7 @@ public class TerraScript : MonoBehaviour
         {
             //CheckTeraDominate();
 
-            //Debug.Log("塗られた数:" + DominateCnt);
+            Debug.Log("塗られた数:" + DominateCnt);
 
             
 
@@ -263,8 +265,8 @@ public class TerraScript : MonoBehaviour
                     }
                 }
 
-                DominateScript.Bar = ((float)DominateCnt / (float)DominateCntMax) * 100;
-                DominateScript_2P.Bar = ((float)DominateCnt / (float)DominateCntMax) * 100;
+                DominateScript.Bar = ((float)DominateCnt / (float)DominateCntMax);
+                DominateScript_2P.Bar = ((float)DominateCnt / (float)DominateCntMax);
                 //Debug.Log(((float)DominateCnt / (float)DominateCntMax));
             }
         }
