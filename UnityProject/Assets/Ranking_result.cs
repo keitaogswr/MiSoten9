@@ -7,6 +7,8 @@ using System;
 
 public class Ranking_result : MonoBehaviour {
 
+    private bool scoreReset = false;
+
     public int MaxText = 3;
     public int MaxRank = 6;
     public float CangeColorTime = 0.3f;
@@ -45,38 +47,28 @@ public class Ranking_result : MonoBehaviour {
         else
         {
             // ランキングデータ
-            Ranking[0, 0] = 90000;
+            Ranking[0, 0] = 50000;
             Ranking[0, 1] = 1;
             Ranking[0, 2] = 500;
 
-            Ranking[1, 0] = 80000;
+            Ranking[1, 0] = 40000;
             Ranking[1, 1] = 2;
             Ranking[1, 2] = 400;
 
-            Ranking[2, 0] = 70000;
+            Ranking[2, 0] = 30000;
             Ranking[2, 1] = 3;
             Ranking[2, 2] = 300;
 
-            Ranking[3, 0] = 60000;
+            Ranking[3, 0] = 20000;
             Ranking[3, 1] = 4;
             Ranking[3, 2] = 200;
 
-            Ranking[4, 0] = 50000;
+            Ranking[4, 0] = 10000;
             Ranking[4, 1] = 5;
             Ranking[4, 2] = 100;
         }
 
-        //---------------------------------------------------//
-        // 今回のスコアのデータ（ここにゲームスコアを入れる）
-        //---------------------------------------------------//
-        Ranking[5, 0] = 75000;  // スコア
-        Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
-        Ranking[5, 2] = 350;     // ファン数
-
-        // 今回のスコアを保存
-        NewScore[0] = Ranking[5, 0];
-        NewScore[1] = Ranking[5, 1];
-        NewScore[2] = Ranking[5, 2];
+        SetNewScore();
 
         // スコアのソート処理
         bool isEnd = false;
@@ -161,6 +153,14 @@ public class Ranking_result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        // リセット
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            scoreReset = true;
+        }
+
+        ScoreReset();
+
         // ランキングの表示
         RankObj[0, 0].GetComponent<Text>().text = "" + Ranking[0, 0];
         RankObj[0, 1].GetComponent<Text>().text = "1";
@@ -193,6 +193,107 @@ public class Ranking_result : MonoBehaviour {
         else
         {
             RankObj[5, 1].GetComponent<Text>().text = "" + NewScore[1];
+        }
+    }
+
+    void SetNewScore()
+    {
+        //---------------------------------------------------//
+        // 今回のスコアのデータ（ここにゲームスコアを入れる）
+        //---------------------------------------------------//
+        Ranking[5, 0] = 60000;  // スコア
+        Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
+        Ranking[5, 2] = 350;     // ファン数
+
+        // 今回のスコアを保存
+        NewScore[0] = Ranking[5, 0];
+        NewScore[1] = Ranking[5, 1];
+        NewScore[2] = Ranking[5, 2];
+    }
+
+    // リセット処理
+    void ScoreReset()
+    {
+        if (scoreReset)
+        {
+            chkEnd = false;
+            // エディタ終了時の処理
+            //Ranking = new int[MaxRank, MaxText];
+            //SaveRanking = new int[MaxRank * MaxText];
+
+            Ranking[0, 0] = 5000;
+            Ranking[0, 1] = 1;
+            Ranking[0, 2] = 50;
+
+            Ranking[1, 0] = 4000;
+            Ranking[1, 1] = 2;
+            Ranking[1, 2] = 40;
+
+            Ranking[2, 0] = 3000;
+            Ranking[2, 1] = 3;
+            Ranking[2, 2] = 30;
+
+            Ranking[3, 0] = 2000;
+            Ranking[3, 1] = 4;
+            Ranking[3, 2] = 20;
+
+            Ranking[4, 0] = 1000;
+            Ranking[4, 1] = 5;
+            Ranking[4, 2] = 10;
+
+            SetNewScore();
+
+            // スコアのソート処理
+            bool isEnd = false;
+            while (!isEnd)
+            {
+                bool loopSwap = false;
+                for (int i = 0; i < MaxRank - 1; i++)
+                {
+                    if (Ranking[i, 0] < Ranking[i + 1, 0])
+                    {
+                        Swap(ref Ranking[i, 0], ref Ranking[i + 1, 0]);
+                        loopSwap = true;
+                    }
+                }
+                if (!loopSwap) // Swapが一度も実行されなかった場合はソート終了
+                {
+                    isEnd = true;
+                }
+            }
+
+            // ファンのソートと今回のランキングの同期
+            if (!chkEnd)
+            {
+                bool loopChk = false;
+                for (int chk = 0; chk < MaxRank; chk++)
+                {
+                    if (NewScore[0] == Ranking[chk, 0])
+                    {
+                        Swap(ref Ranking[5, 2], ref Ranking[chk, 2]);   // ファンのソート
+                        NewScore[1] = Ranking[chk, 1];                  // ランキングの同期
+                        loopChk = true;
+                    }
+                }
+                if (loopChk)
+                {
+                    chkEnd = true;
+                }
+            }
+
+            int SaveRankCnt2 = 0;
+            for (int i = 0; i < MaxRank; i++)
+            {
+                for (int j = 0; j < MaxText; j++)
+                {
+                    SaveRanking[SaveRankCnt2] = Ranking[i, j];
+                    SaveRankCnt2++;
+                }
+            }
+
+            // 保存
+            PlayerPrefsX.SetIntArray(SCORE_KEY, SaveRanking);
+            scoreReset = false;
         }
     }
 
@@ -251,4 +352,6 @@ public class Ranking_result : MonoBehaviour {
 
         yield break;
     }
+
+    
 }
