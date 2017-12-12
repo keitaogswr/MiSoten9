@@ -142,7 +142,9 @@ public class TerraScript : MonoBehaviour
 
             //Debug.Log("塗られた数:" + DominateCnt);
 
-            ClearDominateCnt();
+            
+
+            //TeraCheckTimer = 0;
         }
 
         //DominateCnt = 0;
@@ -243,9 +245,11 @@ public class TerraScript : MonoBehaviour
     {
 
         int x, y;
+
         while (true)
         {
             Thread.Sleep(100);
+            ClearDominateCnt();
             lock (sync)
             {
                 for (y = 0; y < mapAlphaSize_H; y++)
@@ -259,8 +263,8 @@ public class TerraScript : MonoBehaviour
                     }
                 }
 
-                DominateScript.Bar = ((float)DominateCnt / (float)DominateCntMax) * 10;
-                DominateScript_2P.Bar = ((float)DominateCnt / (float)DominateCntMax) * 10;
+                DominateScript.Bar = ((float)DominateCnt / (float)DominateCntMax) * 100;
+                DominateScript_2P.Bar = ((float)DominateCnt / (float)DominateCntMax) * 100;
                 //Debug.Log(((float)DominateCnt / (float)DominateCntMax));
             }
         }

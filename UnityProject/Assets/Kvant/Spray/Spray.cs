@@ -10,9 +10,6 @@ namespace Kvant
     [AddComponentMenu("Kvant/Spray")]
     public partial class Spray : MonoBehaviour
     {
-
-        private Vector3 OldPosition;
-
         #region Basic Properties
 
         [SerializeField]
@@ -443,11 +440,6 @@ namespace Kvant
             _needsReset = true;
         }
 
-        private void Start()
-        {
-            OldPosition = this.transform.position;
-        }
-
         void OnDestroy()
         {
             if (_bulkMesh != null) _bulkMesh.Release();
@@ -485,7 +477,7 @@ namespace Kvant
 
             // Temporary variables
             var mesh = _bulkMesh.mesh;
-            var position = OldPosition;
+            var position = transform.position;
             var rotation = transform.rotation;
             var material = _material ? _material : _defaultMaterial;
             var uv = new Vector2(0.5f / _positionBuffer2.width, 0);
@@ -500,8 +492,6 @@ namespace Kvant
                     material, 0, null, 0, props,
                     _castShadows, _receiveShadows);
             }
-
-            OldPosition = this.transform.position;
         }
 
         void OnGUI()
