@@ -311,6 +311,10 @@ MonoBehaviour:
   parameter: {fileID: 11400000, guid: 1784b2ba3e78fdc45b070ddb548769c1, type: 2}
   paintField: {fileID: 0}
   playerNum: 2
+  PlayerObj: {fileID: 1861360011010564}
+  PlayerCamera: {fileID: 0}
+  LerpHight: 40
+  LerpAngle: -80
 --- !u!135 &135373982823098008
 SphereCollider:
   m_ObjectHideFlags: 1
