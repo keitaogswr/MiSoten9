@@ -30,14 +30,14 @@ public class Notes_C : MonoBehaviour
     private Player playerScript;
 
     [SerializeField]
-    private SphereCollider GrowPoint;
+    private GameObject GrowPoint;
 
     // Use this for initialization
     void Start()
     {
         Bar = GameObject.Find("Hantei_Center").gameObject;
         TerrainObj = GameObject.Find("Terrain").gameObject;
-        GrowPoint = GameObject.Find("Player/Sphere").gameObject.GetComponent<SphereCollider>();
+        GrowPoint = GameObject.Find("Player/Sphere");
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
         PlayerObj = GameObject.Find("Player").gameObject;
         playerScript = PlayerObj.GetComponent<Player>();
@@ -86,8 +86,14 @@ public class Notes_C : MonoBehaviour
 
                 DestroyObject(GEfe, 3);
 
-                //TerrainScript.AriaSize += 5;
                 playerScript.addRangeScale(0.001f);
+
+                GrowPoint.transform.localScale += new Vector3(0.5f, 0, 0);
+
+                if(GrowPoint.transform.localScale.x > 25)
+                {
+                    GrowPoint.transform.localScale -= new Vector3(0.5f, 0, 0);
+                }
 
                 //GrowPoint.isTrigger = false;
 
