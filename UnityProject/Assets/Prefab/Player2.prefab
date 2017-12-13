@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4102400580018846}
   - component: {fileID: 33017011576030180}
-  - component: {fileID: 135373982823098008}
   - component: {fileID: 23113919085077040}
   - component: {fileID: 54020821641074532}
+  - component: {fileID: 136046210499262964}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507731794770978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 250, y: 42.25, z: 8.2}
+  m_LocalPosition: {x: 266.5, y: 57.8, z: 6.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4541089264830596}
@@ -106,8 +106,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288742624616690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -41.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 4046251540666444}
   m_RootOrder: 2
@@ -144,7 +144,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1861360011010564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -176,7 +176,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288742624616690}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -315,8 +315,8 @@ MonoBehaviour:
   PlayerCamera: {fileID: 0}
   LerpHight: 40
   LerpAngle: -80
---- !u!135 &135373982823098008
-SphereCollider:
+--- !u!136 &136046210499262964
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -324,9 +324,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Height: 7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.000000059604645, z: 0}
 --- !u!136 &136652612204410004
 CapsuleCollider:
   m_ObjectHideFlags: 1

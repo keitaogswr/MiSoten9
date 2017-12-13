@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
     public float LerpAngle = -80;
     private float LerpTimer = 0;
 
+    public float Axel = 1;
+
     // Use this for initialization
     void Start () {
         if (parameter != null) {
@@ -117,7 +119,7 @@ public class Player : MonoBehaviour {
             LerpTimer = 0;
         }
 
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        transform.position += transform.forward * moveSpeed * Axel * Time.deltaTime;
 
         LerpTimer += Time.deltaTime;
         PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);

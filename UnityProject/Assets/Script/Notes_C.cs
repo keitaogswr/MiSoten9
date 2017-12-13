@@ -29,15 +29,15 @@ public class Notes_C : MonoBehaviour
     public GameObject PlayerObj;
     private Player playerScript;
 
-    [SerializeField]
-    private GameObject GrowPoint;
+    //[SerializeField]
+    public GameObject GrowPoint;        //色を塗る判定
 
     // Use this for initialization
     void Start()
     {
         Bar = GameObject.Find("Hantei_Center").gameObject;
         TerrainObj = GameObject.Find("Terrain").gameObject;
-        GrowPoint = GameObject.Find("Player/Sphere");
+        //GrowPoint = GameObject.Find("Player/Sphere");
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
         PlayerObj = GameObject.Find("Player").gameObject;
         playerScript = PlayerObj.GetComponent<Player>();
@@ -95,6 +95,8 @@ public class Notes_C : MonoBehaviour
                     GrowPoint.transform.localScale -= new Vector3(0.5f, 0, 0);
                 }
 
+                playerScript.Axel += 0.5f;
+
                 //GrowPoint.isTrigger = false;
 
                 // if (TerrainScript.AriaSize > AddAriaSize)
@@ -106,7 +108,7 @@ public class Notes_C : MonoBehaviour
 
                 DestoryNote();
             }
-            else if (FieldNote[0, 0] != null)
+            else if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > -100)
             {
                 //Debug.Log("Bad");
 
@@ -122,6 +124,8 @@ public class Notes_C : MonoBehaviour
                 playerScript.subRangeScale(0.001f);
                 DestoryNote();
 
+                playerScript.Axel = 1;
+
                 //GrowPoint.isTrigger = true;
             }
             else
@@ -133,6 +137,19 @@ public class Notes_C : MonoBehaviour
 
         if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > 0)
         {
+            GameObject Bad = Instantiate(BadText);
+
+            Bad.transform.SetParent(this.transform);
+
+            Bad.name = "Bad";
+            Bad.transform.localPosition = new Vector2(110, -230);
+            Bad.transform.localScale = new Vector3(2, 2, 2);
+
+            Bar.GetComponent<BarAct>().BadAct();
+            playerScript.subRangeScale(0.001f);
+
+            playerScript.Axel = 1;
+
             DestoryNote();
         }
 

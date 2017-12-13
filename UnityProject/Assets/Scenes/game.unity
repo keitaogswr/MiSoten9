@@ -404,7 +404,7 @@ MonoBehaviour:
   TerrainScript: {fileID: 0}
   AddAriaSize: 50
   PlayerObj: {fileID: 1792064698479406, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
-  GrowPoint: {fileID: 0}
+  GrowPoint: {fileID: 1437215788}
 --- !u!114 &136115276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,29 +1350,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 4102400580018846, guid: c3581684865345a4da56b679074c4c99, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4102400580018846, guid: c3581684865345a4da56b679074c4c99, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 23113919085077040, guid: c3581684865345a4da56b679074c4c99,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23101785860264446, guid: c3581684865345a4da56b679074c4c99,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114121007433655330, guid: c3581684865345a4da56b679074c4c99,
-        type: 2}
-      propertyPath: PlayerObj
-      value: 
-      objectReference: {fileID: 1814041802}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3581684865345a4da56b679074c4c99, type: 2}
   m_IsPrefabParent: 0
@@ -2337,7 +2314,7 @@ MonoBehaviour:
   TerrainScript: {fileID: 0}
   AddAriaSize: 50
   PlayerObj: {fileID: 1792064698479406, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
-  GrowPoint: {fileID: 0}
+  GrowPoint: {fileID: 1303624022}
 --- !u!114 &1044884224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6142,6 +6119,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263965927}
+--- !u!1 &1303624022 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1745007449492908, guid: 1b5fe8aafc1068a4ab9496c252790824,
+    type: 2}
+  m_PrefabInternal: {fileID: 1070653006}
 --- !u!1 &1366208518
 GameObject:
   m_ObjectHideFlags: 0
@@ -6152,6 +6134,7 @@ GameObject:
   - component: {fileID: 1366208519}
   - component: {fileID: 1366208521}
   - component: {fileID: 1366208520}
+  - component: {fileID: 1366208522}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -6283,7 +6266,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -764121903
+  randomSeed: -1991356370
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6843,7 +6826,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9486,6 +9469,18 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+--- !u!114 &1366208522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1366208518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e33802a6664764fa70369a39fbe310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
 --- !u!1 &1385111139
 GameObject:
   m_ObjectHideFlags: 0
@@ -10647,6 +10642,11 @@ TerrainData:
     m_Thickness: 1
     m_Levels: 4
     m_Scale: {x: 1.9533538, y: 112.72038, z: 1.953125}
+--- !u!1 &1437215788 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1288742624616690, guid: c3581684865345a4da56b679074c4c99,
+    type: 2}
+  m_PrefabInternal: {fileID: 560273945}
 --- !u!1001 &1455705857
 Prefab:
   m_ObjectHideFlags: 0
@@ -11043,6 +11043,7 @@ MonoBehaviour:
   Game_UI: {fileID: 136115273}
   Game_UI_2P: {fileID: 1044884221}
   WaitTimer: 1
+  ChangeSkyValue: 0.5
 --- !u!4 &1562428786
 Transform:
   m_ObjectHideFlags: 0
@@ -11459,11 +11460,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1732193035}
---- !u!1 &1814041802 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1861360011010564, guid: c3581684865345a4da56b679074c4c99,
-    type: 2}
-  m_PrefabInternal: {fileID: 560273945}
 --- !u!1 &1820100341
 GameObject:
   m_ObjectHideFlags: 0
@@ -11549,6 +11545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DominateBarObj: {fileID: 1527821712}
   DominateBarObj_2P: {fileID: 248280177}
+  DominateCnt: 0
+  DominateCntMax: 0
 --- !u!1 &1834909215
 GameObject:
   m_ObjectHideFlags: 0
