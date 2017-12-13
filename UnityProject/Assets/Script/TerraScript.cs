@@ -188,6 +188,7 @@ public class TerraScript : MonoBehaviour
         int mapW;
         int x1;
         int x2;
+        float TestSin;
 
         var Tag = collision.gameObject.tag;
 
@@ -208,6 +209,7 @@ public class TerraScript : MonoBehaviour
             mapW = (int)Mathf.Sqrt(mapR * mapR - z * z);
             x1 = (int)Mathf.Max(-mapW, -mapX);
             x2 = (int)Mathf.Min(mapW, -mapX + mapSize_W - 1);
+            TestSin = (x2 - x1) / 2;
             for (var x = x1; x <= x2; x++)
             {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
@@ -215,7 +217,7 @@ public class TerraScript : MonoBehaviour
                     if (!(Tag == "Tornado"))
                     {
                         //Random.Range(0.1f, 0.5f);
-                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.001f, 0.01f);
+                        AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.05f, 0.1f);
 
                         if (AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] > 1)
                         {
