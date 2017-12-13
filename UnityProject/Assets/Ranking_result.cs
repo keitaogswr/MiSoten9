@@ -18,7 +18,62 @@ public class Ranking_result : MonoBehaviour {
     int[] NewScore, SaveRanking, LoadRanking;
     int[,] Ranking;
 
+    // 初期化用配列
+    static int[,] InitData;
+    static int[] InitSaveData;
+
     const string SCORE_KEY = "SCORE";
+
+    //*******************************************
+    // 初回起動時のみ呼ばれるメソッド
+    // PlayerPrefsの初期データ格納用
+    //*******************************************
+    [RuntimeInitializeOnLoadMethod]
+    static void Initialize()
+    {
+        //***************************************
+        // この中にGameObjectは絶対に入れない事
+        //***************************************
+
+        InitData = new int[6, 3];
+        InitSaveData = new int[18];
+
+        InitData[0, 0] = 100;
+        InitData[0, 1] = 1;
+        InitData[0, 2] = 10;
+
+        InitData[1, 0] = 90;
+        InitData[1, 1] = 2;
+        InitData[1, 2] = 9;
+
+        InitData[2, 0] = 80;
+        InitData[2, 1] = 3;
+        InitData[2, 2] = 8;
+
+        InitData[3, 0] = 70;
+        InitData[3, 1] = 4;
+        InitData[3, 2] = 7;
+
+        InitData[4, 0] = 60;
+        InitData[4, 1] = 5;
+        InitData[4, 2] = 6;
+
+        InitData[5, 0] = 0;
+        InitData[5, 1] = 0;
+        InitData[5, 2] = 0;
+
+        int InitSaveCnt = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                InitSaveData[InitSaveCnt] = InitData[i, j];
+                InitSaveCnt++;
+            }
+        }
+        PlayerPrefsX.SetIntArray(SCORE_KEY, InitSaveData);
+    }
+    //*******************************************
 
     // Use this for initialization
     void Start()

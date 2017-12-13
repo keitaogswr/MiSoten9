@@ -347,26 +347,6 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114606578751503742, guid: fb68432e79a52754ea1957f894392548,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: fc35031ed36a8a84fa4c58a2c6b9f07f, type: 2}
-    - target: {fileID: 114606578751503742, guid: fb68432e79a52754ea1957f894392548,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114606578751503742, guid: fb68432e79a52754ea1957f894392548,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114606578751503742, guid: fb68432e79a52754ea1957f894392548,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb68432e79a52754ea1957f894392548, type: 2}
   m_IsPrefabParent: 0
@@ -581,9 +561,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114762875139920756, guid: d8436722ce0b4d143bae3d468d6a15f6,
         type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: fc35031ed36a8a84fa4c58a2c6b9f07f, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056621567452026, guid: d8436722ce0b4d143bae3d468d6a15f6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8436722ce0b4d143bae3d468d6a15f6, type: 2}
   m_IsPrefabParent: 0
@@ -751,9 +736,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114590717714692982, guid: 53d11581e863dba44822d613f5369259,
         type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: fc35031ed36a8a84fa4c58a2c6b9f07f, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53d11581e863dba44822d613f5369259, type: 2}
   m_IsPrefabParent: 0
