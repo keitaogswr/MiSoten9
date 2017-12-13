@@ -7,10 +7,33 @@ public class Player02_result : MonoBehaviour {
 
     GameObject ScoreTextObj, FanTextObj, GoodTextObj, BadTextObj, NumTextObj;
     public float CangeColorTime = 0.3f;
+    int[] PlayerScore;
+
+    float scorePosX,fanPosX,GoodPosX,BadPosX,NumPosX;
+    float time;
 
     // Use this for initialization
     void Start()
     {
+        PlayerScore = new int[6];
+
+        // テキストの初期ポジション
+        scorePosX = 700f;
+        fanPosX = 10f;
+        GoodPosX = 10f;
+        BadPosX = 10f;
+        NumPosX = 700f;
+
+        //-------------------------------------------------------------------//
+        // スコアの設定 ここにスコアの数値いれてね
+        //-------------------------------------------------------------------//
+        PlayerScore[0] = 60000;     // スコア
+        PlayerScore[1] = 500;       // ファン数
+        PlayerScore[2] = 400;       // グッド数
+        PlayerScore[3] = 80;        // バッド数
+        PlayerScore[4] = 75;        // パーセント
+        //-------------------------------------------------------------------//
+        
         ScoreTextObj    = GameObject.Find("Canvas_Player02/resultScores/ScoreText");
         FanTextObj      = GameObject.Find("Canvas_Player02/resultScores/Fan/FanText");
         GoodTextObj     = GameObject.Find("Canvas_Player02/resultScores/Good/GoodText");
@@ -23,11 +46,66 @@ public class Player02_result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ScoreTextObj.GetComponent<Text>().text  = "114514";
-        FanTextObj.GetComponent<Text>().text    = "1919";
-        GoodTextObj.GetComponent<Text>().text   = "810";
-        BadTextObj.GetComponent<Text>().text    = "30";
-        NumTextObj.GetComponent<Text>().text    = "100";
+        ScoreTextObj.GetComponent<Text>().text  = "" + PlayerScore[0];
+        FanTextObj.GetComponent<Text>().text    = "" + PlayerScore[1];
+        GoodTextObj.GetComponent<Text>().text   = "" + PlayerScore[2];
+        BadTextObj.GetComponent<Text>().text    = "" + PlayerScore[3];
+        NumTextObj.GetComponent<Text>().text    = "" + PlayerScore[4];
+
+        TextMove();
+    }
+
+    // テキストの移動処理
+    void TextMove()
+    {
+        time += Time.deltaTime;
+
+        if (time > 3)
+        {
+            scorePosX -= 50;
+            if (scorePosX < 0)
+            {
+                scorePosX = 0;
+            }
+        }
+        if (time > 3.5f)
+        {
+            fanPosX -= 0.5f;
+            if (fanPosX < 0)
+            {
+                fanPosX = 0;
+            }
+        }
+        if (time > 4)
+        {
+            GoodPosX -= 0.5f;
+            if (GoodPosX < 0)
+            {
+                GoodPosX = 0;
+            }
+        }
+        if (time > 4.5f)
+        {
+            BadPosX -= 0.5f;
+            if (BadPosX < 0)
+            {
+                BadPosX = 0;
+            }
+        }
+        if (time > 5)
+        {
+            NumPosX -= 50;
+            if (NumPosX < 0)
+            {
+                NumPosX = 0;
+            }
+        }
+
+        ScoreTextObj.transform.localPosition = new Vector3(70 + scorePosX, 80, 0);
+        FanTextObj.transform.localPosition = new Vector3(3 + fanPosX, 0.01f, 0);
+        GoodTextObj.transform.localPosition = new Vector3(2.75f + GoodPosX, 0.01f, 0);
+        BadTextObj.transform.localPosition = new Vector3(2.98f + BadPosX, 0.01f, 0);
+        NumTextObj.transform.localPosition = new Vector3(0 + NumPosX, -8, 0);
     }
 
     IEnumerator ChangeFontColor()
