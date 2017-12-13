@@ -559,6 +559,16 @@ Prefab:
       propertyPath: CangeColorTime
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114762875139920756, guid: d8436722ce0b4d143bae3d468d6a15f6,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224056621567452026, guid: d8436722ce0b4d143bae3d468d6a15f6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8436722ce0b4d143bae3d468d6a15f6, type: 2}
   m_IsPrefabParent: 0
@@ -723,6 +733,11 @@ Prefab:
         type: 2}
       propertyPath: CangeColorTime
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114590717714692982, guid: 53d11581e863dba44822d613f5369259,
+        type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53d11581e863dba44822d613f5369259, type: 2}
