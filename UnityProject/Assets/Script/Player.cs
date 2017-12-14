@@ -121,9 +121,11 @@ public class Player : MonoBehaviour {
 
         transform.position += transform.forward * moveSpeed * Axel * Time.deltaTime;
 
+        transform.localPosition = new Vector3(Mathf.Clamp(transform.localPosition.x, 0, 500), transform.localPosition.y, Mathf.Clamp(transform.localPosition.z, 0, 500));
+
         LerpTimer += Time.deltaTime;
         PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);
-        PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(Camera.main.transform.localRotation.x, LerpAngle, LerpTimer), Camera.main.transform.localRotation.y, Camera.main.transform.localRotation.z, Camera.main.transform.localRotation.w);
+        //PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(Camera.main.transform.localRotation.x, LerpAngle, LerpTimer), Camera.main.transform.localRotation.y, Camera.main.transform.localRotation.z, Camera.main.transform.localRotation.w);
         
         if(LerpAngle == -0.45f)
         {

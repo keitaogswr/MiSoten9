@@ -6,22 +6,30 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
     public float sec = 0.0f;
     private float time = 0.0f;
+    private int Mnt;
     [SerializeField]
     List<Text> text;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        Mnt = (int)sec / 60;
+        time = 59;
+    }
 	
 	// Update is called once per frame
-	void Update () {
-        if (time < sec) {
-            time += Time.deltaTime;
+	void Update ()
+    {
+        time -= Time.deltaTime;
+        if (time < 0)
+        {
+            time = 59;
+
+            if(Mnt != 0)
+            {
+                Mnt--;
+            }
         }
 
-        for (int i = 0; i < text.Count; i++) {
-            text[i].text = "TIME:" + time;
-        }
+        this.GetComponent<Text>().text = Mnt + ":"+(int)time;
     }
 }
