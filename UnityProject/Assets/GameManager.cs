@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public GameObject Terrain;
     public GameObject Game_UI;
     public GameObject Game_UI_2P;
+    public GameObject Flower;
 
     public float WaitTimer;
 
@@ -57,6 +58,17 @@ public class GameManager : MonoBehaviour {
 
             Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
             Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
+
+            GameObject Obj = Instantiate(Flower);
+            Obj.transform.SetParent(Game_UI.transform);
+            Obj.transform.localPosition = new Vector3(0, -250, 0);
+            DestroyObject(Obj.gameObject, 3);
+
+            GameObject Obj_2 = Instantiate(Flower);
+            Obj_2.transform.SetParent(Game_UI_2P.transform);
+            Obj_2.transform.localPosition = new Vector3(0, 0, 0);
+            Obj_2.layer = LayerMask.NameToLayer("UI2");
+            DestroyObject(Obj_2.gameObject, 3);
         }
 
         
