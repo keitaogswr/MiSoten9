@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 81437281762398674}
   - component: {fileID: 114740929178317554}
   - component: {fileID: 114991200384326004}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SubCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585804022061950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0e23e40c250f65438de73c8abc641ee, type: 3}
   m_Name: 

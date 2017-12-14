@@ -44,13 +44,13 @@ public class Player : MonoBehaviour {
             acceleSlope = parameter.acceleSlope;
             //PlayerObj = GameObject.Find("Player/Capsule");
 
-            if(this.name != "Player")
-            {
-                PlayerCamera = GameObject.Find("Player2/Capsule/SubCamera");
-            }
-            else
-            {
-                PlayerCamera = GameObject.Find("Player/Capsule/Main Camera");
+            if (PlayerCamera == null) {
+                if (this.name != "Player") {
+                    PlayerCamera = GameObject.Find("Player2/Capsule/SubCamera");
+                }
+                else {
+                    PlayerCamera = GameObject.Find("Player/Capsule/Main Camera");
+                }
             }
 
             HightTarget = GameObject.Find("Player/Sphere");
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour {
 
         LerpTimer += Time.deltaTime;
         PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);
-        PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(Camera.main.transform.localRotation.x, LerpAngle, LerpTimer), Camera.main.transform.localRotation.y, Camera.main.transform.localRotation.z, Camera.main.transform.localRotation.w);
+        PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(PlayerCamera.transform.localRotation.x, LerpAngle, LerpTimer), PlayerCamera.transform.localRotation.y, PlayerCamera.transform.localRotation.z, PlayerCamera.transform.localRotation.w);
         
         if(LerpAngle == -0.45f)
         {

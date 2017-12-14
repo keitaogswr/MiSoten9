@@ -8,4 +8,10 @@ public class CametaSet : MonoBehaviour {
 	void Awake () {
         DontDestroyOnLoad(this.gameObject);
     }
+
+    void OnDestroy () {
+        if (this.transform.parent != null) {
+            this.transform.parent = null;
+        }
+    }
 }
