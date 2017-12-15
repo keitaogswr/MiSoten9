@@ -125,7 +125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!92 &200499682
 Behaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +350,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb68432e79a52754ea1957f894392548, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &597192463 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1651166075738196, guid: fb68432e79a52754ea1957f894392548,
+    type: 2}
+  m_PrefabInternal: {fileID: 597192462}
+--- !u!114 &597192464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597192463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cb24e578bd654db5ddddaf941542d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FindCameraName: ViewCamera
 --- !u!1 &632125799 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1098903970756814, guid: 53d11581e863dba44822d613f5369259,
@@ -572,6 +589,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8436722ce0b4d143bae3d468d6a15f6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &996701154 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1441963606671666, guid: d8436722ce0b4d143bae3d468d6a15f6,
+    type: 2}
+  m_PrefabInternal: {fileID: 996701153}
+--- !u!114 &996701155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 996701154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cb24e578bd654db5ddddaf941542d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FindCameraName: SubCamera
 --- !u!1 &1418488181 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1036099034938310, guid: 53d11581e863dba44822d613f5369259,
@@ -742,6 +776,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53d11581e863dba44822d613f5369259, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1676737461 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1179183319592358, guid: 53d11581e863dba44822d613f5369259,
+    type: 2}
+  m_PrefabInternal: {fileID: 1676737460}
+--- !u!114 &1676737462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676737461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cb24e578bd654db5ddddaf941542d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FindCameraName: MainCamera
 --- !u!1 &1822448160 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1417019161565110, guid: 53d11581e863dba44822d613f5369259,
@@ -777,7 +828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1827810781
 AudioListener:
   m_ObjectHideFlags: 0
@@ -930,7 +981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &2035380460
 Camera:
   m_ObjectHideFlags: 0
