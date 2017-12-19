@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FadeCanvas
   - Tornado
+  - AudioManager
   layers:
   - Default
   - TransparentFX

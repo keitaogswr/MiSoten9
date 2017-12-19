@@ -21,7 +21,7 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     static private bool noBGM = true;
     static private bool noSE = true;
 
-    public void Awake()
+    protected override void Awake()
     {
         //create listener
         if (FindObjectsOfType(typeof(AudioListener)).All(o => !((AudioListener)o).enabled)) {
