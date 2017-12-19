@@ -21,7 +21,7 @@ public class MiniMapIconMover : MonoBehaviour {
         MoveVec /= 10;
         MoveVec *= 4;
        
-        this.transform.localPosition = new Vector3((MoveVec.x), -90, 0);
+        this.transform.localPosition = new Vector3((MoveVec.x), -109, 0);
         this.transform.localPosition += new Vector3(0, (MoveVec.z), 0);
 
     }

@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public GameObject Game_UI;
     public GameObject Game_UI_2P;
     public GameObject Flower;
+    private GameObject TimerTxt;
+    private GameObject TimerTxt_2P;
 
     public float WaitTimer;
 
@@ -31,7 +33,12 @@ public class GameManager : MonoBehaviour {
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
 
-       
+        TimerTxt = GameObject.Find("Player_UI_2/TimerFrame/Timer");
+        TimerTxt_2P = GameObject.Find("Player_UI_1/TimerFrame/Timer");
+
+        TimerTxt.GetComponent<Timer>().enabled = false;
+        TimerTxt_2P.GetComponent<Timer>().enabled = false;
+
     }
 	
 	// Update is called once per frame
@@ -50,6 +57,9 @@ public class GameManager : MonoBehaviour {
             Terrain.GetComponent<TerraScript>().enabled = true;
             Game_UI.GetComponent<Notes_C>().enabled = true;
             Game_UI_2P.GetComponent<Notes_C>().enabled = true;
+
+            TimerTxt.GetComponent<Timer>().enabled = true;
+            TimerTxt_2P.GetComponent<Timer>().enabled = true;
 
             Destroy(this.gameObject);
 

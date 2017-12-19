@@ -25,6 +25,6 @@ public class DominateBar : MonoBehaviour {
             Bar = 1;
         }
 
-        BarObj.anchorMax = new Vector2(Bar, 0.5f);
+        BarObj.transform.localPosition = new Vector3(-570 + (570 * Bar), BarObj.transform.localPosition.y, BarObj.transform.localPosition.z);
 	}
 }

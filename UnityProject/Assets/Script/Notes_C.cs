@@ -32,6 +32,9 @@ public class Notes_C : MonoBehaviour
     //[SerializeField]
     public GameObject GrowPoint;        //色を塗る判定
 
+    private bool ThreeTmp = false;
+    private int NoteCnt = 0;
+
     // Use this for initialization
     void Start()
     {
@@ -39,7 +42,11 @@ public class Notes_C : MonoBehaviour
         TerrainObj = GameObject.Find("Terrain").gameObject;
         //GrowPoint = GameObject.Find("Player/Sphere");
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
-        PlayerObj = GameObject.Find("Player").gameObject;
+
+        if (PlayerObj == null)
+        {
+            PlayerObj = GameObject.Find("Player").gameObject;
+        }
         playerScript = PlayerObj.GetComponent<Player>();
 
         Note_Span = Time.time;
@@ -48,22 +55,33 @@ public class Notes_C : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ノーツ生成の時間管理
         if (Time.time > Note_Span)
         {
-            if (lineNum % 1 == 0)
+            if (lineNum % 1 == 0 && NoteCnt < 3)
             {
                 SpawnNotes();
 
                 Note_Span += 60.0f / bpm / 4;
+
+                NoteCnt++;
             }
             else
             {
                 SpawnNotes();
 
-                Note_Span += 60.0f / bpm / 4;
+                Note_Span += 60.0f / (bpm * 2) / 4;
+
+                NoteCnt++;
+
+                if(NoteCnt > 4)
+                {
+                    NoteCnt = 0;
+                }
             }
         }
 
+        //ノーツの判定処理部分
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
@@ -86,7 +104,7 @@ public class Notes_C : MonoBehaviour
 
                 DestroyObject(GEfe, 3);
 
-                playerScript.addRangeScale(0.001f);
+                //playerScript.addRangeScale(0.001f);
 
                 GrowPoint.transform.localScale += new Vector3(0.5f, 0, 0);
 
@@ -96,6 +114,8 @@ public class Notes_C : MonoBehaviour
                 }
 
                 playerScript.Axel += 0.5f;
+
+                playerScript.AddGood();
 
                 //GrowPoint.isTrigger = false;
 
@@ -121,10 +141,12 @@ public class Notes_C : MonoBehaviour
                 Bad.transform.localScale = new Vector3(2, 2, 2);
 
                 Bar.GetComponent<BarAct>().BadAct();
-                playerScript.subRangeScale(0.001f);
+                //playerScript.subRangeScale(0.001f);
                 DestoryNote();
 
                 playerScript.Axel = 1;
+
+                playerScript.AddBad();
 
                 //GrowPoint.isTrigger = true;
             }
@@ -146,9 +168,10 @@ public class Notes_C : MonoBehaviour
             Bad.transform.localScale = new Vector3(2, 2, 2);
 
             Bar.GetComponent<BarAct>().BadAct();
-            playerScript.subRangeScale(0.001f);
+            //playerScript.subRangeScale(0.001f);
 
             playerScript.Axel = 1;
+            playerScript.AddBad();
 
             DestoryNote();
         }
