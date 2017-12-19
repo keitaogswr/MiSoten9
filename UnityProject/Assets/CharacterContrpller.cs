@@ -18,6 +18,8 @@ public class CharacterContrpller : MonoBehaviour {
     };
 
     public AnimationName startAnim = AnimationName.waitLoop_01;
+
+    private AnimationName nowAnimName;
     private Animator animator;
 
 	// Use this for initialization
@@ -26,25 +28,30 @@ public class CharacterContrpller : MonoBehaviour {
         if (animator  == null) {
             Debug.Log("nullだお");
         }
-        startAnimation(startAnim.ToString());
-	}
+        startAnimation(startAnim);
+        nowAnimName = startAnim;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
 
-    public void startAnimation (string animName) {
+    public void startAnimation (AnimationName animName) {
         if (animator != null) {
-            animator.SetBool(animName, true);
-            animator.Play(animName);
+            animator.SetBool(animName.ToString(), true);
+            animator.Play(animName.ToString());
         }
     }
 
-    public void changeAnimation (string nowAnim, string nextAnim) {
+    public void changeAnimation (AnimationName nowAnim, AnimationName nextAnim) {
         if (animator != null) {
-            animator.SetBool(nowAnim, false);
-            animator.SetBool(nextAnim, true);
+            animator.SetBool(nowAnim.ToString(), false);
+            animator.SetBool(nextAnim.ToString(), true);
         }
+    }
+
+    public AnimationName getNowAnimName () {
+        return nowAnimName;
     }
 }

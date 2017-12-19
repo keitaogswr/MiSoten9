@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class titeleScript02 : MonoBehaviour
 {
-
     GameObject TitleLogo, SubTitleLogo, PushBtn;
 
     float TitleScl, SubTitleScl, alpha;
