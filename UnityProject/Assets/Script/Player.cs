@@ -13,6 +13,9 @@ public class Player : MonoBehaviour {
         PLayer_2,
     };
 
+    [SerializeField]
+    private Vector3 Good_Bad_Score = new Vector3(0,0,0); //ｘ：Good数　Y：Bad数　Z：スコア
+
     private float moveSpeed = 0.0f;
     private float maxSpeed = 0.0f;
     private float minSpeed = 0.0f;
@@ -24,16 +27,18 @@ public class Player : MonoBehaviour {
     private string vertical;
     private string horizontal;
 
-    private GameObject HightTarget;
+    private GameObject HightTarget;     //色塗りの判定オブジェクト
    
-    public GameObject PlayerObj;
-    public GameObject PlayerCamera;
+    public GameObject PlayerObj;        //比空戦
+    public GameObject PlayerCamera;     //追従カメラ
 
     public float LerpHight = 40;
     public float LerpAngle = -80;
     private float LerpTimer = 0;
 
     public float Axel = 1;
+
+    private GameObject HaveScore; 
 
     // Use this for initialization
     void Start () {
@@ -64,11 +69,15 @@ public class Player : MonoBehaviour {
 
         brush = this.GetComponent<Es.InkPainter.Sample.Paint>();
 
+        HaveScore = GameObject.Find("HaveScore");
     }
 	
 	// Update is called once per frame
 	void Update () {
         Move();
+        HaveScore.GetComponent<HaveScore>().SetScore((int)Good_Bad_Score.z);
+        HaveScore.GetComponent<HaveScore>().SetGood((int)Good_Bad_Score.x);
+        HaveScore.GetComponent<HaveScore>().SetBad((int)Good_Bad_Score.y);
     }
 
     private void Move () {
@@ -121,7 +130,10 @@ public class Player : MonoBehaviour {
 
         transform.position += transform.forward * moveSpeed * Axel * Time.deltaTime;
 
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 500), transform.position.y, Mathf.Clamp(transform.position.z, 0, 500));
+
         LerpTimer += Time.deltaTime;
+
         PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);
         PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(PlayerCamera.transform.localRotation.x, LerpAngle, LerpTimer), PlayerCamera.transform.localRotation.y, PlayerCamera.transform.localRotation.z, PlayerCamera.transform.localRotation.w);
         
@@ -145,15 +157,25 @@ public class Player : MonoBehaviour {
         moveSpeed = speed;
     }
 
-    public void addRangeScale (float additional) {
-        brush.getBrush().Scale += additional;
+    //public void addRangeScale (float additional) {
+    //    brush.getBrush().Scale += additional;
+    //}
+
+    //public void subRangeScale(float subtract) {
+    //    brush.getBrush().Scale -= subtract;
+    //}
+
+    //public void setRangeScale (float scal) {
+    //    brush.getBrush().Scale = scal;
+    //}
+
+    public void AddGood()
+    {
+        Good_Bad_Score += new Vector3(1, 0, 0);
     }
 
-    public void subRangeScale(float subtract) {
-        brush.getBrush().Scale -= subtract;
-    }
-
-    public void setRangeScale (float scal) {
-        brush.getBrush().Scale = scal;
+    public void AddBad()
+    {
+        Good_Bad_Score += new Vector3(0, 1, 0);
     }
 }
