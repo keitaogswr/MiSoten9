@@ -35,19 +35,27 @@ public class FadeManager : MonoBehaviour {
         nextScene = null;
         FadeMode = Fade_Mode.Fade_None;
     }	
+
 	// Update is called once per frame
 	void Update () {
 		if (FadeMode != Fade_Mode.Fade_None) {
             int fadeInCount = 0;
+            int fadeNoneCount = 0;
             for (int i = 0; i < fadeList.Count; i++) {
                 if ((Fade_Mode)obj[i].GetComponent<Fade>().getFadeMode() == Fade_Mode.Fade_In) {
                     ++fadeInCount;
+                }
+                else if ((Fade_Mode)obj[i].GetComponent<Fade>().getFadeMode() == Fade_Mode.Fade_None) {
+                    ++fadeNoneCount;
                 }
             }
             if (fadeInCount == fadeList.Count && FadeMode != Fade_Mode.Fade_In) {
                 FadeMode = Fade_Mode.Fade_In;
                 SceneManager.LoadScene(nextScene);
                 fadeInCount = 0;
+            }
+            if (fadeNoneCount == fadeList.Count) {
+                FadeMode = Fade_Mode.Fade_None;
             }
         }
 	}
