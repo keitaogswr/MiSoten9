@@ -6,34 +6,40 @@ public class titeleScript02 : MonoBehaviour
 {
     GameObject TitleLogo, SubTitleLogo, PushBtn;
 
-    float TitleScl, SubTitleScl, alpha;
+    float TitleAlpha, SubTitleAlpha, BtnAlpha;
     bool b_pushBtn;
 
     // Use this for initialization
     void Start()
     {
-        TitleScl = 0;
-        SubTitleScl = 0;
-        alpha = 0.05f;
+        TitleAlpha = 0;
+        SubTitleAlpha = 0;
+        BtnAlpha = 0.05f;
         b_pushBtn = false;
 
         TitleLogo = GameObject.Find("Title_Canvas02/UI_title_0");
         SubTitleLogo = GameObject.Find("Title_Canvas02/UI_title_1");
         PushBtn = GameObject.Find("Title_Canvas02/UI_title_2");
+
+        PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TitleScl < 50)
+        if (TitleAlpha < 1.0f)
         {
-            TitleScl += 2f;
+            TitleAlpha += 0.02f;
         }
-        if (TitleScl >= 50)
+        if (TitleAlpha >= 1.0f)
         {
-            if (SubTitleScl < 50)
+            if (SubTitleAlpha < 1.0f)
             {
-                SubTitleScl += 2f;
+                SubTitleAlpha += 0.02f;
+            }
+            if (SubTitleAlpha >= 1.0f)
+            {
+                PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f + Mathf.Sin(Time.frameCount * BtnAlpha));
             }
         }
         if (Input.GetKey(KeyCode.Space))
@@ -42,11 +48,14 @@ public class titeleScript02 : MonoBehaviour
         }
         if (b_pushBtn)
         {
-            alpha = 0.2f;
+            BtnAlpha = 0.2f;
         }
 
-        TitleLogo.transform.localScale = new Vector3(TitleScl, TitleScl, TitleScl);
-        SubTitleLogo.transform.localScale = new Vector3(SubTitleScl, SubTitleScl, SubTitleScl);
-        PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f + Mathf.Sin(Time.frameCount * alpha));
+        //TitleLogo.transform.localScale = new Vector3(TitleAlpha, TitleAlpha, TitleAlpha);
+        //SubTitleLogo.transform.localScale = new Vector3(SubTitleAlpha, SubTitleAlpha, SubTitleAlpha);
+
+        TitleLogo.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0f + TitleAlpha);
+        SubTitleLogo.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0f + SubTitleAlpha);
+        PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f + Mathf.Sin(Time.frameCount * BtnAlpha));
     }
 }

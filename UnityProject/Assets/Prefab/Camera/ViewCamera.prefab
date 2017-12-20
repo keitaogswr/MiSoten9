@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 92334827412325918}
   - component: {fileID: 81887673894640896}
   - component: {fileID: 114921803302210826}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: ViewCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
