@@ -81,15 +81,18 @@ public class Player : MonoBehaviour {
     }
 
     private void Move () {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis(vertical) == 1) {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis(vertical) == 1)
+		{
             if (moveSpeed < maxSpeed) {
                 moveSpeed += acceleration;
             }
             else {
                 moveSpeed = maxSpeed;
             }
-        }
-        else {
+
+		}
+        else
+		{
             if (minSpeed < moveSpeed) {
                 moveSpeed -= acceleration;
             }
@@ -98,11 +101,11 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis(horizontal) == 1) {
+		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis(horizontal) == 1) {
             slope += acceleSlope;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis(horizontal) == -1) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis(horizontal) == -1) {
             slope -= acceleSlope;
         }
 
