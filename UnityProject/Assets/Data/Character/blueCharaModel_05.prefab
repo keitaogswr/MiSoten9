@@ -1412,6 +1412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4625327096437520}
   - component: {fileID: 95463298122835462}
+  - component: {fileID: 114721307457829834}
   m_Layer: 0
   m_Name: blueCharaModel_05
   m_TagString: Untagged
@@ -2796,7 +2797,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247997716221524}
-  m_LocalRotation: {x: 0.048788667, y: 0.7328104, z: -0.675275, w: -0.06791372}
+  m_LocalRotation: {x: 0.048788663, y: 0.7328104, z: -0.675275, w: -0.06791372}
   m_LocalPosition: {x: 0.045287304, y: -0.0059167026, z: -0.055897083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4623,7 +4624,7 @@ Animator:
   m_GameObject: {fileID: 1536265490518484}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0f268c7964ef1414ebbb81ccb5933dbc, type: 3}
-  m_Controller: {fileID: 9100000, guid: cb75aebe7ebcd124db71be539488e9fd, type: 2}
+  m_Controller: {fileID: 9100000, guid: cd2990e82df3d1149b8fb69e2cf844ff, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -4631,6 +4632,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114721307457829834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536265490518484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27363cad655953947987ada3631bb31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startAnim: 6
 --- !u!135 &135544838116557172
 SphereCollider:
   m_ObjectHideFlags: 1
