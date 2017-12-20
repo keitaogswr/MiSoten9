@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4055442424494908}
   - component: {fileID: 212597432162602108}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,8 @@ GameObject:
   - component: {fileID: 222030567911947268}
   - component: {fileID: 114727790406590734}
   - component: {fileID: 114702305856894620}
-  m_Layer: 0
+  - component: {fileID: 114443107124784532}
+  m_Layer: 5
   m_Name: BadText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4755598166671556}
   - component: {fileID: 212328581176826020}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +90,8 @@ GameObject:
   - component: {fileID: 222281847739136152}
   - component: {fileID: 114781223550862704}
   - component: {fileID: 114840168709612566}
-  m_Layer: 0
+  - component: {fileID: 114634340641404184}
+  m_Layer: 5
   m_Name: GoodText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +109,8 @@ GameObject:
   - component: {fileID: 222708042009334794}
   - component: {fileID: 114590717714692982}
   - component: {fileID: 114762340472694466}
-  m_Layer: 0
+  - component: {fileID: 114509763256287044}
+  m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4138150678067650}
   - component: {fileID: 212587379252468124}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GoodTimes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,6 +197,7 @@ GameObject:
   - component: {fileID: 114175411906301778}
   - component: {fileID: 114360422951496630}
   - component: {fileID: 114708308415261920}
+  - component: {fileID: 114466056325064844}
   m_Layer: 5
   m_Name: Canvas_Player01 1
   m_TagString: Untagged
@@ -210,7 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4077903839092292}
   - component: {fileID: 212239544860988380}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Bad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +232,7 @@ GameObject:
   - component: {fileID: 222306131731555846}
   - component: {fileID: 114173334047675548}
   - component: {fileID: 114685276605758542}
+  - component: {fileID: 114639988911078644}
   m_Layer: 5
   m_Name: FanText
   m_TagString: Untagged
@@ -244,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437750080447650}
   - component: {fileID: 212294860644030062}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4825837773978874}
   - component: {fileID: 212682564804833308}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,6 +299,7 @@ GameObject:
   - component: {fileID: 114775133755751524}
   - component: {fileID: 114975195924791944}
   - component: {fileID: 114384489339929604}
+  - component: {fileID: 114597989727302638}
   m_Layer: 5
   m_Name: NumText
   m_TagString: Untagged
@@ -345,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4101085688273286}
   - component: {fileID: 212346794617654548}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BadTimes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4326337503562260}
   - component: {fileID: 212787789568614876}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,6 +671,42 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114443107124784532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1036099034938310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
+--- !u!114 &114466056325064844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179183319592358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cb24e578bd654db5ddddaf941542d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FindCameraName: Main Camera
+--- !u!114 &114509763256287044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098903970756814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
 --- !u!114 &114511434300565926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,13 +746,49 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 88
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 114514
+--- !u!114 &114597989727302638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1764689465609610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
+--- !u!114 &114634340641404184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059657470503294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
+--- !u!114 &114639988911078644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417019161565110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a12f93b4d5844db24856c303c58b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxTime: 0.05
 --- !u!114 &114646662738861466
 MonoBehaviour:
   m_ObjectHideFlags: 1

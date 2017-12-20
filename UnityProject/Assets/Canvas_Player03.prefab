@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 114521000195801376}
   - component: {fileID: 114773871813820934}
   - component: {fileID: 114849646171754850}
+  - component: {fileID: 114651588048533172}
   m_Layer: 5
   m_Name: Canvas_Player03
   m_TagString: Untagged
@@ -1497,6 +1498,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 114514
+--- !u!114 &114651588048533172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651166075738196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3cb24e578bd654db5ddddaf941542d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FindCameraName: ViewCamera
 --- !u!114 &114652733892830112
 MonoBehaviour:
   m_ObjectHideFlags: 1
