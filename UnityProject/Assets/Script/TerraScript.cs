@@ -142,7 +142,7 @@ public class TerraScript : MonoBehaviour
         {
             //CheckTeraDominate();
 
-            Debug.Log("塗られた数:" + DominateCnt);
+            //Debug.Log("塗られた数:" + DominateCnt);
 
             
 

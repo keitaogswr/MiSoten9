@@ -31,18 +31,19 @@ public class Notes_A : MonoBehaviour {
             Note_Span += 60.0f / bpm / 4;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (FieldNote[0] != null && FieldNote[0].transform.position.x > 50)
-            {
-                Debug.Log("Good");
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			if (FieldNote[0] != null && FieldNote[0].transform.position.x > 50)
+			{
+				Debug.Log("Good");
 
-                DestoryNote();
-            }
-            
-        }
+				DestoryNote();
+			}
 
-        if (FieldNote[0] != null && FieldNote[0].transform.position.x > 150)
+		}
+
+
+		if (FieldNote[0] != null && FieldNote[0].transform.position.x > 150)
         {
             DestoryNote();
         }

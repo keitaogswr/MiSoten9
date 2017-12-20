@@ -11,30 +11,37 @@ public class player01_result : MonoBehaviour {
 
     float scorePosX, fanPosX, GoodPosX, BadPosX, NumPosX;
     float time;
+	int maxScore = 999999;
+	// Use this for initialization
+	void Start()
+	{
+		PlayerScore = new int[6];
 
-    // Use this for initialization
-    void Start ()
-    {
-        PlayerScore = new int[6];
+		// テキスト初期ポジション
+		scorePosX = 700f;
+		fanPosX = 10f;
+		GoodPosX = 10f;
+		BadPosX = 10f;
+		NumPosX = 700f;
 
-        // テキスト初期ポジション
-        scorePosX = 700f;
-        fanPosX = 10f;
-        GoodPosX = 10f;
-        BadPosX = 10f;
-        NumPosX = 700f;
+		//-------------------------------------------------------------------//
+		// スコアの設定 ここにスコアの数値いれてね
+		//-------------------------------------------------------------------//
 
-        //-------------------------------------------------------------------//
-        // スコアの設定 ここにスコアの数値いれてね
-        //-------------------------------------------------------------------//
-        PlayerScore[0] = 60000;     // スコア
-        PlayerScore[1] = 500;       // ファン数
-        PlayerScore[2] = 400;       // グッド数
-        PlayerScore[3] = 80;        // バッド数
-        PlayerScore[4] = 75;        // パーセント
-        //-------------------------------------------------------------------//
+		PlayerScore[1] = 500;       // ファン数
+		PlayerScore[2] = 400;       // グッド数
+		PlayerScore[3] = 80;        // バッド数
+		PlayerScore[4] = 75;        // パーセント
+		PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
+		
+		// スコアの最大桁制御
+		if (PlayerScore[0] > maxScore)
+		{
+			PlayerScore[0] = maxScore;
+		}
+		//-------------------------------------------------------------------//
 
-        ScoreTextObj    = GameObject.Find("Canvas_Player01/resultScores/ScoreText");
+		ScoreTextObj    = GameObject.Find("Canvas_Player01/resultScores/ScoreText");
         FanTextObj      = GameObject.Find("Canvas_Player01/resultScores/Fan/FanText");
         GoodTextObj     = GameObject.Find("Canvas_Player01/resultScores/Good/GoodText");
         BadTextObj      = GameObject.Find("Canvas_Player01/resultScores/Bad/BadText");
