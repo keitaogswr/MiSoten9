@@ -11,10 +11,14 @@ public class GameManager : MonoBehaviour {
     public GameObject Game_UI;
     public GameObject Game_UI_2P;
     public GameObject Flower;
+
+    public GameObject StartLogo;
+
     private GameObject TimerTxt;
     private GameObject TimerTxt_2P;
 
     public float WaitTimer;
+    private float StartTimer;
 
     public float ChangeSkyValue = 0.5f;
     private float Timer = 0;
@@ -28,7 +32,8 @@ public class GameManager : MonoBehaviour {
         Terrain.GetComponent<TerrainCollider>().enabled = false;
         Game_UI.GetComponent<Notes_C>().enabled = false;
         Game_UI_2P.GetComponent<Notes_C>().enabled = false;
-        
+
+        StartLogo.GetComponent<StartLogoAnim>().enabled = false;
 
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
@@ -38,6 +43,8 @@ public class GameManager : MonoBehaviour {
 
         TimerTxt.GetComponent<Timer>().enabled = false;
         TimerTxt_2P.GetComponent<Timer>().enabled = false;
+
+        StartTimer = 0;
 
     }
 	
@@ -51,17 +58,25 @@ public class GameManager : MonoBehaviour {
 
         if (Timer > WaitTimer)
         {
-            Player.GetComponent<Player>().enabled = true;
-            Player_2P.GetComponent<Player>().enabled = true;
-            Terrain.GetComponent<TerrainCollider>().enabled = true;
-            Terrain.GetComponent<TerraScript>().enabled = true;
-            Game_UI.GetComponent<Notes_C>().enabled = true;
-            Game_UI_2P.GetComponent<Notes_C>().enabled = true;
+            StartTimer += Time.deltaTime;
 
-            TimerTxt.GetComponent<Timer>().enabled = true;
-            TimerTxt_2P.GetComponent<Timer>().enabled = true;
+            if(StartTimer > 1)
+            {
+                Player.GetComponent<Player>().enabled = true;
+                Player_2P.GetComponent<Player>().enabled = true;
+                Terrain.GetComponent<TerrainCollider>().enabled = true;
+                Terrain.GetComponent<TerraScript>().enabled = true;
+                Game_UI.GetComponent<Notes_C>().enabled = true;
+                Game_UI_2P.GetComponent<Notes_C>().enabled = true;
 
-            Destroy(this.gameObject);
+                TimerTxt.GetComponent<Timer>().enabled = true;
+                TimerTxt_2P.GetComponent<Timer>().enabled = true;
+
+                Destroy(this.gameObject);
+            }
+            
+
+            StartLogo.GetComponent<StartLogoAnim>().enabled = true;
 
             GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Start";
             GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Start";

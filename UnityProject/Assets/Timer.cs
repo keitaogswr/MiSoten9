@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour {
     private int Mnt;
 
     private GameObject TimeOverText;
+    private bool bTimeOver = false;
 
 	// Use this for initialization
 	void Start ()
@@ -40,6 +41,8 @@ public class Timer : MonoBehaviour {
             {
                 TimeOverText.transform.localPosition = new Vector3(Mathf.Lerp(TimeOverText.transform.localPosition.x,0,0.25f + Time.deltaTime * 5), TimeOverText.transform.localPosition.y, TimeOverText.transform.localPosition.z);
 
+                bTimeOver = true;
+
                 time = 0;
             }
         }
@@ -53,5 +56,10 @@ public class Timer : MonoBehaviour {
             this.GetComponent<Text>().text = Mnt + ":" + (int)time;
         }
         
+    }
+
+    public bool GetTimeOverFlag()
+    {
+        return bTimeOver;
     }
 }

@@ -35,6 +35,8 @@ public class Notes_C : MonoBehaviour
     private bool ThreeTmp = false;
     private int NoteCnt = 0;
 
+    private Timer timer;
+
     // Use this for initialization
     void Start()
     {
@@ -50,37 +52,44 @@ public class Notes_C : MonoBehaviour
         playerScript = PlayerObj.GetComponent<Player>();
 
         Note_Span = Time.time;
+
+        timer = GameObject.Find("Player_UI_1/TimerFrame/Timer").GetComponent<Timer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ノーツ生成の時間管理
-        if (Time.time > Note_Span)
+        if (timer.GetTimeOverFlag())
         {
-            if (lineNum % 1 == 0 && NoteCnt < 3)
+        }
+        else
+        {
+            //ノーツ生成の時間管理
+            if (Time.time > Note_Span)
             {
-                SpawnNotes();
-
-                Note_Span += 60.0f / bpm / 4;
-
-                NoteCnt++;
-            }
-            else
-            {
-                SpawnNotes();
-
-                Note_Span += 60.0f / (bpm * 2) / 4;
-
-                NoteCnt++;
-
-                if(NoteCnt > 4)
+                if (lineNum % 1 == 0 && NoteCnt < 3)
                 {
-                    NoteCnt = 0;
+                    SpawnNotes();
+
+                    Note_Span += 60.0f / bpm / 4;
+
+                    NoteCnt++;
+                }
+                else
+                {
+                    SpawnNotes();
+
+                    Note_Span += 60.0f / (bpm * 2) / 4;
+
+                    NoteCnt++;
+
+                    if (NoteCnt > 4)
+                    {
+                        NoteCnt = 0;
+                    }
                 }
             }
         }
-
         //ノーツの判定処理部分
         if (Input.GetKeyDown(KeyCode.Space))
         {
