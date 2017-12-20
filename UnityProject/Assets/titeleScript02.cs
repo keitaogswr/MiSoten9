@@ -20,6 +20,8 @@ public class titeleScript02 : MonoBehaviour
         TitleLogo = GameObject.Find("Title_Canvas02/UI_title_0");
         SubTitleLogo = GameObject.Find("Title_Canvas02/UI_title_1");
         PushBtn = GameObject.Find("Title_Canvas02/UI_title_2");
+
+        PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -34,6 +36,10 @@ public class titeleScript02 : MonoBehaviour
             if (SubTitleAlpha < 1.0f)
             {
                 SubTitleAlpha += 0.02f;
+            }
+            if (SubTitleAlpha >= 1.0f)
+            {
+                PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f + Mathf.Sin(Time.frameCount * BtnAlpha));
             }
         }
         if (Input.GetKey(KeyCode.Space))
