@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class titeleScript02 : MonoBehaviour
-{
-    GameObject TitleLogo, SubTitleLogo, PushBtn;
+public class veiwTitleScript : MonoBehaviour {
 
-    float TitleAlpha, SubTitleAlpha, BtnAlpha;
-    bool b_pushBtn;
+    GameObject TitleLogo, SubTitleLogo;
+
+    float TitleAlpha, SubTitleAlpha;
 
     // Use this for initialization
     void Start()
     {
         TitleAlpha = 0;
         SubTitleAlpha = 0;
-        BtnAlpha = 0.05f;
-        b_pushBtn = false;
 
-        TitleLogo = GameObject.Find("Title_Canvas02/UI_title_0");
-        SubTitleLogo = GameObject.Find("Title_Canvas02/UI_title_1");
-        PushBtn = GameObject.Find("Title_Canvas02/UI_title_2");
+        TitleLogo = GameObject.Find("Title_Canvas03/UI_title_0");
+        SubTitleLogo = GameObject.Find("Title_Canvas03/UI_title_1");
     }
 
     // Update is called once per frame
@@ -36,20 +32,11 @@ public class titeleScript02 : MonoBehaviour
                 SubTitleAlpha += 0.02f;
             }
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            b_pushBtn = true;
-        }
-        if (b_pushBtn)
-        {
-            BtnAlpha = 0.2f;
-        }
 
         //TitleLogo.transform.localScale = new Vector3(TitleAlpha, TitleAlpha, TitleAlpha);
         //SubTitleLogo.transform.localScale = new Vector3(SubTitleAlpha, SubTitleAlpha, SubTitleAlpha);
 
         TitleLogo.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0f + TitleAlpha);
         SubTitleLogo.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0f + SubTitleAlpha);
-        PushBtn.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f + Mathf.Sin(Time.frameCount * BtnAlpha));
     }
 }
