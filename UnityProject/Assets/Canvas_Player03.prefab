@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224676046551185838}
   - component: {fileID: 222613881492868506}
   - component: {fileID: 114526973711017910}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224166876792470326}
   - component: {fileID: 222064795615846906}
   - component: {fileID: 114797109876854114}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScoreText5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 224360659360501942}
   - component: {fileID: 222108920557344736}
   - component: {fileID: 114332708422854962}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Image_Player03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 224769930789805560}
   - component: {fileID: 222140671745664968}
   - component: {fileID: 114981432468844930}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 222296106872564750}
   - component: {fileID: 114652733892830112}
   - component: {fileID: 114879040137300578}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: resultBgDot_Player03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 224463310457746670}
   - component: {fileID: 222691184164663842}
   - component: {fileID: 114573598131280672}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewFanText5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4905010787228116}
   - component: {fileID: 212989583360049504}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 224849840157349536}
   - component: {fileID: 222508021676597058}
   - component: {fileID: 114218505245696000}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewFanText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224859690638642814}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankScoreText5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4521562888251112}
   - component: {fileID: 212188253809700000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scoreTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224549167034741506}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankScoreText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4263235684642816}
   - component: {fileID: 212742309159518304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fanTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4042181391439554}
   - component: {fileID: 212706417932925488}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UI_result_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 224707712603870428}
   - component: {fileID: 222945235888502962}
   - component: {fileID: 114461828406223148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScoreText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224303546662547804}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankScoreText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 224350257577703296}
   - component: {fileID: 222178594019662186}
   - component: {fileID: 114942273994559792}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewFanText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224294041463863136}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224395234317884066}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: TOP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4566325045077666}
   - component: {fileID: 212298088344240592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 224622388971845600}
   - component: {fileID: 222596151045010334}
   - component: {fileID: 114198335772835878}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewFanText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4503962289720500}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ranking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4035971088190196}
   - component: {fileID: 212112391330225578}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rankTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4127602275339234}
   - component: {fileID: 212965568146638764}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scoreTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421283335098762}
   - component: {fileID: 212316798000732760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: fanTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 224670264056086846}
   - component: {fileID: 222911071735553830}
   - component: {fileID: 114725858529305386}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewFanText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 224369603394889106}
   - component: {fileID: 222820040545934072}
   - component: {fileID: 114933742172045052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScoreText4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4252008079442720}
   - component: {fileID: 212533013227938828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UI_result_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 222848731737640144}
   - component: {fileID: 114379767535617640}
   - component: {fileID: 114419839889252348}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: NewFanText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224306616564109498}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: BOTTOM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4037142577154504}
   - component: {fileID: 212211032080770860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4831619410802394}
   - component: {fileID: 212489926992336146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 114773871813820934}
   - component: {fileID: 114849646171754850}
   - component: {fileID: 114651588048533172}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas_Player03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4574580927206268}
   - component: {fileID: 212453542524172472}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rankTex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 224572324555998392}
   - component: {fileID: 222857536992565780}
   - component: {fileID: 114973266951505792}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 4522747293165050}
   - component: {fileID: 198549691286391342}
   - component: {fileID: 199517088668179872}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: FlowerRain_Player03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +593,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224816074114494284}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankScoreText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 224225810424798554}
   - component: {fileID: 222152585304205772}
   - component: {fileID: 114286355385685902}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4699939996848088}
   - component: {fileID: 212627974100052120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 114606578751503742}
   - component: {fileID: 114582447500416670}
   - component: {fileID: 114238699628992208}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 222451945481299100}
   - component: {fileID: 114148090992765348}
   - component: {fileID: 114145427606463490}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: resultBg_Player03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 222116779578259568}
   - component: {fileID: 114490836851933574}
   - component: {fileID: 114580951719286840}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416549052274790}
   - component: {fileID: 212662331311904032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MillionPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   - component: {fileID: 224635489727847774}
   - component: {fileID: 222932173136652682}
   - component: {fileID: 114089697392441280}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankText5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ GameObject:
   - component: {fileID: 224516004098737044}
   - component: {fileID: 222398712217235414}
   - component: {fileID: 114687957100153300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScoreText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 224379339933943778}
   - component: {fileID: 222232270454558844}
   - component: {fileID: 114420988876357490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ScoreText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224227976711616000}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: RankScoreText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224230759113229850}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: SubScoreUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
