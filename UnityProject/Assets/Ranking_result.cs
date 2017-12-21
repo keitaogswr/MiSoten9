@@ -272,7 +272,7 @@ public class Ranking_result : MonoBehaviour {
         //---------------------------------------------------//
         Ranking[5, 0] = 60000;  // スコア
         Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
-        Ranking[5, 2] = 350;     // ファン数
+        Ranking[5, 2] = 350;    // ファン数
 
         // 今回のスコアを保存
         NewScore[0] = Ranking[5, 0];
