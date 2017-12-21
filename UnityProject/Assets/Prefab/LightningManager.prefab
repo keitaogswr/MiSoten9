@@ -55,3 +55,11 @@ MonoBehaviour:
     type: 2}
   range_min: 0
   range_max: 50
+  creation_interval: 10
+  survival_time: 0.5
+  fall_point:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

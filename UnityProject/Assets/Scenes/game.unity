@@ -567,6 +567,78 @@ GameObject:
   m_PrefabParentObject: {fileID: 1695752821051078, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
     type: 2}
   m_PrefabInternal: {fileID: 1129334414}
+--- !u!1001 &651455578
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552758372476066, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: fall_point.Array.data[0]
+      value: 
+      objectReference: {fileID: 1878623665}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: fall_point.Array.data[1]
+      value: 
+      objectReference: {fileID: 777216606}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: fall_point.Array.data[2]
+      value: 
+      objectReference: {fileID: 682188934}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: fall_point.Array.data[3]
+      value: 
+      objectReference: {fileID: 1194636926}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: fall_point.Array.data[4]
+      value: 
+      objectReference: {fileID: 730075509}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: creation_interval
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &682188934 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1046194133795768, guid: 9d5ff75b91ac390478a42ac63e3de0ea,
