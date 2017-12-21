@@ -8,6 +8,7 @@ public class ResultManager : MonoBehaviour {
     private FadeManager fade = null;
     [SerializeField]
     private GameObject create = null;
+    float time = 0;
 
     // Use this for initialization
     void Awake() {
@@ -29,9 +30,14 @@ public class ResultManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.Return)) {
-            if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
-                fade.setFade(nextScene);
+        time += Time.deltaTime;
+
+        if (time > 7)
+        {
+            if (Input.GetKey(KeyCode.Return)) {
+                if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
+                    fade.setFade(nextScene);
+                }
             }
         }
 
