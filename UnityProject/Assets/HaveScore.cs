@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class HaveScore : MonoBehaviour {
 
-    public int Good;
-    public int Bad;
-    public int Score;
+    [SerializeField]
+    private int[] Good = new int[2];
+
+    [SerializeField]
+    private int[] Bad = new int[2];
+
+    [SerializeField]
+    private int[] Score = new int[2];
 
 	// Use this for initialization
 	void Start () {
@@ -19,18 +24,23 @@ public class HaveScore : MonoBehaviour {
 		
 	}
 
-    public void SetScore(int score)
+    public void SetScore(int score,int P)
     {
-        Score = score;
+        Score[P] = score;
     }
 
-    public void SetGood(int good)
+    public void SetGood(int good,int P)
     {
-        Good = good;
+        Good[P] = good;
     }
 
-    public void SetBad(int bad)
+    public void SetBad(int bad,int P)
     {
-        Bad = bad;
+        Bad[P] = bad;
+    }
+
+    public int GetScore(int id)
+    {
+        return Score[id];
     }
 }

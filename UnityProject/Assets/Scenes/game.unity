@@ -961,6 +961,24 @@ GameObject:
   m_PrefabParentObject: {fileID: 1336516549777244, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
     type: 2}
   m_PrefabInternal: {fileID: 1129334414}
+--- !u!1 &1046455086 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1903206361625552, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1129334414}
+--- !u!114 &1046455090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046455086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a7aa1b9006b95418879e7a6bcd78c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  haveScore: {fileID: 1357840501}
+  PlayerID: 0
 --- !u!1001 &1129334414
 Prefab:
   m_ObjectHideFlags: 0
@@ -1103,6 +1121,21 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114966950618401242, guid: 72574f0abfd1630448097780a4bfec46,
+        type: 2}
+      propertyPath: Bad.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966950618401242, guid: 72574f0abfd1630448097780a4bfec46,
+        type: 2}
+      propertyPath: Good.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966950618401242, guid: 72574f0abfd1630448097780a4bfec46,
+        type: 2}
+      propertyPath: Score.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4076456177875638, guid: 72574f0abfd1630448097780a4bfec46, type: 2}
       propertyPath: m_LocalPosition.x
       value: -1000
@@ -1138,6 +1171,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72574f0abfd1630448097780a4bfec46, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1357840501 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1143010743661540, guid: 72574f0abfd1630448097780a4bfec46,
+    type: 2}
+  m_PrefabInternal: {fileID: 1355665642}
 --- !u!1 &1367683211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,6 +2510,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1536525096}
+--- !u!1 &1622746264 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1463655435051134, guid: 39de0c07eaf24dd4885845d42aa1dab5,
+    type: 2}
+  m_PrefabInternal: {fileID: 810845154}
+--- !u!114 &1622746268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622746264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a7aa1b9006b95418879e7a6bcd78c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  haveScore: {fileID: 1357840501}
+  PlayerID: 1
 --- !u!1 &1651340124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3163,11 @@ Prefab:
     - target: {fileID: 1245679697414594, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114946910104538304, guid: 1b5fe8aafc1068a4ab9496c252790824,
+        type: 2}
+      propertyPath: AddFanTimerDray
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}

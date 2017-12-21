@@ -24,6 +24,9 @@ public class Player : MonoBehaviour {
     private float acceleSlope = 0.0f;
     private Es.InkPainter.Sample.Paint brush;
 
+    public float AddFanTimerDray;
+    private float AddFanTimer;
+
     private string vertical;
     private string horizontal;
 
@@ -73,14 +76,23 @@ public class Player : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         Move();
-        HaveScore.GetComponent<HaveScore>().SetScore((int)Good_Bad_Score.z);
-        HaveScore.GetComponent<HaveScore>().SetGood((int)Good_Bad_Score.x);
-        HaveScore.GetComponent<HaveScore>().SetBad((int)Good_Bad_Score.y);
+        HaveScore.GetComponent<HaveScore>().SetScore((int)Good_Bad_Score.z,(int)playerNum - 1);
+        HaveScore.GetComponent<HaveScore>().SetGood((int)Good_Bad_Score.x, (int)playerNum - 1);
+        HaveScore.GetComponent<HaveScore>().SetBad((int)Good_Bad_Score.y, (int)playerNum - 1);
+
+        AddFanTimer += Time.deltaTime;
+
+        if(AddFanTimer > AddFanTimerDray)
+        {
+            AddFan(1);
+        }
     }
 
-    private void Move () {
+    private void Move ()
+    {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis(vertical) == 1)
 		{
             if (moveSpeed < maxSpeed) {
