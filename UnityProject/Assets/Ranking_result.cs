@@ -25,6 +25,8 @@ public class Ranking_result : MonoBehaviour {
 
     const string SCORE_KEY = "SCORE";
 
+    float time = 0;
+
     //*******************************************
     // 初回起動時のみ呼ばれるメソッド
     // PlayerPrefsの初期データ格納用
@@ -212,9 +214,10 @@ public class Ranking_result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // Aキー押すと隠してたランキング表示するよ
+        time += Time.deltaTime;
+
         // 音が鳴り終わるタイミングで表示させてね
-        if(Input.GetKeyDown(KeyCode.A))
+        if (time > 5)
         {
             NonAlphaImage.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         }
