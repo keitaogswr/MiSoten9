@@ -181,4 +181,9 @@ public class Player : MonoBehaviour {
     {
         Good_Bad_Score += new Vector3(0, 1, 0);
     }
+
+    public void AddFan(int AddNum)
+    {
+        Good_Bad_Score += new Vector3(0, 0, AddNum);
+    }
 }

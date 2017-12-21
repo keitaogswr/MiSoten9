@@ -10,9 +10,15 @@ public class CheckPoint : MonoBehaviour {
     private bool drawStart = false;
     private bool drawEnd = false;
     public GameObject drawSphere = null;
+
+    private bool bNextVillage;
+
+    private NextPlace NextPlaceScript;
+
     // Use this for initialization
     void Start () {
 
+        NextPlaceScript = GameObject.Find("BoyNextDoorManager").GetComponent<NextPlace>();
 
         if (drawSphere == null) {
             Debug.Log("オブジェクトが設定されていないので、検索します。");
@@ -28,6 +34,8 @@ public class CheckPoint : MonoBehaviour {
         else {
             drawSphere.SetActive(false);
         }
+
+        bNextVillage = false;
     }
 	
 	// Update is called once per frame
@@ -52,6 +60,18 @@ public class CheckPoint : MonoBehaviour {
             if (!drawEnd) {
                 drawSphere.SetActive(true);
             }
+
+            if(bNextVillage)
+            {
+                Destroy(transform.FindChild("NextInfoParticle(Clone)").gameObject);
+                NextPlaceScript.ClearPoint();
+                bNextVillage = false;
+            }
         }
+    }
+
+    public void SetNextVillage()
+    {
+        bNextVillage = true;
     }
 }
