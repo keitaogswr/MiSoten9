@@ -10,7 +10,7 @@ public class GameScene : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
-        if (!GameObject.Find(create.name)) {
+        if (GameObject.Find(create.name) == null) {
             Debug.Log("createManager is null.");
             GameObject manager = Instantiate(create);
             manager.name = create.name;
