@@ -34,5 +34,7 @@ public class ResultManager : MonoBehaviour {
                 fade.setFade(nextScene);
             }
         }
+
+        Destroy(GameObject.Find("HaveScore"));
     }
 }
