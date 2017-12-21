@@ -38,7 +38,7 @@ public class Player : MonoBehaviour {
 
     public float Axel = 1;
 
-    private GameObject HaveScore; 
+	private GameObject HaveScore; 
 
     // Use this for initialization
     void Start () {
@@ -133,14 +133,16 @@ public class Player : MonoBehaviour {
 
         transform.position += transform.forward * moveSpeed * Axel * Time.deltaTime;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 500), transform.position.y, Mathf.Clamp(transform.position.z, 0, 500));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 499), transform.position.y, Mathf.Clamp(transform.position.z, 0, 499));
 
-        LerpTimer += Time.deltaTime;
+		LerpTimer += Time.deltaTime;
 
         PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);
         PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(PlayerCamera.transform.localRotation.x, LerpAngle, LerpTimer), PlayerCamera.transform.localRotation.y, PlayerCamera.transform.localRotation.z, PlayerCamera.transform.localRotation.w);
-        
-        if(LerpAngle == -0.45f)
+
+
+
+		if (LerpAngle == -0.45f)
         {
             PlayerCamera.transform.localPosition = new Vector3(0, -7, Mathf.Lerp(PlayerCamera.transform.localPosition.z, -6, LerpTimer));
         }
