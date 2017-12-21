@@ -69,29 +69,22 @@ public class player01_result : MonoBehaviour {
 
         if (time > 3)
         {
-            scorePosX -= 50;
-            if (scorePosX < 0)
-            {
-                scorePosX = 0;
-            }
-        }
-        if (time > 3.5f)
-        {
             fanPosX -= 1;
             if (fanPosX < 0)
             {
                 fanPosX = 0;
             }
         }
-        if (time > 4)
+        if (time > 3.5f)
         {
             GoodPosX -= 1;
             if (GoodPosX < 0)
             {
                 GoodPosX = 0;
             }
+
         }
-        if (time > 4.5f)
+        if (time > 4)
         {
             BadPosX -= 1;
             if (BadPosX < 0)
@@ -99,12 +92,20 @@ public class player01_result : MonoBehaviour {
                 BadPosX = 0;
             }
         }
-        if (time > 5)
+        if (time > 4.5f)
         {
             NumPosX -= 50;
             if (NumPosX < 0)
             {
                 NumPosX = 0;
+            }
+        }
+        if (time > 5)
+        {
+            scorePosX -= 50;
+            if (scorePosX < 0)
+            {
+                scorePosX = 0;
             }
         }
 
