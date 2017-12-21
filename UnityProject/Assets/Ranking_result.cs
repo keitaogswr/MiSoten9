@@ -15,6 +15,7 @@ public class Ranking_result : MonoBehaviour {
     bool chkEnd = false;
 
     GameObject[,] RankObj;
+    GameObject NonAlphaImage;
     int[] NewScore, SaveRanking, LoadRanking;
     int[,] Ranking;
 
@@ -83,6 +84,9 @@ public class Ranking_result : MonoBehaviour {
         Ranking     = new int[MaxRank, MaxText];
         SaveRanking = new int[MaxRank * MaxText];
         LoadRanking = new int[MaxRank * MaxText];
+        NonAlphaImage = GameObject.Find("Canvas_Player03/Image_NonAlpha");
+
+        NonAlphaImage.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         // 読み込み
         LoadRanking = PlayerPrefsX.GetIntArray(SCORE_KEY);
@@ -208,7 +212,14 @@ public class Ranking_result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // リセット
+        // Aキー押すと隠してたランキング表示するよ
+        // 音が鳴り終わるタイミングで表示させてね
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            NonAlphaImage.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        }
+
+        // エンターでランキングリセット
         if (Input.GetKeyDown(KeyCode.Return))
         {
             scoreReset = true;
