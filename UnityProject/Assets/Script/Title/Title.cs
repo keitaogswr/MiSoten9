@@ -27,7 +27,8 @@ public class Title : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.Return)) {
-            if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
+            if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None){
+                AudioManager.Instance.PlaySE("button82");
                 fade.setFade(nextScene);
             }
         }

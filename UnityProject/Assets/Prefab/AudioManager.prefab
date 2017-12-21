@@ -54,4 +54,5 @@ MonoBehaviour:
   BGMList: []
   SEList:
   - {fileID: 8300000, guid: b4c2f7c0d4531324f8cdcaf993ba61aa, type: 3}
+  - {fileID: 8300000, guid: 5e48d0136bd870c45a48b67f5ccc20ba, type: 3}
   MaxSE: 10
