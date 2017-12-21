@@ -6,6 +6,7 @@ public class CheckPoint : MonoBehaviour {
 
     public float sec = 5.0f;
     public float addScal = 0.0f;
+    private int AddFunNum = 8000;
     private float elapsedTime = 0.0f;
     private bool drawStart = false;
     private bool drawEnd = false;
@@ -66,6 +67,7 @@ public class CheckPoint : MonoBehaviour {
                 Destroy(transform.FindChild("NextInfoParticle(Clone)").gameObject);
                 NextPlaceScript.ClearPoint();
                 bNextVillage = false;
+                other.gameObject.GetComponent<Player>().AddFan(AddFunNum);
             }
         }
     }

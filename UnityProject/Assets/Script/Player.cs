@@ -88,6 +88,7 @@ public class Player : MonoBehaviour {
         if(AddFanTimer > AddFanTimerDray)
         {
             AddFan(1);
+            AddFanTimer = 0;
         }
     }
 
