@@ -7,7 +7,7 @@ public class Title : MonoBehaviour {
     private FadeManager fade = null;
     [SerializeField]
     private GameObject create = null;
-
+	private bool seFlag = false;
 	// Use this for initialization
     void Awake () {
         if (!GameObject.Find(create.name)) {
@@ -26,9 +26,14 @@ public class Title : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.Return)) {
-            if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None){
-                AudioManager.Instance.PlaySE("button82");
+        if (Input.GetKeyDown(KeyCode.Return)) {
+			if (!seFlag)
+			{
+				seFlag = true;
+				AudioManager.Instance.PlaySE("button32");
+			}
+
+			if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
                 fade.setFade(nextScene);
             }
         }

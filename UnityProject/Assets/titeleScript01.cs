@@ -42,6 +42,7 @@ public class titeleScript01 : MonoBehaviour {
         }
         if(Input.GetKey(KeyCode.Space))
         {
+
             b_pushBtn = true;
         }
         if(b_pushBtn)

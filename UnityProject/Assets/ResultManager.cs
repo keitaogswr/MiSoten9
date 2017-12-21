@@ -9,7 +9,8 @@ public class ResultManager : MonoBehaviour {
     [SerializeField]
     private GameObject create = null;
     float time = 0;
-
+    
+	private bool seFlag = false;
     // Use this for initialization
     void Awake() {
         if (!GameObject.Find(create.name)) {
@@ -34,8 +35,16 @@ public class ResultManager : MonoBehaviour {
 
         if (time > 7)
         {
-            if (Input.GetKey(KeyCode.Return)) {
-                if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                if (!seFlag)
+                {
+                    seFlag = true;
+                    AudioManager.Instance.PlaySE("button36");
+                }
+
+                if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None)
+                {
                     fade.setFade(nextScene);
                 }
             }
