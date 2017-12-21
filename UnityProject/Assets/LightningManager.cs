@@ -25,9 +25,9 @@ public class LightningManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //  スペース押されたら生成。
-		if (Input.GetKeyDown(KeyCode.Space)) {
-            RandomCreate();
-        }
+		//if (Input.GetKeyDown(KeyCode.Space)) {
+  //          RandomCreate();
+  //      }
 
         //  カウントアップ。
         createCounter += Time.deltaTime;

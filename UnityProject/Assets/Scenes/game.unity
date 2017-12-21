@@ -589,6 +589,11 @@ Prefab:
       propertyPath: fall_point.Array.data[4]
       value: 
       objectReference: {fileID: 730075509}
+    - target: {fileID: 114345112500615010, guid: 656903adedd6b8145b4899e5a11703eb,
+        type: 2}
+      propertyPath: creation_interval
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 656903adedd6b8145b4899e5a11703eb, type: 2}
   m_IsPrefabParent: 0
