@@ -9,8 +9,9 @@ public class ResultManager : MonoBehaviour {
     [SerializeField]
     private GameObject create = null;
     float time = 0;
-    
 	private bool seFlag = false;
+	private bool bgmFlag = false;
+
     // Use this for initialization
     void Awake() {
         if (!GameObject.Find(create.name)) {
@@ -35,18 +36,28 @@ public class ResultManager : MonoBehaviour {
 
         if (time > 7)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+
+			if (!bgmFlag)
+			{
+				bgmFlag = true;
+				AudioManager.Instance.PlayBGM("genes_rock", true);
+				AudioManager.Instance.SetVolumeBGM(0.3f);
+			}
+
+			if (Input.GetKeyDown(KeyCode.Return))
             {
                 if (!seFlag)
                 {
                     seFlag = true;
-                    AudioManager.Instance.PlaySE("button36");
-                }
+                    AudioManager.Instance.PlaySE("button32");
+				}
 
                 if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None)
                 {
-                    fade.setFade(nextScene);
-                }
+					AudioManager.Instance.StopBGM();
+					fade.setFade(nextScene);
+
+				}
             }
         }
 

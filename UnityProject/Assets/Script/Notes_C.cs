@@ -95,9 +95,12 @@ public class Notes_C : MonoBehaviour
         {
             if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
             {
-                //Debug.Log("Good");
+				//Debug.Log("Good");
 
-                GameObject Good = Instantiate(GoodText);
+				AudioManager.Instance.PlaySE("syan");
+				AudioManager.Instance.SetVolumSE(0.3f);
+
+				GameObject Good = Instantiate(GoodText);
 
                 Good.transform.SetParent(this.transform);
 

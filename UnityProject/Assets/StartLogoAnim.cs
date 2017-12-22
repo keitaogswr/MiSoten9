@@ -33,7 +33,8 @@ public class StartLogoAnim : MonoBehaviour {
             if(transform.localScale.x < 0)
             {
                 Destroy(this.gameObject);
-            }
+
+			}
         }
 	}
 }
