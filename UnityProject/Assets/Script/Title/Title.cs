@@ -22,7 +22,9 @@ public class Title : MonoBehaviour {
         if (fade == null) {
             Debug.Log("fadeManager is null.");
         }
-    }
+		AudioManager.Instance.PlayBGM("dededon", true);
+		AudioManager.Instance.SetVolumeBGM(0.3f);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,7 +37,9 @@ public class Title : MonoBehaviour {
 
 			if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
                 fade.setFade(nextScene);
-            }
-        }
+				AudioManager.Instance.StopBGM();
+
+			}
+		}
     }
 }

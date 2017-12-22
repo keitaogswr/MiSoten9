@@ -11,6 +11,8 @@ public class Tornado : MonoBehaviour {
     // Use this for initialization
     void Start () {
 		AudioManager.Instance.PlaySE("Wind-Synthetic02-2");
+		AudioManager.Instance.SetVolumSE(0.1f);
+
 		particlre = this.GetComponentsInChildren<ParticleSystem>();
         transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
     }

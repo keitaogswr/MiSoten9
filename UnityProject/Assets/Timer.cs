@@ -18,7 +18,11 @@ public class Timer : MonoBehaviour {
         time = (int)sec % 60;
 
         TimeOverText = GameObject.Find(this.transform.root.transform.gameObject.name + "/TIMEOVER_TEXT");
-    }
+
+		AudioManager.Instance.PlayBGM("Unite In The Sky (short)", false);
+		AudioManager.Instance.SetVolumeBGM(0.1f);
+
+	}
 	
 	// Update is called once per frame
 	void Update ()

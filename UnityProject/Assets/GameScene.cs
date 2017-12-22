@@ -33,7 +33,9 @@ public class GameScene : MonoBehaviour {
                 Player player2 = GameObject.Find("Player2").GetComponent<Player>();
                 player1.transform.DetachChildren();
                 player2.transform.DetachChildren();
-            }
+				AudioManager.Instance.StopBGM();
+
+			}
         }
     }
 }
