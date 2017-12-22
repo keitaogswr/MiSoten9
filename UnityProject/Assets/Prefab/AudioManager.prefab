@@ -51,10 +51,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d315be60f62894a913ce19472dad24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMList: []
-  SEList:
-  - {fileID: 8300000, guid: b4c2f7c0d4531324f8cdcaf993ba61aa, type: 3}
-  - {fileID: 8300000, guid: 000fb4513cb6271409d5a12037834310, type: 3}
-  - {fileID: 8300000, guid: 4d0efb7221b0fde4dbfc7b128172277c, type: 3}
-  - {fileID: 8300000, guid: 27dd762b775d34e4394ab7a64577ba49, type: 3}
+  bgmList: []
+  seList:
+  - audio: {fileID: 8300000, guid: b4c2f7c0d4531324f8cdcaf993ba61aa, type: 3}
+    volume: 1
+  - audio: {fileID: 8300000, guid: 000fb4513cb6271409d5a12037834310, type: 3}
+    volume: 1
+  - audio: {fileID: 8300000, guid: 4d0efb7221b0fde4dbfc7b128172277c, type: 3}
+    volume: 1
+  - audio: {fileID: 8300000, guid: 27dd762b775d34e4394ab7a64577ba49, type: 3}
+    volume: 0.13
   MaxSE: 10
