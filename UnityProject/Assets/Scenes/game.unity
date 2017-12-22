@@ -581,6 +581,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1046194133795768, guid: 9d5ff75b91ac390478a42ac63e3de0ea,
     type: 2}
   m_PrefabInternal: {fileID: 1826486106}
+--- !u!1 &773536551 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1422737118471380, guid: 656903adedd6b8145b4899e5a11703eb,
+    type: 2}
+  m_PrefabInternal: {fileID: 212794586}
 --- !u!1 &777216606 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1046194133795768, guid: 9d5ff75b91ac390478a42ac63e3de0ea,
@@ -2480,6 +2485,11 @@ Prefab:
       propertyPath: TornadeMane
       value: 
       objectReference: {fileID: 1001672026}
+    - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
+        type: 2}
+      propertyPath: LightningMane
+      value: 
+      objectReference: {fileID: 773536551}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a, type: 2}
   m_IsPrefabParent: 0
