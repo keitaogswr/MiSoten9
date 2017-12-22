@@ -12,6 +12,9 @@ public class player01_result : MonoBehaviour {
     float scorePosX, fanPosX, GoodPosX, BadPosX, NumPosX;
     float time;
 	int maxScore = 999999;
+
+    GameObject ScoreGetObj;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -24,16 +27,27 @@ public class player01_result : MonoBehaviour {
 		BadPosX = 10f;
 		NumPosX = 700f;
 
-		//-------------------------------------------------------------------//
-		// スコアの設定 ここにスコアの数値いれてね
-		//-------------------------------------------------------------------//
+        //-------------------------------------------------------------------//
+        // スコアの設定 ここにスコアの数値いれてね
+        //-------------------------------------------------------------------//
+        ScoreGetObj = GameObject.Find("HaveScore");
+        if (ScoreGetObj != null)
+        {
+            PlayerScore[1] = ScoreGetObj.GetComponent<HaveScore>().GetScore(0);       // ファン数
+            PlayerScore[2] = ScoreGetObj.GetComponent<HaveScore>().GetGood(0);       // グッド数
+            PlayerScore[3] = ScoreGetObj.GetComponent<HaveScore>().GetBad(0);        // バッド数
+            PlayerScore[4] = ScoreGetObj.GetComponent<HaveScore>().GetDominatePer();        // パーセント
+            PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
+        }
+        else
+        {
+            PlayerScore[1] = 500;       // ファン数
+            PlayerScore[2] = 400;       // グッド数
+            PlayerScore[3] = 80;        // バッド数
+            PlayerScore[4] = 75;        // パーセント
+            PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
+        }
 
-		PlayerScore[1] = 500;       // ファン数
-		PlayerScore[2] = 400;       // グッド数
-		PlayerScore[3] = 80;        // バッド数
-		PlayerScore[4] = 75;        // パーセント
-		PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
-		
 		// スコアの最大桁制御
 		if (PlayerScore[0] > maxScore)
 		{
@@ -48,6 +62,8 @@ public class player01_result : MonoBehaviour {
         NumTextObj      = GameObject.Find("Canvas_Player01/FlowerImage/NumText");
 
         StartCoroutine("ChangeFontColor");
+
+        
     }
 	
 	// Update is called once per frame

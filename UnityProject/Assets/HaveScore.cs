@@ -13,6 +13,9 @@ public class HaveScore : MonoBehaviour {
     [SerializeField]
     private int[] Score = new int[2];
 
+    [SerializeField]
+    private int DominatePer = 0;
+
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
@@ -23,6 +26,11 @@ public class HaveScore : MonoBehaviour {
     {
 		
 	}
+
+    public void SetDominatePer(float Per)
+    {
+        DominatePer = (int)(Per * 100);
+    }
 
     public void SetScore(int score,int P)
     {
@@ -42,5 +50,20 @@ public class HaveScore : MonoBehaviour {
     public int GetScore(int id)
     {
         return Score[id];
+    }
+
+    public int GetGood(int id)
+    {
+        return Good[id];
+    }
+
+    public int GetBad(int id)
+    {
+        return Bad[id];
+    }
+
+    public int GetDominatePer()
+    {
+        return DominatePer;
     }
 }
