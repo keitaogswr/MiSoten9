@@ -69,4 +69,6 @@ MonoBehaviour:
     volume: 0.136
   - audio: {fileID: 8300000, guid: c4262854d9cc0214faa3ddc5ceedf42e, type: 3}
     volume: 0.136
+  - audio: {fileID: 8300000, guid: 44fca2751e401614b840e3d2f9650f29, type: 3}
+    volume: 0.136
   MaxSE: 30
