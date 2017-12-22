@@ -40,7 +40,7 @@ public class ResultManager : MonoBehaviour {
 			if (!bgmFlag)
 			{
 				bgmFlag = true;
-				AudioManager.Instance.PlayBGM("NSC-SC-6804", true);
+				AudioManager.Instance.PlayBGM("Loop_148", true);
 				AudioManager.Instance.SetVolumeBGM(0.3f);
 			}
 

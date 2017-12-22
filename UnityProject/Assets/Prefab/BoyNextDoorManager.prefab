@@ -9,60 +9,51 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1245944331882024}
+  m_RootGameObject: {fileID: 1557955106355082}
   m_IsPrefabParent: 1
---- !u!1 &1245944331882024
+--- !u!1 &1557955106355082
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4454535325901218}
-  - component: {fileID: 114187060918264262}
+  - component: {fileID: 4211609411482342}
+  - component: {fileID: 114804751448660492}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: BoyNextDoorManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4454535325901218
+--- !u!4 &4211609411482342
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245944331882024}
+  m_GameObject: {fileID: 1557955106355082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 245.24072, y: 78.2867, z: 47.85884}
+  m_LocalPosition: {x: 136.52934, y: 73.64838, z: 403.19226}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114187060918264262
+--- !u!114 &114804751448660492
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1245944331882024}
+  m_GameObject: {fileID: 1557955106355082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4e71f2e77eb1445abcc31130b24f7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b3a36dac17d2ba4888ff090ece3dbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  Player_2P: {fileID: 0}
-  Terrain: {fileID: 0}
-  Game_UI: {fileID: 0}
-  Game_UI_2P: {fileID: 0}
-  Flower: {fileID: 1108044631004010, guid: 0c13ee6d1ceb5584687fb1aa3112f093, type: 2}
-  NextInfo: {fileID: 0}
-  StartLogo: {fileID: 0}
-  Bokashi: {fileID: 0}
-  Bokashi_2P: {fileID: 0}
-  TornadeMane: {fileID: 0}
-  LightningMane: {fileID: 0}
-  WaitTimer: 1
-  ClickTime: 1
-  ChangeSkyValue: 0.5
+  NextIcon: {fileID: 1228292248533990, guid: 1dbd2c365c01d834792ea28e2b84dedf, type: 2}
+  Village: {fileID: 0}
+  Village_2: {fileID: 0}
+  Village_3: {fileID: 0}
+  Village_4: {fileID: 0}
+  Village_5: {fileID: 0}
