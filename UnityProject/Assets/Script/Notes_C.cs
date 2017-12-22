@@ -71,7 +71,7 @@ public class Notes_C : MonoBehaviour
                 {
                     SpawnNotes();
 
-                    Note_Span += 60.0f / bpm / 4;
+                    Note_Span += 60.0f / bpm * 0.5f;
 
                     NoteCnt++;
                 }
@@ -79,7 +79,7 @@ public class Notes_C : MonoBehaviour
                 {
                     SpawnNotes();
 
-                    Note_Span += 60.0f / (bpm * 2) / 4;
+                    Note_Span += 60.0f / bpm * 0.5f;
 
                     NoteCnt++;
 
