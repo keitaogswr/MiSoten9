@@ -15,6 +15,8 @@ public class CameraSwitcher : MonoBehaviour
     Transform target;
     Vector3 followPoint;
 
+    public GameObject liveCamera;
+
     void Start()
     {
         // Target information.
@@ -27,6 +29,7 @@ public class CameraSwitcher : MonoBehaviour
 
         // Start auto-changer if it's enabled.
         if (autoChange) StartAutoChange();
+        StartAutoChange();
     }
 
     void Update()
