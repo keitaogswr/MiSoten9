@@ -125,10 +125,10 @@ public class player01_result : MonoBehaviour {
             }
         }
 
-        ScoreTextObj.transform.localPosition = new Vector3(70 + scorePosX, 80, 0);
-        FanTextObj.transform.localPosition = new Vector3(3 + fanPosX, 0.01f, 0);
-        GoodTextObj.transform.localPosition = new Vector3(2.75f + GoodPosX, 0.01f, 0);
-        BadTextObj.transform.localPosition = new Vector3(2.98f + BadPosX, 0.01f, 0);
+        ScoreTextObj.transform.localPosition = new Vector3(290 + scorePosX, 80, 0);
+        FanTextObj.transform.localPosition = new Vector3(6.2f + fanPosX, 0.01f, 0);
+        GoodTextObj.transform.localPosition = new Vector3(5.6f + GoodPosX, 0.01f, 0);
+        BadTextObj.transform.localPosition = new Vector3(6.2f + BadPosX, 0.01f, 0);
         NumTextObj.transform.localPosition = new Vector3(0 + NumPosX, -8, 0);
     }
 
