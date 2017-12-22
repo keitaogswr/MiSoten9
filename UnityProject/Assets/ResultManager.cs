@@ -40,7 +40,7 @@ public class ResultManager : MonoBehaviour {
 			if (!bgmFlag)
 			{
 				bgmFlag = true;
-				AudioManager.Instance.PlayBGM("genes_rock", true);
+				AudioManager.Instance.PlayBGM("NSC-SC-6804", true);
 				AudioManager.Instance.SetVolumeBGM(0.3f);
 			}
 

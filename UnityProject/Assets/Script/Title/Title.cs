@@ -22,7 +22,7 @@ public class Title : MonoBehaviour {
         if (fade == null) {
             Debug.Log("fadeManager is null.");
         }
-		AudioManager.Instance.PlayBGM("dededon", true);
+		AudioManager.Instance.PlayBGM("start_up!!", true);
 		AudioManager.Instance.SetVolumeBGM(0.3f);
 	}
 	
