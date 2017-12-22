@@ -54,9 +54,9 @@ MonoBehaviour:
   bgmList:
   - audio: {fileID: 8300000, guid: a2966dc6a19cd0c4490abeb21fd1bc77, type: 3}
     volume: 0.36
-  - audio: {fileID: 8300000, guid: 252a1d832a6c5564a8e38bc364beeb5d, type: 3}
+  - audio: {fileID: 8300000, guid: 18fd07243718b5c4c835fa4a437ab14b, type: 3}
     volume: 0.36
-  - audio: {fileID: 8300000, guid: 49088f6ed5e5f3d4391629dcabc2d2d0, type: 3}
+  - audio: {fileID: 8300000, guid: 38a42c302a1d75742ac2170568497de0, type: 3}
     volume: 0.36
   seList:
   - audio: {fileID: 8300000, guid: b4c2f7c0d4531324f8cdcaf993ba61aa, type: 3}
