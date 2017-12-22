@@ -57,6 +57,11 @@ MonoBehaviour:
   Game_UI: {fileID: 0}
   Game_UI_2P: {fileID: 0}
   Flower: {fileID: 1108044631004010, guid: 0c13ee6d1ceb5584687fb1aa3112f093, type: 2}
+  NextInfo: {fileID: 0}
   StartLogo: {fileID: 0}
+  Bokashi: {fileID: 0}
+  Bokashi_2P: {fileID: 0}
+  TornadeMane: {fileID: 0}
   WaitTimer: 1
+  ClickTime: 3
   ChangeSkyValue: 0.5
