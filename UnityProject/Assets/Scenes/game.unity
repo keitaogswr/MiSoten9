@@ -716,7 +716,7 @@ Prefab:
     - target: {fileID: 114456614928053150, guid: 39de0c07eaf24dd4885845d42aa1dab5,
         type: 2}
       propertyPath: bpm
-      value: 70
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39de0c07eaf24dd4885845d42aa1dab5, type: 2}
@@ -1142,7 +1142,7 @@ Prefab:
     - target: {fileID: 114008980696922072, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
         type: 2}
       propertyPath: bpm
-      value: 140
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e24ee6f454322543b1c10f3c62b3bb8, type: 2}
@@ -2490,6 +2490,11 @@ Prefab:
       propertyPath: LightningMane
       value: 
       objectReference: {fileID: 773536551}
+    - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
+        type: 2}
+      propertyPath: ClickTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a, type: 2}
   m_IsPrefabParent: 0
