@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d315be60f62894a913ce19472dad24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmList: []
+  bgmList:
+  - audio: {fileID: 8300000, guid: a2966dc6a19cd0c4490abeb21fd1bc77, type: 3}
+    volume: 0.36
   seList:
   - audio: {fileID: 8300000, guid: b4c2f7c0d4531324f8cdcaf993ba61aa, type: 3}
     volume: 1
@@ -60,5 +62,5 @@ MonoBehaviour:
   - audio: {fileID: 8300000, guid: 4d0efb7221b0fde4dbfc7b128172277c, type: 3}
     volume: 1
   - audio: {fileID: 8300000, guid: 27dd762b775d34e4394ab7a64577ba49, type: 3}
-    volume: 0.13
-  MaxSE: 10
+    volume: 0.136
+  MaxSE: 30

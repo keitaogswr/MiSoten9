@@ -98,7 +98,6 @@ public class Notes_C : MonoBehaviour
 				//Debug.Log("Good");
 
 				AudioManager.Instance.PlaySE("syan");
-				AudioManager.Instance.SetVolumSE(0.3f);
 
 				GameObject Good = Instantiate(GoodText);
 
