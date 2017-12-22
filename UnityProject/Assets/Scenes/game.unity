@@ -642,6 +642,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114303286813560856, guid: 39de0c07eaf24dd4885845d42aa1dab5,
+        type: 2}
+      propertyPath: haveScore
+      value: 
+      objectReference: {fileID: 1357840501}
     - target: {fileID: 114456614928053150, guid: 39de0c07eaf24dd4885845d42aa1dab5,
         type: 2}
       propertyPath: PlayerObj
@@ -657,11 +662,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1990015100}
-    - target: {fileID: 114733302396669206, guid: 39de0c07eaf24dd4885845d42aa1dab5,
-        type: 2}
-      propertyPath: haveScore
-      value: 
-      objectReference: {fileID: 1357840501}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39de0c07eaf24dd4885845d42aa1dab5, type: 2}
   m_IsPrefabParent: 0
@@ -1063,6 +1063,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114273878152071786, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
+        type: 2}
+      propertyPath: haveScore
+      value: 
+      objectReference: {fileID: 1357840501}
     - target: {fileID: 114008980696922072, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
         type: 2}
       propertyPath: PlayerObj
@@ -1078,11 +1083,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1173204583}
-    - target: {fileID: 114490600734280514, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
-        type: 2}
-      propertyPath: haveScore
-      value: 
-      objectReference: {fileID: 1357840501}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e24ee6f454322543b1c10f3c62b3bb8, type: 2}
   m_IsPrefabParent: 0
