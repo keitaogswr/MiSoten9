@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public GameObject Bokashi_2P;
 
     public GameObject TornadeMane;
+    public GameObject LightningMane;
 
     public float WaitTimer;
     private float StartTimer;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour {
         NextInfo.GetComponent<NextPlace>().enabled = false;
 
         TornadeMane.GetComponent<TornadoManager>().enabled = false;
+        LightningMane.GetComponent<LightningManager>().enabled = false;
 
         StartLogo.GetComponent<StartLogoAnim>().enabled = false;
 
@@ -96,6 +98,7 @@ public class GameManager : MonoBehaviour {
                 TimerTxt_2P.GetComponent<Timer>().enabled = true;
 
                 TornadeMane.GetComponent<TornadoManager>().enabled = true;
+                LightningMane.GetComponent<LightningManager>().enabled = true;
 
                 Destroy(Bokashi);
                 Destroy(Bokashi_2P);
