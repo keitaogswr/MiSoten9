@@ -193,6 +193,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 1447283216043940, guid: 25b61c8f70b241744964dbdd4c7e25da, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25b61c8f70b241744964dbdd4c7e25da, type: 2}
   m_IsPrefabParent: 0
@@ -662,6 +666,11 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1990015100}
+    - target: {fileID: 114456614928053150, guid: 39de0c07eaf24dd4885845d42aa1dab5,
+        type: 2}
+      propertyPath: bpm
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39de0c07eaf24dd4885845d42aa1dab5, type: 2}
   m_IsPrefabParent: 0
@@ -1083,6 +1092,11 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1173204583}
+    - target: {fileID: 114008980696922072, guid: 3e24ee6f454322543b1c10f3c62b3bb8,
+        type: 2}
+      propertyPath: bpm
+      value: 140
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e24ee6f454322543b1c10f3c62b3bb8, type: 2}
   m_IsPrefabParent: 0
@@ -2318,6 +2332,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 1873888008857364, guid: d583add8ae67e5a41becd9a45197d8d4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d583add8ae67e5a41becd9a45197d8d4, type: 2}
   m_IsPrefabParent: 0
@@ -3012,6 +3030,10 @@ Prefab:
     - target: {fileID: 23105169274057156, guid: f6a2f53ad374fff4a92fe89c6ebf1d9b,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273696207691580, guid: f6a2f53ad374fff4a92fe89c6ebf1d9b, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
