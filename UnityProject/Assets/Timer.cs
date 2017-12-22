@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour {
 
     private GameObject TimeOverText;
     private bool bTimeOver = false;
+	private bool bSeFlag = false;
 
 	// Use this for initialization
 	void Start ()
@@ -46,7 +47,12 @@ public class Timer : MonoBehaviour {
                 TimeOverText.transform.localPosition = new Vector3(Mathf.Lerp(TimeOverText.transform.localPosition.x,0,0.25f + Time.deltaTime * 5), TimeOverText.transform.localPosition.y, TimeOverText.transform.localPosition.z);
 
                 bTimeOver = true;
-
+				if(!bSeFlag)
+				{
+					bSeFlag = true;
+					AudioManager.Instance.StopBGM();
+					AudioManager.Instance.PlaySE("jingle003");
+				}
                 time = 0;
             }
         }
