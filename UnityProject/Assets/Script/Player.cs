@@ -151,7 +151,7 @@ public class Player : MonoBehaviour {
 		LerpTimer += Time.deltaTime;
 
         PlayerObj.transform.position = new Vector3(transform.position.x,Mathf.Lerp(PlayerObj.transform.position.y, LerpHight, LerpTimer),transform.position.z);
-        PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(PlayerCamera.transform.localRotation.x, LerpAngle, LerpTimer), PlayerCamera.transform.localRotation.y, PlayerCamera.transform.localRotation.z, PlayerCamera.transform.localRotation.w);
+        //PlayerCamera.transform.localRotation = new Quaternion(Mathf.Lerp(PlayerCamera.transform.localRotation.x, LerpAngle, LerpTimer), PlayerCamera.transform.localRotation.y, PlayerCamera.transform.localRotation.z, PlayerCamera.transform.localRotation.w);
 
 
 
