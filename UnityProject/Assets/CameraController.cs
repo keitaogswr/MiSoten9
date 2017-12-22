@@ -48,4 +48,41 @@ public class CameraController : MonoBehaviour {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, deltaSpeed);
     }
 
+    [ContextMenu("ApplyTarget")]
+    private void ApplyForceTarget()
+    {
+        if (Target == null)
+        {
+            return;
+        }
+
+        transform.position = Target.position;
+
+        SetCameraTransform();
+        if (m_cameraTransform == null)
+        {
+            return;
+        }
+
+        m_cameraTransform.transform.LookAt(Target);
+    }
+
+    private void SetCameraTransform()
+    {
+        Camera camera = GetComponentInChildren<Camera>();
+        Debug.AssertFormat(camera != null, "カメラが無ぇよ!");
+        if (camera == null)
+        {
+            return;
+        }
+
+        m_cameraTransform = camera.transform;
+        m_pivot = m_cameraTransform.parent;
+    }
+
+    public void Turn(float i_angle)
+    {
+        transform.rotation *= Quaternion.AngleAxis(i_angle, Vector3.up);
+    }
+
 }

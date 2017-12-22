@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+    // カメラのやーつ
+    [Header("PlayerCamera")]
+    [SerializeField]
+    private CameraController m_camera = null;
+    [SerializeField]
+    private float m_camraTurnSpeed = 0.0f;
+
     [SerializeField]
     PlayerSetteing parameter = null;
     [SerializeField]
@@ -41,7 +48,7 @@ public class Player : MonoBehaviour {
 
     public float Axel = 1;
 
-	private GameObject HaveScore; 
+	private GameObject HaveScore;
 
     // Use this for initialization
     void Start () {
@@ -76,8 +83,9 @@ public class Player : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	private void Update ()
     {
+        ControlCamera();
         Move();
         HaveScore.GetComponent<HaveScore>().SetScore((int)Good_Bad_Score.z,(int)playerNum - 1);
         HaveScore.GetComponent<HaveScore>().SetGood((int)Good_Bad_Score.x, (int)playerNum - 1);
@@ -94,6 +102,12 @@ public class Player : MonoBehaviour {
 
     private void Move ()
     {
+        //Vector3 moveDir = Vector3.zero;
+
+        //Vector3 forward = m_camera.transform.forward;
+        //Vector3 right = m_camera.transform.right;
+        //slope = m_camera.transform.right.y;
+
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis(vertical) == 1)
 		{
             if (moveSpeed < maxSpeed) {
@@ -116,6 +130,7 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis(horizontal) == 1) {
             slope += acceleSlope;
+
         }
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis(horizontal) == -1) {
@@ -200,5 +215,17 @@ public class Player : MonoBehaviour {
     public void AddFan(int AddNum)
     {
         Good_Bad_Score += new Vector3(0, 0, AddNum);
+    }
+
+    private void ControlCamera()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            m_camera.Turn(m_camraTurnSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            m_camera.Turn(-m_camraTurnSpeed * Time.deltaTime);
+        }
     }
 }
