@@ -12,6 +12,8 @@ public class Player02_result : MonoBehaviour {
     float scorePosX,fanPosX,GoodPosX,BadPosX,NumPosX;
     float time;
 
+    public GameObject ScoreGetObj;
+
     // Use this for initialization
     void Start()
     {
@@ -27,13 +29,25 @@ public class Player02_result : MonoBehaviour {
         //-------------------------------------------------------------------//
         // スコアの設定 ここにスコアの数値いれてね
         //-------------------------------------------------------------------//
-        PlayerScore[0] = 60000;     // スコア
-        PlayerScore[1] = 500;       // ファン数
-        PlayerScore[2] = 400;       // グッド数
-        PlayerScore[3] = 80;        // バッド数
-        PlayerScore[4] = 75;        // パーセント
+        ScoreGetObj = GameObject.Find("HaveScore");
+        if (ScoreGetObj != null)
+        {
+            PlayerScore[1] = ScoreGetObj.GetComponent<HaveScore>().GetScore(1);       // ファン数
+            PlayerScore[2] = ScoreGetObj.GetComponent<HaveScore>().GetGood(1);       // グッド数
+            PlayerScore[3] = ScoreGetObj.GetComponent<HaveScore>().GetBad(1);        // バッド数
+            PlayerScore[4] = ScoreGetObj.GetComponent<HaveScore>().GetDominatePer();        // パーセント
+            PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
+        }
+        else
+        {
+            PlayerScore[1] = 500;       // ファン数
+            PlayerScore[2] = 400;       // グッド数
+            PlayerScore[3] = 80;        // バッド数
+            PlayerScore[4] = 75;        // パーセント
+            PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
+        }
         //-------------------------------------------------------------------//
-        
+
         ScoreTextObj    = GameObject.Find("Canvas_Player02/resultScores/ScoreText");
         FanTextObj      = GameObject.Find("Canvas_Player02/resultScores/Fan/FanText");
         GoodTextObj     = GameObject.Find("Canvas_Player02/resultScores/Good/GoodText");

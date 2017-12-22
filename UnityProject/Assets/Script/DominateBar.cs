@@ -8,12 +8,15 @@ public class DominateBar : MonoBehaviour {
     public float Bar = 0;
     RectTransform BarObj;
 
+    HaveScore Score;
+
 	// Use this for initialization
 	void Start ()
     {
         Bar = 0;
         BarObj = this.GetComponent<RectTransform>();
-	}
+        Score = GameObject.Find("HaveScore").GetComponent<HaveScore>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -26,5 +29,6 @@ public class DominateBar : MonoBehaviour {
         }
 
         BarObj.transform.localPosition = new Vector3(-570 + (570 * Bar), BarObj.transform.localPosition.y, BarObj.transform.localPosition.z);
-	}
+        Score.SetDominatePer(Bar);
+    }
 }
