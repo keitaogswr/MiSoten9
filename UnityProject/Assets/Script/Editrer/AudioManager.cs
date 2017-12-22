@@ -4,10 +4,25 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
+[Serializable]
+public class SEAudioData {
+    public AudioClip audio;
+    [Range(0, 1)]
+    public float volume = 1.0f;
+}
+
+[Serializable]
+public class BGMAudioData {
+    public AudioClip audio;
+    [Range(0, 1)]
+    public float volume = 1.0f;
+}
+
 public class AudioManager : SingletonMonoBehaviour<AudioManager>
 {
-    public List<AudioClip> BGMList;
-    public List<AudioClip> SEList;
+    public List<BGMAudioData> bgmList;
+    public List<SEAudioData> seList;
+
     public int MaxSE = 10;
 
     private AudioSource bgmSource = null;
@@ -41,8 +56,9 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
             }
         };
 
-        this.BGMList.ForEach(bgm => addClipDict(this.bgmDict, bgm));
-        this.SEList.ForEach(se => addClipDict(this.seDict, se));
+        this.bgmList.ForEach(bgm => addClipDict(this.bgmDict, bgm.audio));
+        this.seList.ForEach(se => addClipDict(this.seDict, se.audio));
+
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -61,7 +77,16 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
             source = this.gameObject.AddComponent<AudioSource>();
             this.seSources.Add(source);
         }
-        source.volume = seVolume;
+
+        int index = 0;
+        foreach (KeyValuePair<string, AudioClip> fileName in seDict) {
+            if (fileName.Key == seName) {
+                break;
+            }
+            ++index;
+        }
+
+        source.volume = seList[index].volume;
         source.clip = this.seDict[seName];
         source.time = PlayTime;
         source.Play();
@@ -77,6 +102,16 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
         if (!this.bgmDict.ContainsKey(bgmName)) throw new ArgumentException(bgmName + " not found", "bgmName");
         if (this.bgmSource.clip == this.bgmDict[bgmName]) return;
         this.bgmSource.Stop();
+
+        int index = 0;
+        foreach (KeyValuePair<string, AudioClip> fileName in bgmDict) {
+            if (fileName.Key == bgmName) {
+                break;
+            }
+            ++index;
+        }
+
+        this.bgmSource.volume = bgmList[index].volume;
         this.bgmSource.loop = loop;
         this.bgmSource.clip = this.bgmDict[bgmName];
         this.bgmSource.time = PlayTime;
