@@ -13,7 +13,7 @@ public class Lightning : MonoBehaviour {
 	}
 	private void Awake()
 	{
-		AudioManager.Instance.PlaySE("THUNDER_Clap_Rumble_01_stereo");
+		AudioManager.Instance.PlaySE("nc30620");
 	}
 	// Update is called once per frame
 	void Update () {

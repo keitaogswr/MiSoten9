@@ -63,8 +63,8 @@ MonoBehaviour:
     volume: 1
   - audio: {fileID: 8300000, guid: 000fb4513cb6271409d5a12037834310, type: 3}
     volume: 1
-  - audio: {fileID: 8300000, guid: 4d0efb7221b0fde4dbfc7b128172277c, type: 3}
-    volume: 1
+  - audio: {fileID: 8300000, guid: bef27bb163a30f8408dda39179cb07ec, type: 3}
+    volume: 0.136
   - audio: {fileID: 8300000, guid: 27dd762b775d34e4394ab7a64577ba49, type: 3}
     volume: 0.136
   - audio: {fileID: 8300000, guid: c4262854d9cc0214faa3ddc5ceedf42e, type: 3}
