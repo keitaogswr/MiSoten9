@@ -802,6 +802,11 @@ Prefab:
     - {fileID: 114120876172835694, guid: 9d5ff75b91ac390478a42ac63e3de0ea, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9d5ff75b91ac390478a42ac63e3de0ea, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &939394362 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1283975838912856, guid: 39de0c07eaf24dd4885845d42aa1dab5,
+    type: 2}
+  m_PrefabInternal: {fileID: 810845154}
 --- !u!1001 &966242006
 Prefab:
   m_ObjectHideFlags: 0
@@ -897,6 +902,11 @@ Prefab:
     - {fileID: 114120876172835694, guid: 9d5ff75b91ac390478a42ac63e3de0ea, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9d5ff75b91ac390478a42ac63e3de0ea, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1001672026 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1767976590232210, guid: 3a4f0144fac41a744817d5c810d3c80b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2107933838}
 --- !u!1 &1004847951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2387,14 +2397,19 @@ Prefab:
       objectReference: {fileID: 136115273}
     - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
         type: 2}
+      propertyPath: NextInfo
+      value: 
+      objectReference: {fileID: 1679677007}
+    - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
+        type: 2}
       propertyPath: StartLogo
       value: 
       objectReference: {fileID: 650689705}
     - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
         type: 2}
-      propertyPath: ClickTime
-      value: 3
-      objectReference: {fileID: 0}
+      propertyPath: Bokashi
+      value: 
+      objectReference: {fileID: 1807078780}
     - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
         type: 2}
       propertyPath: Bokashi_2P
@@ -2402,9 +2417,9 @@ Prefab:
       objectReference: {fileID: 643562422}
     - target: {fileID: 114187060918264262, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a,
         type: 2}
-      propertyPath: Bokashi
+      propertyPath: TornadeMane
       value: 
-      objectReference: {fileID: 1807078780}
+      objectReference: {fileID: 1001672026}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f6e56ddda2e5d54eaa0199b73b0a61a, type: 2}
   m_IsPrefabParent: 0
@@ -2994,6 +3009,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 23105169274057156, guid: f6a2f53ad374fff4a92fe89c6ebf1d9b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6a2f53ad374fff4a92fe89c6ebf1d9b, type: 2}
   m_IsPrefabParent: 0
@@ -3036,6 +3056,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 114866683943561862, guid: be5b51e6ceb35bb49a35ced5aa386708,
+        type: 2}
+      propertyPath: Timer
+      value: 
+      objectReference: {fileID: 939394362}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be5b51e6ceb35bb49a35ced5aa386708, type: 2}
   m_IsPrefabParent: 0
@@ -3090,6 +3115,11 @@ Prefab:
         type: 2}
       propertyPath: AddFanTimerDray
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114724873725583658, guid: 1b5fe8aafc1068a4ab9496c252790824,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b5fe8aafc1068a4ab9496c252790824, type: 2}
