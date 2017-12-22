@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     public GameObject Game_UI_2P;
     public GameObject Flower;
 
+    public GameObject NextInfo;
+
     public GameObject StartLogo;
 
     private GameObject TimerTxt;
@@ -19,6 +21,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject Bokashi;
     public GameObject Bokashi_2P;
+
+    public GameObject TornadeMane;
 
     public float WaitTimer;
     private float StartTimer;
@@ -38,6 +42,10 @@ public class GameManager : MonoBehaviour {
         Terrain.GetComponent<TerrainCollider>().enabled = false;
         Game_UI.GetComponent<Notes_C>().enabled = false;
         Game_UI_2P.GetComponent<Notes_C>().enabled = false;
+
+        NextInfo.GetComponent<NextPlace>().enabled = false;
+
+        TornadeMane.GetComponent<TornadoManager>().enabled = false;
 
         StartLogo.GetComponent<StartLogoAnim>().enabled = false;
 
@@ -82,8 +90,12 @@ public class GameManager : MonoBehaviour {
                 Game_UI.GetComponent<Notes_C>().enabled = true;
                 Game_UI_2P.GetComponent<Notes_C>().enabled = true;
 
+                NextInfo.GetComponent<NextPlace>().enabled = true;
+
                 TimerTxt.GetComponent<Timer>().enabled = true;
                 TimerTxt_2P.GetComponent<Timer>().enabled = true;
+
+                TornadeMane.GetComponent<TornadoManager>().enabled = true;
 
                 Destroy(Bokashi);
                 Destroy(Bokashi_2P);

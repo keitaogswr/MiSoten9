@@ -8,6 +8,8 @@ public class GameScene : MonoBehaviour {
     [SerializeField]
     private GameObject create = null;
 
+    public GameObject Timer;
+
     // Use this for initialization
     void Awake() {
         if (GameObject.Find(create.name) == null) {
@@ -26,7 +28,8 @@ public class GameScene : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKey(KeyCode.Return)) {
+        //if (Input.GetKey(KeyCode.Return)) {
+        if (Timer.GetComponent<Timer>().GetTimeOverFlag() == true) { 
             if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None) {
                 fade.setFade(nextScene);
                 Player player1 = GameObject.Find("Player").GetComponent<Player>();

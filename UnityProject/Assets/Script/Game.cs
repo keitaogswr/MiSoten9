@@ -30,8 +30,14 @@ public class Game : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (fade.getFadeMode() == FadeManager.Fade_Mode.Fade_None)
+            {
+                fade.setFade(nextScene);
+            }
+        }
+    }
 
     public bool getGameStart () {
         return gameStart;
