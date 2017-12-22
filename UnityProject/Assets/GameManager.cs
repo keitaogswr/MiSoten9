@@ -17,8 +17,14 @@ public class GameManager : MonoBehaviour {
     private GameObject TimerTxt;
     private GameObject TimerTxt_2P;
 
+    public GameObject Bokashi;
+    public GameObject Bokashi_2P;
+
     public float WaitTimer;
     private float StartTimer;
+
+    public int ClickTime;
+    private float ClickCnt;
 
     public float ChangeSkyValue = 0.5f;
     private float Timer = 0;
@@ -45,18 +51,25 @@ public class GameManager : MonoBehaviour {
         TimerTxt_2P.GetComponent<Timer>().enabled = false;
 
         StartTimer = 0;
+        ClickCnt = 0;
 
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Timer += Time.deltaTime;
+        //Timer += Time.deltaTime;
 
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait" + Timer;
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait" + Timer;
 
-        if (Timer > WaitTimer)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ClickCnt++;
+        }
+
+        //if (Timer > WaitTimer)]
+        if(ClickTime <= ClickCnt)
         {
             StartTimer += Time.deltaTime;
 
@@ -72,6 +85,8 @@ public class GameManager : MonoBehaviour {
                 TimerTxt.GetComponent<Timer>().enabled = true;
                 TimerTxt_2P.GetComponent<Timer>().enabled = true;
 
+                Destroy(Bokashi);
+                Destroy(Bokashi_2P);
                 Destroy(this.gameObject);
             }
             
@@ -80,6 +95,9 @@ public class GameManager : MonoBehaviour {
 
             GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Start";
             GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Start";
+
+            Bokashi.GetComponent<Image>().color = new Color(1, 1, 1, 0.8f - StartTimer);
+            Bokashi_2P.GetComponent<Image>().color = new Color(1, 1, 1, 0.8f - StartTimer);
 
             Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
             Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
