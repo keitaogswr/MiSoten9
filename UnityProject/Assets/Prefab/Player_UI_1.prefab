@@ -586,7 +586,7 @@ MonoBehaviour:
   GoodText: {fileID: 1001213724711390, guid: a731ab919ea934145876c09650637415, type: 2}
   BadText: {fileID: 1609176772282274, guid: 6e2d484300b7e914ebfda522ef0f063a, type: 2}
   GoodEffect: {fileID: 1963987935173146, guid: 60b1140464527ee40896c78cd7b79c7a, type: 2}
-  bpm: 30
+  bpm: 35
   Bar: {fileID: 0}
   TerrainObj: {fileID: 0}
   TerrainScript: {fileID: 0}
