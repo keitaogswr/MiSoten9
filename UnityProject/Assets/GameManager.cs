@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour {
                 Destroy(Bokashi_2P);
                 Destroy(this.gameObject);
             }
-            
+
 
             StartLogo.GetComponent<StartLogoAnim>().enabled = true;
 

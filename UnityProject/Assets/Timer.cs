@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour {
     public float sec = 0.0f;
     private float time = 0.0f;
     private int Mnt;
+    private float secMax;
 
     private GameObject TimeOverText;
     private bool bTimeOver = false;
@@ -17,17 +18,17 @@ public class Timer : MonoBehaviour {
     {
         Mnt = (int)sec / 60;
         time = (int)sec % 60;
+        secMax = sec;
 
         TimeOverText = GameObject.Find(this.transform.root.transform.gameObject.name + "/TIMEOVER_TEXT");
         
-        AudioManager.Instance.PlayBGM("Unite In The Sky (full)", false);
-
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         time -= Time.deltaTime;
+        sec -= Time.deltaTime;
         if (time < 1)
         {
             time = 59;
@@ -64,7 +65,11 @@ public class Timer : MonoBehaviour {
         {
             this.GetComponent<Text>().text = Mnt + ":" + (int)time;
         }
-        
+
+        if (sec < secMax - 2)
+        {
+            AudioManager.Instance.PlayBGM("Unite In The Sky (short)", false);
+        }
     }
 
     public bool GetTimeOverFlag()

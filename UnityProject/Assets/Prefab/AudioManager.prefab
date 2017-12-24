@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmList:
-  - audio: {fileID: 8300000, guid: a3bed836f062a4a4699478622149da19, type: 3}
+  - audio: {fileID: 8300000, guid: a2966dc6a19cd0c4490abeb21fd1bc77, type: 3}
     volume: 0.163
   - audio: {fileID: 8300000, guid: 18fd07243718b5c4c835fa4a437ab14b, type: 3}
     volume: 0.36
