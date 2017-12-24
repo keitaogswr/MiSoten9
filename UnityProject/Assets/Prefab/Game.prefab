@@ -53,3 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: result
   create: {fileID: 1869368052656882, guid: 754b28f21c77e2a49829e93e31259445, type: 2}
+  Timer: {fileID: 0}

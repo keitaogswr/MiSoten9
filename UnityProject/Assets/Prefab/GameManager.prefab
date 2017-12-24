@@ -63,6 +63,8 @@ MonoBehaviour:
   Bokashi_2P: {fileID: 0}
   TornadeMane: {fileID: 0}
   LightningMane: {fileID: 0}
-  WaitTimer: 1
+  PinkIdol: {fileID: 0}
+  BlueIdol: {fileID: 0}
+  WaitTimer: 2
   ClickTime: 1
   ChangeSkyValue: 0.5

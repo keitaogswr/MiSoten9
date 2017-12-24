@@ -52,19 +52,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmList:
-  - audio: {fileID: 8300000, guid: a2966dc6a19cd0c4490abeb21fd1bc77, type: 3}
-    volume: 0.36
+  - audio: {fileID: 8300000, guid: a3bed836f062a4a4699478622149da19, type: 3}
+    volume: 0.163
   - audio: {fileID: 8300000, guid: 18fd07243718b5c4c835fa4a437ab14b, type: 3}
     volume: 0.36
-  - audio: {fileID: 8300000, guid: 38a42c302a1d75742ac2170568497de0, type: 3}
-    volume: 0.36
+  - audio: {fileID: 8300000, guid: 2ef39d584f5c6ac44baaa65440b33993, type: 3}
+    volume: 0.169
   seList:
   - audio: {fileID: 8300000, guid: b4c2f7c0d4531324f8cdcaf993ba61aa, type: 3}
     volume: 1
   - audio: {fileID: 8300000, guid: 000fb4513cb6271409d5a12037834310, type: 3}
     volume: 1
   - audio: {fileID: 8300000, guid: 4d0efb7221b0fde4dbfc7b128172277c, type: 3}
-    volume: 1
+    volume: 0.055
   - audio: {fileID: 8300000, guid: 27dd762b775d34e4394ab7a64577ba49, type: 3}
     volume: 0.136
   - audio: {fileID: 8300000, guid: c4262854d9cc0214faa3ddc5ceedf42e, type: 3}

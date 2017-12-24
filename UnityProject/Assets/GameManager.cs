@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour {
     public GameObject TornadeMane;
     public GameObject LightningMane;
 
+    public GameObject PinkIdol;
+    public GameObject BlueIdol;
+
     public float WaitTimer;
     private float StartTimer;
 
@@ -82,8 +85,11 @@ public class GameManager : MonoBehaviour {
         if(ClickTime <= ClickCnt)
         {
             StartTimer += Time.deltaTime;
+            
+            PinkIdol.GetComponent<CharacterContrpller>().changeAnimation(PinkIdol.GetComponent<CharacterContrpller>().startAnim, CharacterContrpller.AnimationName.SAK01_Final);
+            BlueIdol.GetComponent<CharacterContrpller>().changeAnimation(BlueIdol.GetComponent<CharacterContrpller>().startAnim, CharacterContrpller.AnimationName.SAK01_Final);
 
-            if(StartTimer > 1)
+            if (StartTimer > 1)
             {
                 Player.GetComponent<Player>().enabled = true;
                 Player_2P.GetComponent<Player>().enabled = true;
