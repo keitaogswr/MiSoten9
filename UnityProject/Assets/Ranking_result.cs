@@ -23,10 +23,18 @@ public class Ranking_result : MonoBehaviour {
     static int[,] InitData;
     static int[] InitSaveData;
 
+    // 保存識別キー
     const string SCORE_KEY = "SCORE";
 
+    // タイム関連
     float time = 0;
+    public float FinishSE = 5;
 
+    // スコア加算用変数
+    public int ScoreAdd, FanAdd;
+
+    bool Sort;
+    
     //*******************************************
     // 初回起動時のみ呼ばれるメソッド
     // PlayerPrefsの初期データ格納用
@@ -90,96 +98,7 @@ public class Ranking_result : MonoBehaviour {
 
         NonAlphaImage.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
-        // 読み込み
-        LoadRanking = PlayerPrefsX.GetIntArray(SCORE_KEY);
-
-        if(LoadRanking != null)
-        {
-            int LoadRankCnt = 0;
-            for (int i = 0; i < MaxRank; i++)
-            {
-                for (int j = 0; j < MaxText; j++)
-                {
-                    Ranking[i, j] = LoadRanking[LoadRankCnt];
-                    LoadRankCnt++;
-                }
-            }
-        }
-        else
-        {
-            // ランキングデータ
-            Ranking[0, 0] = 50000;
-            Ranking[0, 1] = 1;
-            Ranking[0, 2] = 500;
-
-            Ranking[1, 0] = 40000;
-            Ranking[1, 1] = 2;
-            Ranking[1, 2] = 400;
-
-            Ranking[2, 0] = 30000;
-            Ranking[2, 1] = 3;
-            Ranking[2, 2] = 300;
-
-            Ranking[3, 0] = 20000;
-            Ranking[3, 1] = 4;
-            Ranking[3, 2] = 200;
-
-            Ranking[4, 0] = 10000;
-            Ranking[4, 1] = 5;
-            Ranking[4, 2] = 100;
-        }
-
-        SetNewScore();
-
-        // スコアのソート処理
-        bool isEnd = false;
-        while (!isEnd)
-        {
-            bool loopSwap = false;
-            for (int i = 0; i < MaxRank - 1; i++)
-            {
-                if (Ranking[i, 0] < Ranking[i + 1, 0])
-                {
-                    Swap(ref Ranking[i, 0], ref Ranking[i + 1, 0]);
-                    loopSwap = true;
-                }
-            }
-            if (!loopSwap) // Swapが一度も実行されなかった場合はソート終了
-            {
-                isEnd = true;
-            }
-        }
-
-        // ファンのソートと今回のランキングの同期
-        if (!chkEnd)
-        {
-            bool loopChk = false;
-            for (int chk = 0; chk < MaxRank; chk++)
-            {
-                if (NewScore[0] == Ranking[chk, 0])
-                {
-                    Swap(ref Ranking[5, 2], ref Ranking[chk, 2]);   // ファンのソート
-                    NewScore[1] = Ranking[chk, 1];                  // ランキングの同期
-                    loopChk = true;
-                }
-            }
-            if (loopChk)
-            {
-                chkEnd = true;
-            }
-        }
-
-        // 保存
-        int SaveRankCnt = 0;
-        for (int i = 0; i < MaxRank; i++)
-        {
-            for (int j = 0; j < MaxText; j++)
-            {
-                SaveRanking[SaveRankCnt] = Ranking[i, j];
-                SaveRankCnt++;
-            }
-        }
-        PlayerPrefsX.SetIntArray(SCORE_KEY, SaveRanking);
+        Sort = false;
 
         // ランキングのゲームオブジェクトをファインド
         RankObj[0, 0] = GameObject.Find("Canvas_Player03/Ranking/RankScoreText1/ScoreText1");    // スコア
@@ -214,16 +133,113 @@ public class Ranking_result : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        // 読み込みソート保存
+        if(!Sort)
+        {
+            // 読み込み
+            LoadRanking = PlayerPrefsX.GetIntArray(SCORE_KEY);
+
+            if (LoadRanking != null)
+            {
+                int LoadRankCnt = 0;
+                for (int i = 0; i < MaxRank; i++)
+                {
+                    for (int j = 0; j < MaxText; j++)
+                    {
+                        Ranking[i, j] = LoadRanking[LoadRankCnt];
+                        LoadRankCnt++;
+                    }
+                }
+            }
+            else
+            {
+                // ランキングデータ
+                Ranking[0, 0] = 50000;
+                Ranking[0, 1] = 1;
+                Ranking[0, 2] = 500;
+
+                Ranking[1, 0] = 40000;
+                Ranking[1, 1] = 2;
+                Ranking[1, 2] = 400;
+
+                Ranking[2, 0] = 30000;
+                Ranking[2, 1] = 3;
+                Ranking[2, 2] = 300;
+
+                Ranking[3, 0] = 20000;
+                Ranking[3, 1] = 4;
+                Ranking[3, 2] = 200;
+
+                Ranking[4, 0] = 10000;
+                Ranking[4, 1] = 5;
+                Ranking[4, 2] = 100;
+            }
+
+            SetNewScore();
+
+            // スコアのソート処理
+            bool isEnd = false;
+            while (!isEnd)
+            {
+                bool loopSwap = false;
+                for (int i = 0; i < MaxRank - 1; i++)
+                {
+                    if (Ranking[i, 0] < Ranking[i + 1, 0])
+                    {
+                        Swap(ref Ranking[i, 0], ref Ranking[i + 1, 0]);
+                        loopSwap = true;
+                    }
+                }
+                if (!loopSwap) // Swapが一度も実行されなかった場合はソート終了
+                {
+                    isEnd = true;
+                }
+            }
+
+            // ファンのソートと今回のランキングの同期
+            if (!chkEnd)
+            {
+                bool loopChk = false;
+                for (int chk = 0; chk < MaxRank; chk++)
+                {
+                    if (NewScore[0] == Ranking[chk, 0])
+                    {
+                        Swap(ref Ranking[5, 2], ref Ranking[chk, 2]);   // ファンのソート
+                        NewScore[1] = Ranking[chk, 1];                  // ランキングの同期
+                        loopChk = true;
+                    }
+                }
+                if (loopChk)
+                {
+                    chkEnd = true;
+                }
+            }
+
+            // 保存
+            int SaveRankCnt = 0;
+            for (int i = 0; i < MaxRank; i++)
+            {
+                for (int j = 0; j < MaxText; j++)
+                {
+                    SaveRanking[SaveRankCnt] = Ranking[i, j];
+                    SaveRankCnt++;
+                }
+            }
+            PlayerPrefsX.SetIntArray(SCORE_KEY, SaveRanking);
+            Sort = true;
+        }
+
+
         time += Time.deltaTime;
 
         // 音が鳴り終わるタイミングで表示させてね
-        if (time > 5)
+        if (time > FinishSE)
         {
             NonAlphaImage.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         }
 
         // エンターでランキングリセット
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             scoreReset = true;
         }
@@ -270,9 +286,9 @@ public class Ranking_result : MonoBehaviour {
         //---------------------------------------------------//
         // 今回のスコアのデータ（ここにゲームスコアを入れる）
         //---------------------------------------------------//
-        Ranking[5, 0] = 60000;  // スコア
-        Ranking[5, 1] = 0;      // ランク (ここは数値変えない)
-        Ranking[5, 2] = 350;     // ファン数
+        Ranking[5, 0] = ScoreAdd;  // スコア
+        Ranking[5, 1] = 0;           // ランク (ここは数値変えない)
+        Ranking[5, 2] = FanAdd;      // ファン数
 
         // 今回のスコアを保存
         NewScore[0] = Ranking[5, 0];

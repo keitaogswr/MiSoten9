@@ -144,6 +144,7 @@ public class Player : MonoBehaviour {
             LerpTimer = 0;
         }
 
+        // 加速度
         transform.position += transform.forward * moveSpeed * Axel * Time.deltaTime;
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 499), transform.position.y, Mathf.Clamp(transform.position.z, 0, 499));

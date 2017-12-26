@@ -14,9 +14,18 @@ public class Player02_result : MonoBehaviour {
 
     GameObject ScoreGetObj;
 
+    public GameObject PlayerResult02;
+    private Ranking_result Scores;
+
     // Use this for initialization
     void Start()
     {
+        if (PlayerResult02 == null)
+        {
+            PlayerResult02 = GameObject.Find("Ranking_result").gameObject;
+        }
+        Scores = PlayerResult02.GetComponent<Ranking_result>();
+
         PlayerScore = new int[6];
 
         // テキストの初期ポジション
@@ -46,6 +55,9 @@ public class Player02_result : MonoBehaviour {
             PlayerScore[4] = 75;        // パーセント
             PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
         }
+
+        Scores.ScoreAdd += PlayerScore[0];
+        Scores.FanAdd += PlayerScore[1];
         //-------------------------------------------------------------------//
 
         ScoreTextObj    = GameObject.Find("Canvas_Player02/resultScores/ScoreText");
