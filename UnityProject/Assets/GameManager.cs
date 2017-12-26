@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour {
     public GameObject Bokashi;
     public GameObject Bokashi_2P;
 
+    public GameObject TuText1;
+    public GameObject TuText2;
+
+    public GameObject TuText1_2P;
+    public GameObject TuText2_2P;
+
     public GameObject TornadeMane;
     public GameObject LightningMane;
 
@@ -76,7 +82,7 @@ public class GameManager : MonoBehaviour {
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait" + Timer;
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait" + Timer;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("Jump"))
         {
             ClickCnt++;
         }
@@ -119,6 +125,11 @@ public class GameManager : MonoBehaviour {
 
             Bokashi.GetComponent<Image>().color = new Color(1, 1, 1, 0.8f - StartTimer);
             Bokashi_2P.GetComponent<Image>().color = new Color(1, 1, 1, 0.8f - StartTimer);
+
+            TuText1.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+            TuText2.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+            TuText1_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+            TuText2_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
 
             Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
             Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
