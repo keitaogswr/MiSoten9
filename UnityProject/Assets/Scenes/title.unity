@@ -1368,6 +1368,11 @@ Prefab:
       propertyPath: m_Name
       value: blueCharaModel_05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 95463298122835462, guid: 218d42042e6e2d14abcd60109ed36341,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 218d42042e6e2d14abcd60109ed36341, type: 2}
   m_IsPrefabParent: 0
@@ -2434,6 +2439,11 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: -0.067913726
       objectReference: {fileID: 0}
+    - target: {fileID: 95463298122835462, guid: 218d42042e6e2d14abcd60109ed36341,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 218d42042e6e2d14abcd60109ed36341, type: 2}
   m_IsPrefabParent: 0
@@ -3326,6 +3336,11 @@ Prefab:
     - target: {fileID: 1528939320966426, guid: ae233f0d874cfb94886bed1ee41886a1, type: 2}
       propertyPath: m_Layer
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 95067249510946848, guid: ae233f0d874cfb94886bed1ee41886a1,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae233f0d874cfb94886bed1ee41886a1, type: 2}
@@ -5263,6 +5278,11 @@ Prefab:
         type: 2}
       propertyPath: startAnim
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 95067249510946848, guid: ae233f0d874cfb94886bed1ee41886a1,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae233f0d874cfb94886bed1ee41886a1, type: 2}
