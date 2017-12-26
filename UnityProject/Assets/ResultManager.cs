@@ -44,7 +44,7 @@ public class ResultManager : MonoBehaviour {
 				AudioManager.Instance.SetVolumeBGM(0.3f);
 			}
 
-			if (Input.GetKeyDown(KeyCode.Return))
+			if (Input.GetKeyDown(KeyCode.Return)||Input.GetButtonDown("Jump"))
             {
                 if (!seFlag)
                 {
