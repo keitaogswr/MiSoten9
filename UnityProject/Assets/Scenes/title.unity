@@ -1373,6 +1373,11 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95463298122835462, guid: 218d42042e6e2d14abcd60109ed36341,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b6154ed3a143acf49bac6d9fd61b0839, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 218d42042e6e2d14abcd60109ed36341, type: 2}
   m_IsPrefabParent: 0
@@ -2444,6 +2449,11 @@ Prefab:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95463298122835462, guid: 218d42042e6e2d14abcd60109ed36341,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b6154ed3a143acf49bac6d9fd61b0839, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 218d42042e6e2d14abcd60109ed36341, type: 2}
   m_IsPrefabParent: 0
@@ -7105,6 +7115,7 @@ MonoBehaviour:
   - {fileID: 922269211}
   - {fileID: 1823730870}
   - {fileID: 112614959}
+  playAnim: 7
 --- !u!4 &2083225212
 Transform:
   m_ObjectHideFlags: 0
