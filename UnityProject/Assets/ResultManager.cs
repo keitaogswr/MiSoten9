@@ -11,6 +11,10 @@ public class ResultManager : MonoBehaviour {
     float time = 0;
 	private bool seFlag = false;
 	private bool bgmFlag = false;
+    [SerializeField]
+    private List<GameObject> character = new List<GameObject>();
+    private float animTime;
+    private bool playAnim = false;
 
     // Use this for initialization
     void Awake() {
@@ -28,11 +32,27 @@ public class ResultManager : MonoBehaviour {
         if (fade == null) {
             Debug.Log("fadeManager is null.");
         }
+
+        animTime = GameObject.Find("Canvas_Player03").GetComponent<Ranking_result>().FinishSE;
     }
 	
 	// Update is called once per frame
 	void Update () {
         time += Time.deltaTime;
+
+        if (time >= animTime) {
+            if (!playAnim) {
+                if (character.Count > 0) {
+                    for (int i = 0; i < character.Count; i++) {
+                        CharacterContrpller charaAnim = character[i].GetComponent<CharacterContrpller>();
+                        if (charaAnim != null) {
+                            charaAnim.changeAnimationTrigger(charaAnim.getNowAnimName() ,CharacterContrpller.AnimationName.jump);
+                        }
+                    }
+                    playAnim = true;
+                }
+            }
+        }
 
         if (time > 7)
         {
