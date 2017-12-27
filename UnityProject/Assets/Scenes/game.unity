@@ -485,7 +485,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114153183106485062, guid: 7d810fb0046c60e4880b7a4642b0d98f,
+        type: 2}
+      propertyPath: magPosY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064232491805860, guid: 7d810fb0046c60e4880b7a4642b0d98f,
+        type: 2}
+      propertyPath: magPosY
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114153183106485062, guid: 7d810fb0046c60e4880b7a4642b0d98f, type: 2}
+    - {fileID: 114064232491805860, guid: 7d810fb0046c60e4880b7a4642b0d98f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7d810fb0046c60e4880b7a4642b0d98f, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &390835336 stripped
@@ -982,6 +994,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114566946765697926, guid: 74498d067749ff74093d8b00d6be1a02,
+        type: 2}
+      propertyPath: magScaleX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114566946765697926, guid: 74498d067749ff74093d8b00d6be1a02,
+        type: 2}
+      propertyPath: magScaleY
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74498d067749ff74093d8b00d6be1a02, type: 2}

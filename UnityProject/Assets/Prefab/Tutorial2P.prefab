@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224345297735459622}
   - component: {fileID: 222521353287976438}
   - component: {fileID: 114214191033957690}
+  - component: {fileID: 114566946765697926}
   m_Layer: 5
   m_Name: Tutorial1
   m_TagString: Untagged
@@ -87,6 +88,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114566946765697926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1200196200216418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1a746ff0590ea4aaaa636934cdfff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magPosX: 0
+  magPosY: 0
+  magScaleX: 1
+  magScaleY: 1
 --- !u!114 &114943067704890892
 MonoBehaviour:
   m_ObjectHideFlags: 1
