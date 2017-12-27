@@ -14,7 +14,8 @@ public class CharacterContrpller : MonoBehaviour {
         waveHands,
         turn,
         jump,
-        SAK01_Final
+        SAK01_Final,
+        NOT01_Final
     };
 
     public AnimationName startAnim = AnimationName.waitLoop_01;
@@ -28,7 +29,7 @@ public class CharacterContrpller : MonoBehaviour {
         if (animator  == null) {
             Debug.Log("nullだお");
         }
-        startAnimation(startAnim);
+        startAnimationBool(startAnim);
         nowAnimName = startAnim;
     }
 	
@@ -37,17 +38,31 @@ public class CharacterContrpller : MonoBehaviour {
 		
 	}
 
-    public void startAnimation (AnimationName animName) {
+    public void startAnimationBool(AnimationName animName) {
         if (animator != null) {
             animator.SetBool(animName.ToString(), true);
             animator.Play(animName.ToString());
         }
     }
 
-    public void changeAnimation (AnimationName nowAnim, AnimationName nextAnim) {
+    public void changeAnimationBool(AnimationName nowAnim, AnimationName nextAnim) {
         if (animator != null) {
             animator.SetBool(nowAnim.ToString(), false);
             animator.SetBool(nextAnim.ToString(), true);
+        }
+    }
+
+    public void startAnimationTrigger (AnimationName animName) {
+        if (animator != null) {
+            animator.SetTrigger(animName.ToString());
+            animator.Play(animName.ToString());
+        }
+    }
+
+    public void changeAnimationTrigger(AnimationName nowAnim, AnimationName nextAnim) {
+        if (animator != null) {
+            animator.SetTrigger(nowAnim.ToString());
+            animator.SetTrigger(nextAnim.ToString());
         }
     }
 

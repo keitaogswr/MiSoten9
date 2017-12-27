@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour {
 
     public List<GameObject> character = new List<GameObject>();
+    public CharacterContrpller.AnimationName playAnim = CharacterContrpller.AnimationName.turn;
     private List<CharacterContrpller> charaAnim = new List<CharacterContrpller>();
 
 	// Use this for initialization
@@ -19,11 +20,15 @@ public class CharacterManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
-            if (charaAnim.Count > 0) {
-                for (int i = 0; i < charaAnim.Count; i++) {
-                    charaAnim[i].changeAnimation(charaAnim[i].getNowAnimName(), CharacterContrpller.AnimationName.waveHands);
-                }
-            }
+            PlayAnim();
         }
 	}
+
+    public void PlayAnim() {
+        if (charaAnim.Count > 0) {
+            for (int i = 0; i < charaAnim.Count; i++) {
+                charaAnim[i].changeAnimationBool(charaAnim[i].getNowAnimName(), playAnim);
+            }
+        }
+    }
 }

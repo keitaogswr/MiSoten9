@@ -92,8 +92,8 @@ public class GameManager : MonoBehaviour {
         {
             StartTimer += Time.deltaTime;
             
-            PinkIdol.GetComponent<CharacterContrpller>().changeAnimation(PinkIdol.GetComponent<CharacterContrpller>().startAnim, CharacterContrpller.AnimationName.SAK01_Final);
-            BlueIdol.GetComponent<CharacterContrpller>().changeAnimation(BlueIdol.GetComponent<CharacterContrpller>().startAnim, CharacterContrpller.AnimationName.SAK01_Final);
+            PinkIdol.GetComponent<CharacterContrpller>().changeAnimationBool(PinkIdol.GetComponent<CharacterContrpller>().startAnim, CharacterContrpller.AnimationName.NOT01_Final);
+            BlueIdol.GetComponent<CharacterContrpller>().changeAnimationBool(BlueIdol.GetComponent<CharacterContrpller>().startAnim, CharacterContrpller.AnimationName.NOT01_Final);
 
             if (StartTimer > 1)
             {
