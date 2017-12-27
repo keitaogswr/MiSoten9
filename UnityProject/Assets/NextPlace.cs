@@ -15,14 +15,16 @@ public class NextPlace : MonoBehaviour {
     private bool bNext = false;
 
     private int SpawndNum;
+    private int CheckedPointCnt = 0;
 
     private float timer = 0;
     private float SpawnDeray = 5;
+    
 
 	// Use this for initialization
 	void Start ()
     {
-        SpawndNum = 0;
+        SpawndNum = 2;
 	}
 	
 	// Update is called once per frame
@@ -30,7 +32,7 @@ public class NextPlace : MonoBehaviour {
     {
         GameObject Icon;
 
-        int Rand;
+        int Rand,RandOld = 0;
 
 		if(bNext == false)
         {
@@ -38,45 +40,62 @@ public class NextPlace : MonoBehaviour {
 
             if(SpawnDeray < timer)
             {
-                Rand = Random.Range(0, 5);
-
-                switch(Rand)
+                for (var i = 0; i < 2; i++)
                 {
-                    case 0:
-                        Icon = Instantiate(NextIcon);
-                        Icon.transform.position = Village.transform.position + new Vector3(0,30,10);
-                        Icon.transform.SetParent(Village.transform);
-                        Village.GetComponent<CheckPoint>().SetNextVillage();
-                        break;
-                    case 1:
-                        Icon = Instantiate(NextIcon);
-                        Icon.transform.position = Village_2.transform.position + new Vector3(0, 30, 10);
-                        Icon.transform.SetParent(Village_2.transform);
-                        Village_2.GetComponent<CheckPoint>().SetNextVillage();
-                        break;
-                    case 2:
-                        Icon = Instantiate(NextIcon);
-                        Icon.transform.position = Village_3.transform.position + new Vector3(0, 30, 10);
-                        Icon.transform.SetParent(Village_3.transform);
-                        Village_3.GetComponent<CheckPoint>().SetNextVillage();
-                        break;
-                    case 3:
-                        Icon = Instantiate(NextIcon);
-                        Icon.transform.position = Village_4.transform.position + new Vector3(0, 30, 10);
-                        Icon.transform.SetParent(Village_4.transform);
-                        Village_4.GetComponent<CheckPoint>().SetNextVillage();
-                        break;
-                    case 4:
-                        Icon = Instantiate(NextIcon);
-                        Icon.transform.position = Village_5.transform.position + new Vector3(0, 30, 10);
-                        Icon.transform.SetParent(Village_5.transform);
-                        Village_5.GetComponent<CheckPoint>().SetNextVillage();
-                        break;
+                    Rand = Random.Range(0, 5);
+                    while(Rand == RandOld)
+                    {
+                        Rand = Random.Range(0, 5);
+                    }
+                    switch (Rand)
+                    {
+                        case 0:
+                            Icon = Instantiate(NextIcon);
+                            Icon.transform.position = Village.transform.position + new Vector3(0, 30, 10);
+                            Icon.transform.SetParent(Village.transform);
+                            Village.GetComponent<CheckPoint>().SetNextVillage();
+                            break;
+                        case 1:
+                            Icon = Instantiate(NextIcon);
+                            Icon.transform.position = Village_2.transform.position + new Vector3(0, 30, 10);
+                            Icon.transform.SetParent(Village_2.transform);
+                            Village_2.GetComponent<CheckPoint>().SetNextVillage();
+                            break;
+                        case 2:
+                            Icon = Instantiate(NextIcon);
+                            Icon.transform.position = Village_3.transform.position + new Vector3(0, 30, 10);
+                            Icon.transform.SetParent(Village_3.transform);
+                            Village_3.GetComponent<CheckPoint>().SetNextVillage();
+                            break;
+                        case 3:
+                            Icon = Instantiate(NextIcon);
+                            Icon.transform.position = Village_4.transform.position + new Vector3(0, 30, 10);
+                            Icon.transform.SetParent(Village_4.transform);
+                            Village_4.GetComponent<CheckPoint>().SetNextVillage();
+                            break;
+                        case 4:
+                            Icon = Instantiate(NextIcon);
+                            Icon.transform.position = Village_5.transform.position + new Vector3(0, 30, 10);
+                            Icon.transform.SetParent(Village_5.transform);
+                            Village_5.GetComponent<CheckPoint>().SetNextVillage();
+                            break;
+                    }
+                    RandOld = Rand;
                 }
                 bNext = true;
             }
         }
 	}
+
+    public void CheckedPoint()
+    {
+        CheckedPointCnt++;
+        if(CheckedPointCnt == SpawndNum)
+        {
+            CheckedPointCnt = 0;
+            ClearPoint();
+        }
+    }
 
     public void ClearPoint()
     {
