@@ -15,10 +15,20 @@ public class player01_result : MonoBehaviour {
 
     GameObject ScoreGetObj;
 
+    public GameObject PlayerResult01;
+    private Ranking_result Scores;
+
 	// Use this for initialization
 	void Start()
 	{
-		PlayerScore = new int[6];
+        if(PlayerResult01 == null)
+        {
+            PlayerResult01 = GameObject.Find("Ranking_result").gameObject;
+        }
+        Scores = PlayerResult01.GetComponent<Ranking_result>();
+
+
+        PlayerScore = new int[6];
 
 		// テキスト初期ポジション
 		scorePosX = 700f;
@@ -33,10 +43,10 @@ public class player01_result : MonoBehaviour {
         ScoreGetObj = GameObject.Find("HaveScore");
         if (ScoreGetObj != null)
         {
-            PlayerScore[1] = ScoreGetObj.GetComponent<HaveScore>().GetScore(0);       // ファン数
-            PlayerScore[2] = ScoreGetObj.GetComponent<HaveScore>().GetGood(0);       // グッド数
-            PlayerScore[3] = ScoreGetObj.GetComponent<HaveScore>().GetBad(0);        // バッド数
-            PlayerScore[4] = ScoreGetObj.GetComponent<HaveScore>().GetDominatePer();        // パーセント
+            PlayerScore[1] = ScoreGetObj.GetComponent<HaveScore>().GetScore(0);            // ファン数
+            PlayerScore[2] = ScoreGetObj.GetComponent<HaveScore>().GetGood(0);             // グッド数
+            PlayerScore[3] = ScoreGetObj.GetComponent<HaveScore>().GetBad(0);              // バッド数
+            PlayerScore[4] = ScoreGetObj.GetComponent<HaveScore>().GetDominatePer();       // パーセント
             PlayerScore[0] = (int)Mathf.Ceil(((PlayerScore[1] * 1000 * 0.3f) + (PlayerScore[2] * 1000 * 0.2f) + (32768 * (PlayerScore[4] * 0.1f))));     // スコア 繰り上がり
         }
         else
@@ -53,9 +63,12 @@ public class player01_result : MonoBehaviour {
 		{
 			PlayerScore[0] = maxScore;
 		}
-		//-------------------------------------------------------------------//
 
-		ScoreTextObj    = GameObject.Find("Canvas_Player01/resultScores/ScoreText");
+        Scores.ScoreAdd += PlayerScore[0];
+        Scores.FanAdd += PlayerScore[1];
+        //-------------------------------------------------------------------//
+
+        ScoreTextObj    = GameObject.Find("Canvas_Player01/resultScores/ScoreText");
         FanTextObj      = GameObject.Find("Canvas_Player01/resultScores/Fan/FanText");
         GoodTextObj     = GameObject.Find("Canvas_Player01/resultScores/Good/GoodText");
         BadTextObj      = GameObject.Find("Canvas_Player01/resultScores/Bad/BadText");

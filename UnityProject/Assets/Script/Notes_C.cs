@@ -126,6 +126,9 @@ public class Notes_C : MonoBehaviour
 
                 playerScript.Axel += 0.5f;
 
+                // 加速度上限を追加
+
+
                 playerScript.AddGood();
 
                 //GrowPoint.isTrigger = false;
