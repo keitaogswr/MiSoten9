@@ -61,7 +61,7 @@ public class CharacterContrpller : MonoBehaviour {
 
     public void changeAnimationTrigger(AnimationName nowAnim, AnimationName nextAnim) {
         if (animator != null) {
-            animator.SetTrigger(nowAnim.ToString());
+            //animator.SetTrigger(nowAnim.ToString());
             animator.SetTrigger(nextAnim.ToString());
         }
     }
