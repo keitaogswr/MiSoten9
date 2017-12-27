@@ -187,6 +187,7 @@ public class Ranking_result : MonoBehaviour {
                     if (Ranking[i, 0] < Ranking[i + 1, 0])
                     {
                         Swap(ref Ranking[i, 0], ref Ranking[i + 1, 0]);
+                        Swap(ref Ranking[i, 2], ref Ranking[i + 1, 2]);
                         loopSwap = true;
                     }
                 }
@@ -197,6 +198,7 @@ public class Ranking_result : MonoBehaviour {
             }
 
             // ファンのソートと今回のランキングの同期
+            chkEnd = false;
             if (!chkEnd)
             {
                 bool loopChk = false;
@@ -204,7 +206,7 @@ public class Ranking_result : MonoBehaviour {
                 {
                     if (NewScore[0] == Ranking[chk, 0])
                     {
-                        Swap(ref Ranking[5, 2], ref Ranking[chk, 2]);   // ファンのソート
+                        //Swap(ref Ranking[5, 2], ref Ranking[chk, 2]);   // ファンのソート
                         NewScore[1] = Ranking[chk, 1];                  // ランキングの同期
                         loopChk = true;
                     }
