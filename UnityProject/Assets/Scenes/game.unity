@@ -1306,6 +1306,39 @@ Prefab:
       propertyPath: targetName
       value: pinkCharaModel_02
       objectReference: {fileID: 0}
+    - target: {fileID: 4015399470724882, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015399470724882, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015399470724882, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356508897132146, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.529749
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356508897132146, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.348034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554127679516500, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.389755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554127679516500, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.529749
+      objectReference: {fileID: 0}
+    - target: {fileID: 20975111654169132, guid: 8b4090e8300887b44b5bdc6c76867bd9,
+        type: 2}
+      propertyPath: m_TargetTexture
+      value: 
+      objectReference: {fileID: 8400000, guid: fb2c1ec4b094ffa4b81bc61c1641594a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b4090e8300887b44b5bdc6c76867bd9, type: 2}
   m_IsPrefabParent: 0
@@ -4305,10 +4338,26 @@ Prefab:
     - target: {fileID: 2000000, guid: f468251a01e8242df8066e377619a712, type: 2}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: fb2c1ec4b094ffa4b81bc61c1641594a, type: 2}
+      objectReference: {fileID: 8400000, guid: 1e795c9a469ad4507954b5431961f7d5, type: 2}
     - target: {fileID: 11400000, guid: f468251a01e8242df8066e377619a712, type: 2}
       propertyPath: targetName
       value: blueCharaModel_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: f468251a01e8242df8066e377619a712, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.389755
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: f468251a01e8242df8066e377619a712, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.529749
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f468251a01e8242df8066e377619a712, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.348034
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f468251a01e8242df8066e377619a712, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 6.529749
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f468251a01e8242df8066e377619a712, type: 2}
