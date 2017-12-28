@@ -37,7 +37,7 @@ public class CameraSwitcher : MonoBehaviour
     {
         // Update the follow point with the exponential easing function.
         var param = Mathf.Exp(-rotationSpeed * Time.deltaTime);
-        followPoint = Vector3.Lerp(target.position, followPoint, param);
+        //followPoint = Vector3.Lerp(target.position, followPoint, param);
 
         // Look at the follow point.
         transform.LookAt(followPoint);
