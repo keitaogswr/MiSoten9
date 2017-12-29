@@ -3,6 +3,8 @@
 		_MainTex("Main Tex",   2D) = "white" {}     // texture (default = white)
 		_Color("Main Color", Color) = (1, 1, 1, 1)  // color (default = white)
 
+		_ToonShade("ToonShader Cubemap(RGB)", CUBE) = "" { }
+
 		_EdgeSize("Edge Size",  Float) = 1          // Edge Size
 		_EdgeColor("Edge Color", Color) = (1, 1, 1, 1)
 	}
@@ -12,7 +14,7 @@
 		Tags{ "RenderType" = "Transparent" "Queue" = "Transparent" }
 		LOD 100
 		Cull off
-		Blend SrcAlpha OneMinusSrcAlpha
+		//Blend SrcAlpha OneMinusSrcAlpha
 
 		//------------------------------------------------------------
 		Pass{                                           // 1Pass  表側を描画
@@ -22,32 +24,52 @@
 
 		CGPROGRAM                                     // Cgコード開始
 #include "UnityCG.cginc"                      // 基本セット
-#pragma target 3.0                            // Direct3D 9 上の Shader Model 3.0 にコンパイル
+//#pragma target 3.0                            // Direct3D 9 上の Shader Model 3.0 にコンパイル
 
 #pragma vertex        vertFunc                // バーテックスシェーダーに vertFunc を使用
-#pragma fragment    fragFunc                  // フラグメントシェーダーに fragFunc を使用
-
+#pragma fragment    frag                  // フラグメントシェーダーに fragFunc を使用
+#pragma multi_compile_fog
 													  // Cgコード内で、使用する宣言
-		float4 _Color;                                // color
+	float4 _Color;                                // color
 	sampler2D _MainTex;                           // texture
-
+	samplerCUBE _ToonShade;
 	float4 _MainTex_ST;                           // uv
+
+	struct appdata
+	{
+		float4 vertex : POSITION;
+		float2 texcoord : TEXCOORD0;
+		float3 normal : NORMAL;
+	};
 
 	struct v2f {                                  // vertex シェーダーと fragment シェーダーの橋渡し
 		float4 pos      : SV_POSITION;
 		float2 uv       : TEXCOORD0;
+		float3 cubenormal : TEXCOORD1;
+		UNITY_FOG_COORDS(2)
 	};
 
 	v2f vertFunc(appdata_tan v) {                 // Vertex Shader
 		v2f o;
 		o.uv.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
 		o.pos = UnityObjectToClipPos(v.vertex);    // (UNITY_MATRIX_MVP = model*view*projection) *頂点
+		o.cubenormal = mul(UNITY_MATRIX_MV, float4(v.normal, 0));
+		UNITY_TRANSFER_FOG(0, o.pos);
 		return o;
 	}
 
-	float4 fragFunc(v2f i) : COLOR{              // Fragment Shader
-		return tex2D(_MainTex, i.uv.xy);
+	fixed4 frag (v2f i) : SV_Target
+	{
+		fixed4 col = _Color * tex2D(_MainTex, i.uv);
+		fixed4 cube = texCUBE(_ToonShade, i.cubenormal);
+		fixed4 c = fixed4(1.0f * cube.rgb * col.rgb, col.a);
+		UNITY_APPLY_FOG(i.fogCoord, c);
+		return c;
 	}
+
+	//float4 fragFunc(v2f i) : COLOR{              // Fragment Shader
+	//	return tex2D(_MainTex, i.uv.xy);
+	//}
 
 		ENDCG                                         // Cgコード終了
 	}

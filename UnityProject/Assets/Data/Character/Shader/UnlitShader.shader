@@ -69,7 +69,7 @@ Shader "Unlit/UnlitShader"
 #pragma vertex        vertFunc                // バーテックスシェーダーに vertFunc を使用
 #pragma fragment    fragFunc                  // フラグメントシェーダーに fragFunc を使用
 
-													  // Cgコード内で、使用する宣言
+												 // Cgコード内で、使用する宣言
 	float4 _Color;                                // color
 	float4 _EdgeColor;
 	sampler2D _MainTex;                           // texture
