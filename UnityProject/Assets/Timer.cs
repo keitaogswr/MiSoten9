@@ -8,10 +8,13 @@ public class Timer : MonoBehaviour {
     private float time = 0.0f;
     private int Mnt;
     private float secMax;
+    [SerializeField]
+    private float startSec = 3;
 
     private GameObject TimeOverText;
     private bool bTimeOver = false;
 	private bool bSeFlag = false;
+    private bool bBgmFlag = false;
 
 	// Use this for initialization
 	void Start ()
@@ -66,9 +69,13 @@ public class Timer : MonoBehaviour {
             this.GetComponent<Text>().text = Mnt + ":" + (int)time;
         }
 
-        if (sec < secMax - 2)
+        if (sec < secMax - startSec)
         {
-            AudioManager.Instance.PlayBGM("Unite In The Sky (short)", false);
+            if(!bBgmFlag)
+            {
+                bBgmFlag = true;
+                AudioManager.Instance.PlayBGM("Unite In The Sky (short)", false);
+            }
         }
     }
 
