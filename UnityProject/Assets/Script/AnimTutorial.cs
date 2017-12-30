@@ -20,15 +20,18 @@ public class AnimTutorial : MonoBehaviour {
         animTime += Time.deltaTime;
 
         // 画像を上下左右に反復移動する
-        Vector3 pos = transform.localPosition;
-        pos.x += Mathf.Sin(animTime * magPosX);
-        pos.y += Mathf.Sin(animTime * magPosY);
-        transform.localPosition = pos;
+        //Vector3 pos = transform.localPosition;
+        //pos.x += Mathf.Sin(animTime * magPosX);
+        //pos.y += Mathf.Sin(animTime * magPosY);
+        //transform.localPosition = pos;
+        transform.localPosition = new Vector3(transform.localPosition.x,
+            transform.localPosition.y + Mathf.Sin(Time.frameCount * magPosY),
+            transform.localPosition.z);
 
         // 画像を上下左右に反復拡縮する
         Vector3 scale = transform.localScale;
-        scale.x += Mathf.Sin(animTime * magScaleX);
-        scale.y += Mathf.Sin(animTime * magScaleY);
+        scale.x = Mathf.Sin(animTime * magScaleX) + 1.0f;
+        scale.y = Mathf.Sin(animTime * magScaleY) + 1.0f;
         transform.localScale = scale;
     }
 }
