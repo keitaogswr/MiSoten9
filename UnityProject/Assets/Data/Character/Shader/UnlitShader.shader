@@ -7,7 +7,7 @@ Shader "Unlit/UnlitShader"
 	Properties{                                   // Inspector Properties 
 		_MainTex("Main Tex",   2D) = "white" {}     // texture (default = white)
 		_Color("Main Color", Color) = (1, 1, 1, 1)  // color (default = white)
-
+		_Ramp("Ramp", 2D) = "white"{}
 		_EdgeSize("Edge Size",  Float) = 1          // Edge Size
 		_EdgeColor("Edge Color", Color) = (1, 1, 1, 1)
 		_RampTex("Ramp", 2D) = "white" {}

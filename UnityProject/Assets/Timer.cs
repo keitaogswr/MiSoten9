@@ -10,11 +10,12 @@ public class Timer : MonoBehaviour {
     private float secMax;
     [SerializeField]
     private float startSec = 3;
-
+    
     private GameObject TimeOverText;
     private bool bTimeOver = false;
 	private bool bSeFlag = false;
     private bool bBgmFlag = false;
+
 
 	// Use this for initialization
 	void Start ()

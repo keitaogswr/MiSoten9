@@ -65,7 +65,7 @@ public class CheckPoint : MonoBehaviour {
             if(bNextVillage)
             {
                 Destroy(transform.Find("NextInfoParticle(Clone)").gameObject);
-                NextPlaceScript.ClearPoint();
+                NextPlaceScript.CheckedPoint();
                 bNextVillage = false;
                 other.gameObject.GetComponent<Player>().AddFan(AddFunNum);
             }
