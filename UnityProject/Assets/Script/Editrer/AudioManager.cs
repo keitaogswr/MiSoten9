@@ -181,4 +181,8 @@ public class AudioManager : SingletonMonoBehaviour<AudioManager>
     public void SetPlaySEFlag(bool play) {
         noSE = play;
     }
+
+    public AudioSource getBGMAudioSource () {
+        return bgmSource;
+    }
 }
