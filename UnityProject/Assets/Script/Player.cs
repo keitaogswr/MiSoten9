@@ -123,8 +123,12 @@ public class Player : MonoBehaviour {
         }
 
         transform.rotation = Quaternion.Euler(0, transform.rotation.y + slope, 0);
-        
-        if((int)HightTarget.transform.localPosition.y > -6)
+
+        if ((int)HightTarget.transform.localPosition.y > 0)
+        {
+            LerpHight = 180;
+        }
+        else if((int)HightTarget.transform.localPosition.y > -6)
         {
             LerpHight = 100;
         }
