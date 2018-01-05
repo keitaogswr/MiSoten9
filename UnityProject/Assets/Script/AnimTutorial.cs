@@ -30,8 +30,8 @@ public class AnimTutorial : MonoBehaviour {
 
         // 画像を上下左右に反復拡縮する
         Vector3 scale = transform.localScale;
-        scale.x = Mathf.Sin(animTime * magScaleX) + 1.0f;
-        scale.y = Mathf.Sin(animTime * magScaleY) + 1.0f;
+        scale.x = Mathf.Sin(animTime * magScaleX) * 0.5f + 0.5f;
+        scale.y = Mathf.Sin(animTime * magScaleY) * 0.5f + 0.5f;
         transform.localScale = scale;
     }
 }
