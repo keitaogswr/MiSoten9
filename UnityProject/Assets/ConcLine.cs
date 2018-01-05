@@ -25,11 +25,15 @@ public class ConcLine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (playerScript.Axel >= 4)
+        if (playerScript.Axel >= 16)
+        {
+            PartAlpha = 1.0f;
+        }
+        else if (playerScript.Axel >= 8)
         {
             PartAlpha = 0.75f;
         }
-        else if (playerScript.Axel >= 3)
+        else if (playerScript.Axel >= 4)
         {
             PartAlpha = 0.5f;
         }
@@ -39,7 +43,7 @@ public class ConcLine : MonoBehaviour {
         }
         else if (playerScript.Axel == 1)
         {
-            PartAlpha = 0;
+            PartAlpha = 0.1f;
         }
 
         Part.startColor = new Color(1, 1, 1, PartAlpha);
