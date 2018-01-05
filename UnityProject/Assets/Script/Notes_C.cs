@@ -37,6 +37,9 @@ public class Notes_C : MonoBehaviour
 
     private Timer timer;
 
+    public GameObject playrStageEffect = null;
+    private PlayerEffectGroup stageEffect;
+
     // Use this for initialization
     void Start()
     {
@@ -54,6 +57,7 @@ public class Notes_C : MonoBehaviour
         Note_Span = Time.time;
 
         timer = GameObject.Find("Player_UI_1/TimerFrame/Timer").GetComponent<Timer>();
+        stageEffect = playrStageEffect.GetComponent<PlayerEffectGroup>();
     }
 
     // Update is called once per frame
@@ -139,6 +143,7 @@ public class Notes_C : MonoBehaviour
                 // }
 
                 Bar.GetComponent<BarAct>().GoodAct();
+                stageEffect.PlayBang();
 
                 DestoryNote();
             }
