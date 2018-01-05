@@ -5,10 +5,10 @@ using UnityEngine;
 public class AnimTutorial : MonoBehaviour {
 
     private float animTime = 0;
-    [SerializeField] private float magPosX = 0;       // X軸移動の倍率 
-    [SerializeField] private float magPosY = 1;       // Y軸移動の倍率
-    [SerializeField] private float magScaleX = 1;       // X軸移動の倍率 
-    [SerializeField] private float magScaleY = 1;       // Y軸移動の倍率
+    [SerializeField] private float magPosX = 0;           // X軸移動の倍率 
+    [SerializeField] private float magPosY = 1;           // Y軸移動の倍率
+    [SerializeField] private float magScaleX = 1;         // X軸拡縮の倍率 
+    [SerializeField] private float magScaleY = 1;         // Y軸拡縮の倍率
 
     // Use this for initialization
     void Start () {
@@ -20,18 +20,15 @@ public class AnimTutorial : MonoBehaviour {
         animTime += Time.deltaTime;
 
         // 画像を上下左右に反復移動する
-        //Vector3 pos = transform.localPosition;
-        //pos.x += Mathf.Sin(animTime * magPosX);
-        //pos.y += Mathf.Sin(animTime * magPosY);
-        //transform.localPosition = pos;
-        transform.localPosition = new Vector3(transform.localPosition.x,
+        transform.localPosition = new Vector3(
+            transform.localPosition.x,
             transform.localPosition.y + Mathf.Sin(Time.frameCount * magPosY),
             transform.localPosition.z);
 
         // 画像を上下左右に反復拡縮する
-        Vector3 scale = transform.localScale;
-        scale.x = Mathf.Sin(animTime * magScaleX) * 0.5f + 0.5f;
-        scale.y = Mathf.Sin(animTime * magScaleY) * 0.5f + 0.5f;
-        transform.localScale = scale;
+        transform.localScale = new Vector3(
+            Mathf.Sin(animTime * magScaleX) + 1.0f,
+            Mathf.Sin(animTime * magScaleY) + 1.0f,
+            transform.localScale.z);
     }
 }
