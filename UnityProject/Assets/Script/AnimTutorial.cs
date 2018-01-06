@@ -6,9 +6,9 @@ public class AnimTutorial : MonoBehaviour {
 
     private float animTime = 0;
     [SerializeField] private float magPosX = 0;           // X軸移動の倍率 
-    [SerializeField] private float magPosY = 1;           // Y軸移動の倍率
-    [SerializeField] private float magScaleX = 1;         // X軸拡縮の倍率 
-    [SerializeField] private float magScaleY = 1;         // Y軸拡縮の倍率
+    [SerializeField] private float magPosY = 0.1f;           // Y軸移動の倍率
+    [SerializeField] private float magScaleX = 0;         // X軸拡縮の倍率 
+    [SerializeField] private float magScaleY = 0;         // Y軸拡縮の倍率
 
     // Use this for initialization
     void Start () {

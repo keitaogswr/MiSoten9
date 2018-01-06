@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 224578080426003262}
   - component: {fileID: 222829612673641796}
   - component: {fileID: 114492825152182312}
+  - component: {fileID: 114545990027182670}
   m_Layer: 5
   m_Name: Tutorial2
   m_TagString: Untagged
@@ -404,6 +405,7 @@ GameObject:
   - component: {fileID: 224687748696019408}
   - component: {fileID: 222147114700366756}
   - component: {fileID: 114415610175214370}
+  - component: {fileID: 114236994071693138}
   m_Layer: 5
   m_Name: Tutorial1
   m_TagString: Untagged
@@ -940,6 +942,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114236994071693138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658127093207442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1a746ff0590ea4aaaa636934cdfff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magPosX: 0
+  magPosY: 0.1
+  magScaleX: 0
+  magScaleY: 0
 --- !u!114 &114238072461532732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -976,6 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sec: 110
+  startSec: 3
 --- !u!114 &114407120534741102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1226,6 +1244,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetScl: {x: 2, y: 2, z: 2}
   SpeedWeight: 3
+--- !u!114 &114545990027182670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181293028882890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1a746ff0590ea4aaaa636934cdfff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magPosX: 0
+  magPosY: 0.1
+  magScaleX: 0
+  magScaleY: 0
 --- !u!114 &114580757943818600
 MonoBehaviour:
   m_ObjectHideFlags: 1
