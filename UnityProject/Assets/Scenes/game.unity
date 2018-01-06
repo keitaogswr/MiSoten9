@@ -1645,6 +1645,15 @@ Prefab:
       propertyPath: playrStageEffect
       value: 
       objectReference: {fileID: 19611243}
+    - target: {fileID: 224381030051222770, guid: 39de0c07eaf24dd4885845d42aa1dab5,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324851151873628, guid: 39de0c07eaf24dd4885845d42aa1dab5, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39de0c07eaf24dd4885845d42aa1dab5, type: 2}
   m_IsPrefabParent: 0
