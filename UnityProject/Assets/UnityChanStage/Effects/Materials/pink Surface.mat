@@ -23,7 +23,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amplitude: 0
+    - _Amplitude: 1
     m_Colors:
     - _Color: {r: 0.9852941, g: 0.42019895, b: 0.87617207, a: 1}
     - _Emission: {r: 0.95385385, g: 0.52205884, b: 1, a: 0}
