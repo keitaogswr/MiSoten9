@@ -26,7 +26,7 @@ public class TerraScript : MonoBehaviour
     private DominateBar DominateScript;
     private DominateBar DominateScript_2P;
 
-    private const float UpdateDeray = 0.15f;
+    private const float UpdateDeray = 0.1f;
     private float UpdateTimer = 0;
 
     private const float TeraCheckDeray = 0.5f;
