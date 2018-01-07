@@ -38,8 +38,10 @@ public class Lightning : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision collision) {
-        foreach (ContactPoint point in collision.contacts) {
-            hitting_point = point.point;
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Terrain") {
+            foreach (ContactPoint point in collision.contacts) {
+                hitting_point = point.point;
+            }
         }
     }
 }

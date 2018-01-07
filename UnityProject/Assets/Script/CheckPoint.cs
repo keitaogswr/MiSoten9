@@ -16,6 +16,8 @@ public class CheckPoint : MonoBehaviour {
 
     private NextPlace NextPlaceScript;
 
+    private GameObject MiniMapIcon;
+
     // Use this for initialization
     void Start () {
 
@@ -36,6 +38,9 @@ public class CheckPoint : MonoBehaviour {
             drawSphere.SetActive(false);
         }
 
+        MiniMapIcon = GameObject.Find(this.name + "/MinimapIcon_CheckPoint");
+
+        MiniMapIcon.SetActive(false);
         bNextVillage = false;
     }
 	
@@ -67,6 +72,7 @@ public class CheckPoint : MonoBehaviour {
                 Destroy(transform.Find("NextInfoParticle(Clone)").gameObject);
                 NextPlaceScript.CheckedPoint();
                 bNextVillage = false;
+                MiniMapIcon.SetActive(false);
                 other.gameObject.GetComponent<Player>().AddFan(AddFunNum);
             }
         }
@@ -74,6 +80,7 @@ public class CheckPoint : MonoBehaviour {
 
     public void SetNextVillage()
     {
+        MiniMapIcon.SetActive(true);
         bNextVillage = true;
     }
 }

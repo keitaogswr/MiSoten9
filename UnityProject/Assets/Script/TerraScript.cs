@@ -26,7 +26,7 @@ public class TerraScript : MonoBehaviour
     private DominateBar DominateScript;
     private DominateBar DominateScript_2P;
 
-    private const float UpdateDeray = 0.15f;
+    private const float UpdateDeray = 0.1f;
     private float UpdateTimer = 0;
 
     private const float TeraCheckDeray = 0.5f;
@@ -214,7 +214,7 @@ public class TerraScript : MonoBehaviour
             {
                 if ((x + mapX) > 0 && (x + mapX) < mapAlphaSize_W && (z + mapZ) > 0 && (z + mapZ) < mapAlphaSize_H)
                 {
-                    if (!(Tag == "Tornado"))
+                    if (!(Tag == "Tornado") && Tag != "Fire")
                     {
                         //Random.Range(0.1f, 0.5f);
                         AlphaMap[(int)(x + mapX), (int)(z + mapZ), 1] += Random.Range(0.05f, 0.1f);
