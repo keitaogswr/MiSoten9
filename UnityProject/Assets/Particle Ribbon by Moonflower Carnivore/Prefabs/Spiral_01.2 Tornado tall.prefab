@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 114417952626073932}
   - component: {fileID: 54146385916181782}
   - component: {fileID: 114654460186706944}
+  - component: {fileID: 136214928097109030}
   m_Layer: 0
   m_Name: Spiral_01.2 Tornado tall
   m_TagString: Tornado
@@ -120,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 108504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 331.8, y: 66, z: 247.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 1, z: 1}
   m_Children:
   - {fileID: 457024}
   - {fileID: 4685349084514680}
@@ -13600,4 +13601,17 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136214928097109030
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 15
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
