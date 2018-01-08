@@ -43,9 +43,7 @@ GameObject:
   - component: {fileID: 470610}
   - component: {fileID: 19822124}
   - component: {fileID: 114622557564131638}
-  - component: {fileID: 135855774166601658}
   - component: {fileID: 114870007498970820}
-  - component: {fileID: 54029997674150590}
   m_Layer: 16
   m_Name: Fire basic soft
   m_TagString: Fire
@@ -146,13 +144,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.5133, y: 41.7, z: 112.5}
+  m_LocalPosition: {x: 275.02402, y: 35.4, z: 68.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432616}
   - {fileID: 417064}
   - {fileID: 425630}
   - {fileID: 458410}
+  - {fileID: 4918570794219074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -230,7 +229,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 26887653
+  randomSeed: 1425824422
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3384,7 +3383,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1753013253
+  randomSeed: -1580966112
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6646,7 +6645,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -759145562
+  randomSeed: -1617850357
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9836,7 +9835,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -538041081
+  randomSeed: -1336708380
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13068,12 +13067,42 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146424}
   m_IsPrefabParent: 1
---- !u!54 &54029997674150590
+--- !u!1 &1939795596358706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4918570794219074}
+  - component: {fileID: 54349112569907416}
+  - component: {fileID: 135373260653331430}
+  m_Layer: 16
+  m_Name: GameObject
+  m_TagString: Fire
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4918570794219074
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1939795596358706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470610}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54349112569907416
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146424}
+  m_GameObject: {fileID: 1939795596358706}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -13094,7 +13123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e54ff67d2b1ecd448e3ee1814fd1b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  validTime: 30
+  validTime: 60
   createObj: {fileID: 0}
 --- !u!114 &114870007498970820
 MonoBehaviour:
@@ -13107,16 +13136,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6ea841ee872e94e81e3eb52a29f405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scale_quantity: 0.005
---- !u!135 &135855774166601658
+  scale_quantity: 0.001
+  drawObj: {fileID: 1939795596358706}
+--- !u!135 &135373260653331430
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146424}
+  m_GameObject: {fileID: 1939795596358706}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0.93, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
