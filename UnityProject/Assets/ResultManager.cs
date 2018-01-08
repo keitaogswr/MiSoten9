@@ -15,6 +15,7 @@ public class ResultManager : MonoBehaviour {
     private List<GameObject> character = new List<GameObject>();
     private float animTime;
     private bool playAnim = false;
+    public CharacterContrpller.AnimationName playAnimation = CharacterContrpller.AnimationName.turn;
 
     // Use this for initialization
     void Awake() {
@@ -46,7 +47,7 @@ public class ResultManager : MonoBehaviour {
                     for (int i = 0; i < character.Count; i++) {
                         CharacterContrpller charaAnim = character[i].GetComponent<CharacterContrpller>();
                         if (charaAnim != null) {
-                            charaAnim.changeAnimationTrigger(charaAnim.getNowAnimName() ,CharacterContrpller.AnimationName.jump);
+                            charaAnim.changeAnimationTrigger(charaAnim.getNowAnimName() , playAnimation);
                         }
                     }
                     playAnim = true;
