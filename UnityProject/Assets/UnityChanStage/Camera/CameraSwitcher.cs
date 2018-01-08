@@ -5,6 +5,7 @@ using UnityStandardAssets.ImageEffects;
 public class CameraSwitcher : MonoBehaviour
 {
     public string targetName;
+    public GameObject targetObj;
     public Transform[] points;
     public float interval = 2.0f;
     public float stability = 0.5f;
@@ -21,7 +22,12 @@ public class CameraSwitcher : MonoBehaviour
     void Start()
     {
         // Target information.
-        target = GameObject.Find(targetName).transform;
+        if (targetObj == null) {
+            target = GameObject.Find(targetName).transform;
+        }
+        else {
+            target = targetObj.transform;
+        }
         followPoint = target.position;
 
         // Initialize DOF fx.
