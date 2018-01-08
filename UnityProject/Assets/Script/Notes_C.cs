@@ -43,7 +43,7 @@ public class Notes_C : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Bar = GameObject.Find("Hantei_Center").gameObject;
+        //Bar = GameObject.Find("Hantei_Center").gameObject;
         TerrainObj = GameObject.Find("FieldTerrain").gameObject;
         //GrowPoint = GameObject.Find("Player/Sphere");
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
