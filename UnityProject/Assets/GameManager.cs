@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public GameObject NextInfo;
 
     public GameObject StartLogo;
+    public GameObject StartLogo_2P;
 
     private GameObject TimerTxt;
     private GameObject TimerTxt_2P;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour {
         LightningMane.GetComponent<LightningManager>().enabled = false;
 
         StartLogo.GetComponent<StartLogoAnim>().enabled = false;
+        StartLogo_2P.GetComponent<StartLogoAnim>().enabled = false;
 
         GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
         GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
@@ -119,6 +121,7 @@ public class GameManager : MonoBehaviour {
 
 
             StartLogo.GetComponent<StartLogoAnim>().enabled = true;
+            StartLogo_2P.GetComponent<StartLogoAnim>().enabled = true;
 
             GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Start";
             GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Start";
