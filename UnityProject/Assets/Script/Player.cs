@@ -67,8 +67,8 @@ public class Player : MonoBehaviour {
         else {
             Debug.Log("param is null");
         }
-        vertical = "Vertical_" + (int)playerNum;
-        horizontal = "Horizontal_" + (int)playerNum;
+        vertical = "Vertical_switch" + ((((int)playerNum - 1) * 2) + 1);
+        horizontal = "Horizontal_switch" + ((((int)playerNum - 1) * 2) + 1);
 
         brush = this.GetComponent<Es.InkPainter.Sample.Paint>();
 
@@ -94,31 +94,44 @@ public class Player : MonoBehaviour {
 
     private void Move ()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis(vertical) == 1)
-		{
-            if (moveSpeed < maxSpeed) {
-                moveSpeed += acceleration;
-            }
-            else {
-                moveSpeed = maxSpeed;
-            }
+        //if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis(horizontal) == 1)
+        //{
+        //    if (moveSpeed < maxSpeed)
+        //    {
+        //        moveSpeed += acceleration;
+        //    }
+        //    else
+        //    {
+        //        moveSpeed = maxSpeed;
+        //    }
 
-		}
+        //}
+        //else
+        //{
+        //    if (minSpeed < moveSpeed)
+        //    {
+        //        moveSpeed -= acceleration;
+        //    }
+        //    else
+        //    {
+        //        moveSpeed = minSpeed;
+        //    }
+        //}
+
+        if (minSpeed < moveSpeed)
+        {
+            moveSpeed -= acceleration;
+        }
         else
-		{
-            if (minSpeed < moveSpeed) {
-                moveSpeed -= acceleration;
-            }
-            else {
-                moveSpeed = minSpeed;
-            }
+        {
+            moveSpeed = minSpeed;
         }
 
-		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis(horizontal) == 1) {
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis(vertical) > 0) {
             slope += acceleSlope;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis(horizontal) == -1) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis(vertical) < 0) {
             slope -= acceleSlope;
         }
 
