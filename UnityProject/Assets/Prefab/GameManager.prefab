@@ -59,12 +59,21 @@ MonoBehaviour:
   Flower: {fileID: 1108044631004010, guid: 0c13ee6d1ceb5584687fb1aa3112f093, type: 2}
   NextInfo: {fileID: 0}
   StartLogo: {fileID: 0}
+  StartLogo_2P: {fileID: 0}
   Bokashi: {fileID: 0}
   Bokashi_2P: {fileID: 0}
+  TuText1: {fileID: 0}
+  TuText2: {fileID: 0}
+  TuText1_2P: {fileID: 0}
+  TuText2_2P: {fileID: 0}
   TornadeMane: {fileID: 0}
   LightningMane: {fileID: 0}
   PinkIdol: {fileID: 0}
   BlueIdol: {fileID: 0}
+  TuImage1: {fileID: 0}
+  TuImage2: {fileID: 0}
+  TuImage1_2P: {fileID: 0}
+  TuImage2_2P: {fileID: 0}
   WaitTimer: 2
   ClickTime: 1
   ChangeSkyValue: 0.5
