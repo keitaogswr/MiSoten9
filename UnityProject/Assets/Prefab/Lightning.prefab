@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef01d2ef85b937f47baf3c1abbd0e043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireObject: {fileID: 146424, guid: 5254f1d4706b70a43a126292a062a4cf, type: 2}
+  fireObject: {fileID: 117628, guid: 1c6cf70a4666e5a40ba4bafbc8947b6a, type: 2}
   validTime: 0
 --- !u!120 &120512831864619854
 LineRenderer:

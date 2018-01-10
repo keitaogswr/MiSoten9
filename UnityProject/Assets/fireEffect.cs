@@ -5,16 +5,14 @@ using UnityEngine;
 public class fireEffect : MonoBehaviour {
 
     public float scale_quantity = 0.1f;
-
-    private SphereCollider coll;
+    public GameObject drawObj = null;
 
     // Use this for initialization
     void Start () {
-        coll = this.GetComponent<SphereCollider>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        coll.radius += scale_quantity;
+        drawObj.transform.localScale += new Vector3(scale_quantity, 0, 0);
     }
 }

@@ -43,7 +43,7 @@ public class Notes_C : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Bar = GameObject.Find("Hantei_Center").gameObject;
+        //Bar = GameObject.Find("Hantei_Center").gameObject;
         TerrainObj = GameObject.Find("FieldTerrain").gameObject;
         //GrowPoint = GameObject.Find("Player/Sphere");
         TerrainScript = TerrainObj.GetComponent<TerraScript>();
@@ -63,6 +63,12 @@ public class Notes_C : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        for (int i = (int)KeyCode.Joystick1Button0; i <= (int)KeyCode.Joystick8Button19; i++)
+        {
+            if (Input.GetKey((KeyCode)i)) Debug.Log(((KeyCode)i).ToString() + " is pressed.");
+        }
         if (timer.GetTimeOverFlag())
         {
         }
@@ -95,7 +101,7 @@ public class Notes_C : MonoBehaviour
             }
         }
         //ノーツの判定処理部分
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Rhythm_" + ((int)playerScript.playerNum + 1)))
         {
             if (FieldNote[0, 0] != null && FieldNote[0, 0].transform.localPosition.x > -50 && FieldNote[0, 0].transform.localPosition.x < 50)
             {
@@ -194,7 +200,6 @@ public class Notes_C : MonoBehaviour
 
             DestoryNote();
         }
-
     }
 
     void SpawnNotes()

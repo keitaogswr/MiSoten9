@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     public GameObject NextInfo;
 
     public GameObject StartLogo;
+    public GameObject StartLogo_2P;
 
     private GameObject TimerTxt;
     private GameObject TimerTxt_2P;
@@ -59,9 +60,10 @@ public class GameManager : MonoBehaviour {
         LightningMane.GetComponent<LightningManager>().enabled = false;
 
         StartLogo.GetComponent<StartLogoAnim>().enabled = false;
+        StartLogo_2P.GetComponent<StartLogoAnim>().enabled = false;
 
-        GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
-        GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
+        //GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait";
+        //GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait";
 
         TimerTxt = GameObject.Find("Player_UI_2/TimerFrame/Timer");
         TimerTxt_2P = GameObject.Find("Player_UI_1/TimerFrame/Timer");
@@ -79,10 +81,10 @@ public class GameManager : MonoBehaviour {
     {
         //Timer += Time.deltaTime;
 
-        GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait" + Timer;
-        GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait" + Timer;
+        //GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait" + Timer;
+        //GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait" + Timer;
 
-        if (Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("Rhythm_1"))
         {
             ClickCnt++;
         }
@@ -119,9 +121,7 @@ public class GameManager : MonoBehaviour {
 
 
             StartLogo.GetComponent<StartLogoAnim>().enabled = true;
-
-            GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Start";
-            GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Start";
+            StartLogo_2P.GetComponent<StartLogoAnim>().enabled = true;
 
             Bokashi.GetComponent<Image>().color = new Color(1, 1, 1, 0.8f - StartTimer);
             Bokashi_2P.GetComponent<Image>().color = new Color(1, 1, 1, 0.8f - StartTimer);
@@ -131,8 +131,8 @@ public class GameManager : MonoBehaviour {
             TuText1_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
             TuText2_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
 
-            Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
-            Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
+            //Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
+            //Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
 
             GameObject Obj = Instantiate(Flower);
             Obj.transform.SetParent(Game_UI.transform);
