@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour {
         //GameObject.Find("Player_UI_1/Text").GetComponent<Text>().text = "Wait" + Timer;
         //GameObject.Find("Player_UI_2/Text").GetComponent<Text>().text = "Wait" + Timer;
 
-        if (Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("Rhythm_1"))
         {
             ClickCnt++;
         }
