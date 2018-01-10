@@ -35,6 +35,15 @@ public class GameManager : MonoBehaviour {
     public GameObject PinkIdol;
     public GameObject BlueIdol;
 
+    public GameObject TuImage1;
+    public GameObject TuImage2;
+
+    public GameObject TuImage1_2P;
+    public GameObject TuImage2_2P;
+
+    public GameObject FlowerRain_1P;
+    public GameObject FlowerRain_2P;
+
     public float WaitTimer;
     private float StartTimer;
 
@@ -114,6 +123,9 @@ public class GameManager : MonoBehaviour {
                 TornadeMane.GetComponent<TornadoManager>().enabled = true;
                 LightningMane.GetComponent<LightningManager>().enabled = true;
 
+                FlowerRain_1P.GetComponent<ParticleSystem>().Stop();
+                FlowerRain_2P.GetComponent<ParticleSystem>().Stop();
+
                 Destroy(Bokashi);
                 Destroy(Bokashi_2P);
                 Destroy(this.gameObject);
@@ -131,6 +143,11 @@ public class GameManager : MonoBehaviour {
             TuText1_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
             TuText2_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
 
+            TuImage1.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+            TuImage2.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+            TuImage1_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+            TuImage2_2P.GetComponent<Image>().color = new Color(1, 1, 1, 1.0f - StartTimer);
+
             //Destroy(GameObject.Find("Player_UI_1/Text").gameObject,1);
             //Destroy(GameObject.Find("Player_UI_2/Text").gameObject,1);
 
@@ -141,7 +158,7 @@ public class GameManager : MonoBehaviour {
 
             GameObject Obj_2 = Instantiate(Flower);
             Obj_2.transform.SetParent(Game_UI_2P.transform);
-            Obj_2.transform.localPosition = new Vector3(0, 0, 0);
+            Obj_2.transform.localPosition = new Vector3(0, -250, 0);
             Obj_2.layer = LayerMask.NameToLayer("UI2");
             DestroyObject(Obj_2.gameObject, 3);
         }
